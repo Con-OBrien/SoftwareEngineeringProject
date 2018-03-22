@@ -139,6 +139,21 @@ namespace PropertySysv2
 
             return DS;
         }
+        public static DataSet getTenant(DataSet RS)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            String strSQL = "SELECT Tenant_ID FROM Tenants ORDER BY Tenant_ID";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataAdapter ra = new OracleDataAdapter(cmd);
+
+            ra.Fill(RS, "rs");
+
+            conn.Close();
+
+            return RS;
+        }
 
         public static int getNextTenantId()
         {
@@ -185,8 +200,9 @@ namespace PropertySysv2
 
             //Define SQL query to INSERT stock record
             String strSQL = "INSERT INTO Tenants VALUES(" + this.tenant_id.ToString() +
-                ",'" + this.surname.ToUpper() + "','" + this.forename.ToUpper() + 
-                  "'," + this.phone.ToString() + ",'" + this.email.ToUpper() + "','" + this.dob.ToString() + "')";
+                ",'" + this.forename.ToUpper() + "','" + this.surname.ToUpper() + 
+                  "'," + this.phone.ToString() + ",'" + this.email.ToUpper() + "','" 
+                  + this.dob.ToString() + "'," + this.prop_id.ToString() + ")";
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -195,20 +211,7 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
-        public void makeBooking()
-        {
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-            conn.Open();
-
-            String strSQL = "INSERT INTO Bookings VALUES('" + this.forename.ToUpper() +
-                "','" + this.surname.ToUpper() + "'," + this.phone.ToString() + ",'" +
-                this.email.ToString() + "'," + this.prop_id.ToString() + ")";
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
-        }
+        
 
         public void updTenant()
         {

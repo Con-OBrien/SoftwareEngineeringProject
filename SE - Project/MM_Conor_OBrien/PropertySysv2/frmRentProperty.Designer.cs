@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTenantID = new System.Windows.Forms.TextBox();
+            this.txtBookingID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.grpTenants = new System.Windows.Forms.GroupBox();
+            this.txtTenantID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPropID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtDOB = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtForename = new System.Windows.Forms.TextBox();
@@ -52,45 +53,52 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnYes = new System.Windows.Forms.Button();
+            this.btnNo = new System.Windows.Forms.Button();
+            this.cboTenant = new System.Windows.Forms.ComboBox();
+            this.grpTenantSelect = new System.Windows.Forms.GroupBox();
+            this.grpPropSelect = new System.Windows.Forms.GroupBox();
+            this.btnRent = new System.Windows.Forms.Button();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.txtOwnerID = new System.Windows.Forms.TextBox();
+            this.grpDates = new System.Windows.Forms.GroupBox();
             this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.grpTenantSelect.SuspendLayout();
+            this.grpPropSelect.SuspendLayout();
+            this.grpDates.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtTenantID
+            // txtBookingID
             // 
-            this.txtTenantID.Enabled = false;
-            this.txtTenantID.Location = new System.Drawing.Point(89, 43);
-            this.txtTenantID.MaxLength = 4;
-            this.txtTenantID.Name = "txtTenantID";
-            this.txtTenantID.Size = new System.Drawing.Size(49, 20);
-            this.txtTenantID.TabIndex = 19;
+            this.txtBookingID.Enabled = false;
+            this.txtBookingID.Location = new System.Drawing.Point(89, 43);
+            this.txtBookingID.MaxLength = 4;
+            this.txtBookingID.Name = "txtBookingID";
+            this.txtBookingID.Size = new System.Drawing.Size(58, 20);
+            this.txtBookingID.TabIndex = 19;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(12, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Tenant ID";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Select your Property";
+            this.label8.Text = "Booking ID";
             // 
             // grpTenants
             // 
+            this.grpTenants.Controls.Add(this.dtpDOB);
+            this.grpTenants.Controls.Add(this.txtTenantID);
+            this.grpTenants.Controls.Add(this.label7);
+            this.grpTenants.Controls.Add(this.label1);
             this.grpTenants.Controls.Add(this.txtPropID);
             this.grpTenants.Controls.Add(this.label3);
             this.grpTenants.Controls.Add(this.txtSurname);
             this.grpTenants.Controls.Add(this.label2);
             this.grpTenants.Controls.Add(this.btnAdd);
-            this.grpTenants.Controls.Add(this.txtDOB);
             this.grpTenants.Controls.Add(this.txtEmail);
             this.grpTenants.Controls.Add(this.txtPhone);
             this.grpTenants.Controls.Add(this.txtForename);
@@ -98,13 +106,41 @@
             this.grpTenants.Controls.Add(this.label11);
             this.grpTenants.Controls.Add(this.label12);
             this.grpTenants.Controls.Add(this.label13);
-            this.grpTenants.Location = new System.Drawing.Point(12, 259);
+            this.grpTenants.Location = new System.Drawing.Point(257, 43);
             this.grpTenants.Name = "grpTenants";
-            this.grpTenants.Size = new System.Drawing.Size(335, 263);
+            this.grpTenants.Size = new System.Drawing.Size(335, 318);
             this.grpTenants.TabIndex = 34;
             this.grpTenants.TabStop = false;
             this.grpTenants.Text = "Enter Tenant Details";
             this.grpTenants.Visible = false;
+            // 
+            // txtTenantID
+            // 
+            this.txtTenantID.Enabled = false;
+            this.txtTenantID.Location = new System.Drawing.Point(104, 53);
+            this.txtTenantID.Name = "txtTenantID";
+            this.txtTenantID.Size = new System.Drawing.Size(124, 20);
+            this.txtTenantID.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Tenant ID:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(21, 281);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Tenant has been entered successfully!";
+            this.label1.Visible = false;
             // 
             // txtPropID
             // 
@@ -113,7 +149,6 @@
             this.txtPropID.Name = "txtPropID";
             this.txtPropID.Size = new System.Drawing.Size(124, 20);
             this.txtPropID.TabIndex = 34;
-            
             // 
             // label3
             // 
@@ -126,15 +161,15 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(104, 89);
+            this.txtSurname.Location = new System.Drawing.Point(104, 116);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(124, 20);
-            this.txtSurname.TabIndex = 32;
+            this.txtSurname.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 89);
+            this.label2.Location = new System.Drawing.Point(15, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 31;
@@ -142,46 +177,39 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(17, 225);
+            this.btnAdd.Location = new System.Drawing.Point(17, 252);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 19);
-            this.btnAdd.TabIndex = 26;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add Tenant";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtDOB
-            // 
-            this.txtDOB.Location = new System.Drawing.Point(105, 187);
-            this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Size = new System.Drawing.Size(123, 20);
-            this.txtDOB.TabIndex = 25;
-            // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(105, 153);
+            this.txtEmail.Location = new System.Drawing.Point(105, 180);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
-            this.txtEmail.TabIndex = 24;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(104, 123);
+            this.txtPhone.Location = new System.Drawing.Point(104, 150);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(124, 20);
-            this.txtPhone.TabIndex = 23;
+            this.txtPhone.TabIndex = 2;
             // 
             // txtForename
             // 
-            this.txtForename.Location = new System.Drawing.Point(104, 55);
+            this.txtForename.Location = new System.Drawing.Point(104, 82);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(124, 20);
-            this.txtForename.TabIndex = 22;
+            this.txtForename.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 187);
+            this.label10.Location = new System.Drawing.Point(15, 214);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(33, 13);
             this.label10.TabIndex = 21;
@@ -190,7 +218,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 156);
+            this.label11.Location = new System.Drawing.Point(15, 183);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 20;
@@ -199,7 +227,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 123);
+            this.label12.Location = new System.Drawing.Point(15, 150);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 19;
@@ -208,7 +236,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 55);
+            this.label13.Location = new System.Drawing.Point(15, 82);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 18;
@@ -235,7 +263,7 @@
             // 
             this.cboProperty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProperty.FormattingEnabled = true;
-            this.cboProperty.Location = new System.Drawing.Point(15, 105);
+            this.cboProperty.Location = new System.Drawing.Point(9, 20);
             this.cboProperty.Name = "cboProperty";
             this.cboProperty.Size = new System.Drawing.Size(169, 21);
             this.cboProperty.TabIndex = 36;
@@ -243,14 +271,14 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(12, 166);
+            this.dtpStart.Location = new System.Drawing.Point(17, 36);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(200, 20);
             this.dtpStart.TabIndex = 37;
             // 
             // dtpEnd
             // 
-            this.dtpEnd.Location = new System.Drawing.Point(12, 223);
+            this.dtpEnd.Location = new System.Drawing.Point(17, 79);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 20);
             this.dtpEnd.TabIndex = 38;
@@ -258,7 +286,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 150);
+            this.label4.Location = new System.Drawing.Point(14, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 39;
@@ -267,25 +295,128 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 207);
+            this.label5.Location = new System.Drawing.Point(14, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 40;
             this.label5.Text = "End Date:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Existing Tenant?";
+            // 
+            // btnYes
+            // 
+            this.btnYes.Location = new System.Drawing.Point(18, 186);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(55, 25);
+            this.btnYes.TabIndex = 42;
+            this.btnYes.Text = "Yes";
+            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
+            // 
+            // btnNo
+            // 
+            this.btnNo.Location = new System.Drawing.Point(92, 186);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(55, 25);
+            this.btnNo.TabIndex = 43;
+            this.btnNo.Text = "No";
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
+            // 
+            // cboTenant
+            // 
+            this.cboTenant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTenant.FormattingEnabled = true;
+            this.cboTenant.Location = new System.Drawing.Point(6, 19);
+            this.cboTenant.Name = "cboTenant";
+            this.cboTenant.Size = new System.Drawing.Size(169, 21);
+            this.cboTenant.TabIndex = 45;
+            this.cboTenant.SelectedIndexChanged += new System.EventHandler(this.cboTenant_SelectedIndexChanged);
+            // 
+            // grpTenantSelect
+            // 
+            this.grpTenantSelect.Controls.Add(this.cboTenant);
+            this.grpTenantSelect.Location = new System.Drawing.Point(12, 246);
+            this.grpTenantSelect.Name = "grpTenantSelect";
+            this.grpTenantSelect.Size = new System.Drawing.Size(200, 55);
+            this.grpTenantSelect.TabIndex = 46;
+            this.grpTenantSelect.TabStop = false;
+            this.grpTenantSelect.Text = "Select your TenantID";
+            this.grpTenantSelect.Visible = false;
+            // 
+            // grpPropSelect
+            // 
+            this.grpPropSelect.Controls.Add(this.cboProperty);
+            this.grpPropSelect.Location = new System.Drawing.Point(12, 90);
+            this.grpPropSelect.Name = "grpPropSelect";
+            this.grpPropSelect.Size = new System.Drawing.Size(200, 55);
+            this.grpPropSelect.TabIndex = 47;
+            this.grpPropSelect.TabStop = false;
+            this.grpPropSelect.Text = "Select your PropertyID";
+            // 
+            // btnRent
+            // 
+            this.btnRent.Location = new System.Drawing.Point(17, 125);
+            this.btnRent.Name = "btnRent";
+            this.btnRent.Size = new System.Drawing.Size(86, 25);
+            this.btnRent.TabIndex = 48;
+            this.btnRent.Text = "Rent Property";
+            this.btnRent.UseVisualStyleBackColor = true;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(104, 208);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(200, 20);
+            this.dtpDOB.TabIndex = 38;
+            // 
+            // txtOwnerID
+            // 
+            this.txtOwnerID.Enabled = false;
+            this.txtOwnerID.Location = new System.Drawing.Point(170, 46);
+            this.txtOwnerID.MaxLength = 4;
+            this.txtOwnerID.Name = "txtOwnerID";
+            this.txtOwnerID.Size = new System.Drawing.Size(70, 20);
+            this.txtOwnerID.TabIndex = 49;
+            this.txtOwnerID.Visible = false;
+            // 
+            // grpDates
+            // 
+            this.grpDates.Controls.Add(this.label4);
+            this.grpDates.Controls.Add(this.dtpStart);
+            this.grpDates.Controls.Add(this.btnRent);
+            this.grpDates.Controls.Add(this.dtpEnd);
+            this.grpDates.Controls.Add(this.label5);
+            this.grpDates.Location = new System.Drawing.Point(170, 376);
+            this.grpDates.Name = "grpDates";
+            this.grpDates.Size = new System.Drawing.Size(228, 163);
+            this.grpDates.TabIndex = 50;
+            this.grpDates.TabStop = false;
+            this.grpDates.Text = "Dates";
+            this.grpDates.Visible = false;
             // 
             // frmRentProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 551);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpEnd);
-            this.Controls.Add(this.dtpStart);
-            this.Controls.Add(this.cboProperty);
+            this.Controls.Add(this.grpDates);
+            this.Controls.Add(this.txtOwnerID);
+            this.Controls.Add(this.grpPropSelect);
+            this.Controls.Add(this.grpTenantSelect);
+            this.Controls.Add(this.btnNo);
+            this.Controls.Add(this.btnYes);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.grpTenants);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTenantID);
+            this.Controls.Add(this.txtBookingID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -296,6 +427,10 @@
             this.grpTenants.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grpTenantSelect.ResumeLayout(false);
+            this.grpPropSelect.ResumeLayout(false);
+            this.grpDates.ResumeLayout(false);
+            this.grpDates.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,14 +438,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtTenantID;
+        private System.Windows.Forms.TextBox txtBookingID;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpTenants;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtForename;
@@ -327,5 +460,18 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnYes;
+        private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.ComboBox cboTenant;
+        private System.Windows.Forms.GroupBox grpTenantSelect;
+        private System.Windows.Forms.GroupBox grpPropSelect;
+        private System.Windows.Forms.Button btnRent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTenantID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.TextBox txtOwnerID;
+        private System.Windows.Forms.GroupBox grpDates;
     }
 }
