@@ -1,0 +1,62 @@
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\CS01_DBConnect.exe.config
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\CS01_DBConnect.exe
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\CS01_DBConnect.pdb
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\EntityFramework.dll
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\EntityFramework.SqlServer.dll
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\EntityFramework.xml
+C:\CS03_UpdStock\CS02_NewStock\bin\Debug\EntityFramework.SqlServer.xml
+C:\CS03_UpdStock\CS02_NewStock\obj\Debug\CS03_UpdStock.csprojResolveAssemblyReference.cache
+C:\CS03_UpdStock\CS02_NewStock\obj\Debug\CS02_NewStock.frmConnect.resources
+C:\CS03_UpdStock\CS02_NewStock\obj\Debug\CS02_NewStock.frmStockNew.resources
+C:\CS03_UpdStock\CS02_NewStock\obj\Debug\CS02_NewStock.Properties.Resources.resources
+C:\CS03_UpdStock\CS02_NewStock\obj\Debug\CS03_UpdStock.csproj.GenerateResource.Cache
+C:\CS03_UpdStock\CS02_NewStock\obj\Debug\CS01_DBConnect.exe
+C:\CS03_UpdStock\CS02_NewStock\obj\Debug\CS01_DBConnect.pdb
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\CS01_DBConnect.exe.config
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\CS01_DBConnect.exe
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\CS01_DBConnect.pdb
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\EntityFramework.dll
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\EntityFramework.SqlServer.dll
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\EntityFramework.xml
+C:\CS03_UpdStock\CS03_UpdStock\bin\Debug\EntityFramework.SqlServer.xml
+C:\CS03_UpdStock\CS03_UpdStock\obj\Debug\CS03_UpdStock.csprojResolveAssemblyReference.cache
+C:\CS03_UpdStock\CS03_UpdStock\obj\Debug\CS02_NewStock.Properties.Resources.resources
+C:\CS03_UpdStock\CS03_UpdStock\obj\Debug\CS03_UpdStock.csproj.GenerateResource.Cache
+C:\CS03_UpdStock\CS03_UpdStock\obj\Debug\CS01_DBConnect.exe
+C:\CS03_UpdStock\CS03_UpdStock\obj\Debug\CS01_DBConnect.pdb
+C:\CS03_UpdStock\CS03_UpdStock\obj\Debug\CS03_UpdStock.frmStockUpd.resources
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\CS01_DBConnect.exe.config
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\CS01_DBConnect.exe
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\CS01_DBConnect.pdb
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\EntityFramework.dll
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\EntityFramework.SqlServer.dll
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\EntityFramework.xml
+C:\CS03_UpdStock_Name\CS03_UpdStock\bin\Debug\EntityFramework.SqlServer.xml
+C:\CS03_UpdStock_Name\CS03_UpdStock\obj\Debug\CS03_UpdStock.csprojResolveAssemblyReference.cache
+C:\CS03_UpdStock_Name\CS03_UpdStock\obj\Debug\CS03_UpdStock.frmStockUpd.resources
+C:\CS03_UpdStock_Name\CS03_UpdStock\obj\Debug\CS02_NewStock.Properties.Resources.resources
+C:\CS03_UpdStock_Name\CS03_UpdStock\obj\Debug\CS03_UpdStock.csproj.GenerateResource.Cache
+C:\CS03_UpdStock_Name\CS03_UpdStock\obj\Debug\CS01_DBConnect.exe
+C:\CS03_UpdStock_Name\CS03_UpdStock\obj\Debug\CS01_DBConnect.pdb
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\CS01_DBConnect.exe.config
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\CS01_DBConnect.exe
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\CS01_DBConnect.pdb
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\EntityFramework.dll
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\EntityFramework.SqlServer.dll
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\Oracle.ManagedDataAccess.dll
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\EntityFramework.xml
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\bin\Debug\EntityFramework.SqlServer.xml
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\obj\Debug\CS03_UpdStock.csprojResolveAssemblyReference.cache
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\obj\Debug\CS03_UpdStock.frmStockUpd.resources
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\obj\Debug\CS02_NewStock.Properties.Resources.resources
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\obj\Debug\CS03_UpdStock.csproj.GenerateResource.Cache
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\obj\Debug\CS03_UpdStock.csproj.CoreCompileInputs.cache
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\obj\Debug\CS01_DBConnect.exe
+I:\SE - Project\SWEP_Samples\CS03_UpdStock_Combo\CS03_UpdStock\obj\Debug\CS01_DBConnect.pdb

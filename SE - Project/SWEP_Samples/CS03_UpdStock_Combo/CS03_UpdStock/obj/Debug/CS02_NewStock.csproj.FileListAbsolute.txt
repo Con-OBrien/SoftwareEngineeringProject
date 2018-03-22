@@ -1,0 +1,16 @@
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\CS01_DBConnect.exe.config
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\CS01_DBConnect.exe
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\CS01_DBConnect.pdb
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\EntityFramework.dll
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\EntityFramework.SqlServer.dll
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\EntityFramework.xml
+C:\CS03_NewStock\CS01_DBConnect\bin\Debug\EntityFramework.SqlServer.xml
+C:\CS03_NewStock\CS01_DBConnect\obj\Debug\CS02_NewStock.csprojResolveAssemblyReference.cache
+C:\CS03_NewStock\CS01_DBConnect\obj\Debug\CS01_DBConnect.frmConnect.resources
+C:\CS03_NewStock\CS01_DBConnect\obj\Debug\CS01_DBConnect.frmStockNew.resources
+C:\CS03_NewStock\CS01_DBConnect\obj\Debug\CS01_DBConnect.Properties.Resources.resources
+C:\CS03_NewStock\CS01_DBConnect\obj\Debug\CS02_NewStock.csproj.GenerateResource.Cache
+C:\CS03_NewStock\CS01_DBConnect\obj\Debug\CS01_DBConnect.exe
+C:\CS03_NewStock\CS01_DBConnect\obj\Debug\CS01_DBConnect.pdb

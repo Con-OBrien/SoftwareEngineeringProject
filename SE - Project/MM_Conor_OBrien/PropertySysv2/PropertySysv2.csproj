@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{196426E2-62C5-496E-98CA-05782B120AB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PropertySysv2</RootNamespace>
+    <AssemblyName>PropertySysv2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Booking.cs" />
+    <Compile Include="Property.cs" />
+    <Compile Include="DBConnect.cs" />
+    <Compile Include="Owner.cs" />
+    <Compile Include="frmCalculateRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculateRent.Designer.cs">
+      <DependentUpon>frmCalculateRent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOwnerUpd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOwnerUpd.Designer.cs">
+      <DependentUpon>frmOwnerUpd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOwnerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOwnerSearch.Designer.cs">
+      <DependentUpon>frmOwnerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOwnerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOwnerAdd.Designer.cs">
+      <DependentUpon>frmOwnerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOwnerRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOwnerRemove.Designer.cs">
+      <DependentUpon>frmOwnerRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPropertyAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPropertyAdd.Designer.cs">
+      <DependentUpon>frmPropertyAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPropertyRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPropertyRemove.Designer.cs">
+      <DependentUpon>frmPropertyRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPropertySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPropertySearch.Designer.cs">
+      <DependentUpon>frmPropertySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPropertyUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPropertyUpdate.Designer.cs">
+      <DependentUpon>frmPropertyUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRentProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRentProperty.Designer.cs">
+      <DependentUpon>frmRentProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTenantRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTenantRemove.Designer.cs">
+      <DependentUpon>frmTenantRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTenantSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTenantSearch.Designer.cs">
+      <DependentUpon>frmTenantSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTenantUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTenantUpdate.Designer.cs">
+      <DependentUpon>frmTenantUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tenant.cs" />
+    <EmbeddedResource Include="frmCalculateRent.resx">
+      <DependentUpon>frmCalculateRent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOwnerUpd.resx">
+      <DependentUpon>frmOwnerUpd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOwnerSearch.resx">
+      <DependentUpon>frmOwnerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOwnerAdd.resx">
+      <DependentUpon>frmOwnerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOwnerRemove.resx">
+      <DependentUpon>frmOwnerRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPropertyAdd.resx">
+      <DependentUpon>frmPropertyAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPropertyRemove.resx">
+      <DependentUpon>frmPropertyRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPropertySearch.resx">
+      <DependentUpon>frmPropertySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPropertyUpdate.resx">
+      <DependentUpon>frmPropertyUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRentProperty.resx">
+      <DependentUpon>frmRentProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTenantRemove.resx">
+      <DependentUpon>frmTenantRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTenantSearch.resx">
+      <DependentUpon>frmTenantSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTenantUpdate.resx">
+      <DependentUpon>frmTenantUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
