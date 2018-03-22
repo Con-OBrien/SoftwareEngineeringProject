@@ -37,7 +37,7 @@ CREATE TABLE Tenants
 Forename char(15) NOT NULL,
 Surname char(15) NOT NULL,
 Phone varchar(15) NOT NULL,
-Email char(20) NOT NULL,
+Email char(30) NOT NULL,
 DOB date,
 Prop_ID numeric(3),
 CONSTRAINT pk_Tenant PRIMARY KEY (Tenant_ID),
