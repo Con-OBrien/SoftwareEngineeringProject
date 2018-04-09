@@ -31,6 +31,7 @@
             this.txtBookingID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.grpTenants = new System.Windows.Forms.GroupBox();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.txtTenantID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.grpTenantSelect = new System.Windows.Forms.GroupBox();
             this.grpPropSelect = new System.Windows.Forms.GroupBox();
             this.btnRent = new System.Windows.Forms.Button();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.grpDates = new System.Windows.Forms.GroupBox();
             this.grpTenants.SuspendLayout();
@@ -114,6 +114,13 @@
             this.grpTenants.Text = "Enter Tenant Details";
             this.grpTenants.Visible = false;
             // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(104, 208);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(200, 20);
+            this.dtpDOB.TabIndex = 38;
+            // 
             // txtTenantID
             // 
             this.txtTenantID.Enabled = false;
@@ -121,6 +128,7 @@
             this.txtTenantID.Name = "txtTenantID";
             this.txtTenantID.Size = new System.Drawing.Size(124, 20);
             this.txtTenantID.TabIndex = 37;
+            this.txtTenantID.TextChanged += new System.EventHandler(this.txtTenantID_TextChanged);
             // 
             // label7
             // 
@@ -371,13 +379,6 @@
             this.btnRent.UseVisualStyleBackColor = true;
             this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
-            // dtpDOB
-            // 
-            this.dtpDOB.Location = new System.Drawing.Point(104, 208);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(200, 20);
-            this.dtpDOB.TabIndex = 38;
-            // 
             // txtOwnerID
             // 
             this.txtOwnerID.Enabled = false;
@@ -387,6 +388,7 @@
             this.txtOwnerID.Size = new System.Drawing.Size(70, 20);
             this.txtOwnerID.TabIndex = 49;
             this.txtOwnerID.Visible = false;
+            this.txtOwnerID.TextChanged += new System.EventHandler(this.txtOwnerID_TextChanged);
             // 
             // grpDates
             // 
@@ -395,7 +397,7 @@
             this.grpDates.Controls.Add(this.btnRent);
             this.grpDates.Controls.Add(this.dtpEnd);
             this.grpDates.Controls.Add(this.label5);
-            this.grpDates.Location = new System.Drawing.Point(170, 376);
+            this.grpDates.Location = new System.Drawing.Point(12, 324);
             this.grpDates.Name = "grpDates";
             this.grpDates.Size = new System.Drawing.Size(228, 163);
             this.grpDates.TabIndex = 50;

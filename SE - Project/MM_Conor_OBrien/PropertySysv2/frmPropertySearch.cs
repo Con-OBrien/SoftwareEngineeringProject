@@ -71,5 +71,14 @@ namespace PropertySysv2
             //go back to previousform
             parent.Show();
         }
+
+        private void frmPropertySearch_Load(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            ds = Property.getTown(ds);
+
+            for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
+                cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+        }
     }
 }

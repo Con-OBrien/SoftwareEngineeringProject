@@ -115,7 +115,7 @@ namespace PropertySysv2
                 setSurname(dr.GetString(2));    
                 setPhone(Convert.ToInt32(dr.GetString(3)));
                 setEmail(dr.GetString(4));
-                setDob(dr.GetString(5));
+                setDob(dr.GetValue(5).ToString());
             }
             //close DB connection
             myConn.Close();

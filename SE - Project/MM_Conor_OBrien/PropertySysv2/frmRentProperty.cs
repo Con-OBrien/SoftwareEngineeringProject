@@ -92,7 +92,7 @@ namespace PropertySysv2
  
             //instantiate Stock Object
             Tenant myTenant = new Tenant();
-            myTenant.setTenantId(Convert.ToInt32(txtBookingID.Text));
+            myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
             myTenant.setForename(txtForename.Text);
             myTenant.setSurname(txtSurname.Text);          
             myTenant.setPhone(Convert.ToInt32(txtPhone.Text));
@@ -173,6 +173,17 @@ namespace PropertySysv2
             txtEmail.Text = newTenant.getEmail();
             dtpDOB.Text = newTenant.getDOB();
 
+
+        }
+
+
+        private void txtOwnerID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenantID_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

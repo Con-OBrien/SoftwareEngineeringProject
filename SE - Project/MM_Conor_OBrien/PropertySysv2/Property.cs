@@ -153,7 +153,36 @@ namespace PropertySysv2
 
             return DS;
         }
-       
+        public static DataSet getTown(DataSet DS)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            String strSQL = "SELECT Town FROM Properties ORDER BY Town";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            conn.Close();
+
+            return DS;
+        }
+        public static DataSet getBeds(DataSet DS)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            String strSQL = "SELECT Bedrooms FROM Properties ORDER BY Bedrooms";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            conn.Close();
+
+            return DS;
+        }
         public static int getNextPropId()
         {
             int intNextPropId;
@@ -190,6 +219,7 @@ namespace PropertySysv2
             conn.Close();
             return DS;
         }
+       
         public void regProp()
         {
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);

@@ -48,8 +48,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboTown = new System.Windows.Forms.ComboBox();
+            this.cboBeds = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Prop_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Town = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Beds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpProperty.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -227,7 +239,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(409, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(932, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -238,11 +250,103 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(412, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Search Requirements";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(416, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Town";
+            // 
+            // cboTown
+            // 
+            this.cboTown.FormattingEnabled = true;
+            this.cboTown.Location = new System.Drawing.Point(456, 61);
+            this.cboTown.Name = "cboTown";
+            this.cboTown.Size = new System.Drawing.Size(121, 21);
+            this.cboTown.TabIndex = 34;
+            // 
+            // cboBeds
+            // 
+            this.cboBeds.FormattingEnabled = true;
+            this.cboBeds.Location = new System.Drawing.Point(456, 103);
+            this.cboBeds.Name = "cboBeds";
+            this.cboBeds.Size = new System.Drawing.Size(121, 21);
+            this.cboBeds.TabIndex = 35;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(419, 106);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(31, 13);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "Beds";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(422, 136);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 19);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Prop_ID,
+            this.Town,
+            this.Beds,
+            this.Price});
+            this.dataGridView1.Location = new System.Drawing.Point(422, 174);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(443, 116);
+            this.dataGridView1.TabIndex = 38;
+            // 
+            // Prop_ID
+            // 
+            this.Prop_ID.HeaderText = "Prop_ID";
+            this.Prop_ID.Name = "Prop_ID";
+            // 
+            // Town
+            // 
+            this.Town.HeaderText = "Town";
+            this.Town.Name = "Town";
+            // 
+            // Beds
+            // 
+            this.Beds.HeaderText = "Beds";
+            this.Beds.Name = "Beds";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            // 
             // frmPropertySearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 377);
+            this.ClientSize = new System.Drawing.Size(932, 512);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cboBeds);
+            this.Controls.Add(this.cboTown);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.grpProperty);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
@@ -251,10 +355,12 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPropertySearch";
             this.Text = "Search Property";
+            this.Load += new System.EventHandler(this.frmPropertySearch_Load);
             this.grpProperty.ResumeLayout(false);
             this.grpProperty.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,5 +387,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboTown;
+        private System.Windows.Forms.ComboBox cboBeds;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prop_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Town;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Beds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }
