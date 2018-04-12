@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,47 +24,6 @@ namespace PropertySysv2
             InitializeComponent();
             parent = Parent;
         }
-
-        private void txtSearchProperty_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            //check that owner number is entered
-            if (txtSearch.Text.Equals(""))
-            {
-                MessageBox.Show("PropID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //find owner details
-            Property srhProp = new Property();
-            srhProp.getProperty(Convert.ToInt32(txtSearch.Text));
-
-            if (srhProp.getPropId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //display Owner details
-            txtRent.Text = srhProp.getRentPerMonth().ToString();
-            txtBedroom.Text = srhProp.getBedrooms().ToString();
-            txtBathroom.Text = srhProp.getBathrooms().ToString();
-            txtHouse.Text = srhProp.getHouseType();
-            txtAdd1.Text = srhProp.getStreet();
-            txtAdd2.Text = srhProp.getTown();
-            txtCounty.Text = srhProp.getCounty();
-
-
-
-            //display details
-            grpProperty.Visible = true;
-        }
-
         private void mnuBack_Click(object sender, EventArgs e)
         {
             //close current form
@@ -79,6 +40,31 @@ namespace PropertySysv2
 
             for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
                 cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+
+            for (int i = 1; i < 6; i++)
+                cboBeds.Items.Add(i.ToString());
+        }
+      
+        private void button1_Click(object sender, EventArgs e)
+        {
+        //    make sure town is selected
+            
+            
+
+            DataSet ds = new DataSet();
+            dgvProperties.DataSource = Property.getSpecificProps(ds,cboTown.Text,Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+
+            dgvProperties.Visible = true;
+
+
+        }
+
+        private void cboTown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboBeds.Visible = true;
+            lblBeds.Visible = true;
+            btnSearch.Visible = true;
+
         }
     }
 }

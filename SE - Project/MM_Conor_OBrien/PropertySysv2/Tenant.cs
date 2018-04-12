@@ -154,6 +154,21 @@ namespace PropertySysv2
 
             return RS;
         }
+        public static DataSet getSurnamesTenant(DataSet RS, String Surname)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            String strSQL = "SELECT Tenant_ID FROM Tenants WHERE Surname = '" + Surname + "' ORDER BY Tenant_ID";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataAdapter ra = new OracleDataAdapter(cmd);
+
+            ra.Fill(RS, "rs");
+
+            conn.Close();
+
+            return RS;
+        }
 
         public static int getNextTenantId()
         {

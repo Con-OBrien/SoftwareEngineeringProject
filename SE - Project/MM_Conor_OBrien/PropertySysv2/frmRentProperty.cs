@@ -145,7 +145,9 @@ namespace PropertySysv2
             newBooking.setPropId(Convert.ToInt32(txtPropID.Text));
             newBooking.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
 
-            newBooking.makeBooking(); 
+            newBooking.makeBooking();
+
+            MessageBox.Show("Booking has been made and the landlord has been notified of your booking! Thank you using our service!");
         }
 
         private void cboTenant_SelectedIndexChanged(object sender, EventArgs e)

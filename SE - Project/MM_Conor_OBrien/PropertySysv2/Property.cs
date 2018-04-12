@@ -65,6 +65,12 @@ namespace PropertySysv2
         {
             this.county = County;
         }
+
+        internal void getSpecificProps(int v)
+        {
+            throw new NotImplementedException();
+        }
+
         public void setOwnerId(int Owner_ID)
         {
             this.owner_id = Owner_ID;
@@ -157,7 +163,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT Town FROM Properties ORDER BY Town";
+            String strSQL = "SELECT DISTINCT Town FROM Properties ORDER BY Town";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -168,19 +174,16 @@ namespace PropertySysv2
 
             return DS;
         }
-        public static DataSet getBeds(DataSet DS)
+        public static DataSet getSpecificProps(DataSet DS, String Town, int Beds)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT Bedrooms FROM Properties ORDER BY Bedrooms";
+            String strSQL = "SELECT Street, Town, County, Bedrooms, Bathrooms, RentPerMonth FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds;
             OracleCommand cmd = new OracleCommand(strSQL, conn);
-
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
             da.Fill(DS, "ss");
-
             conn.Close();
-
             return DS;
         }
         public static int getNextPropId()

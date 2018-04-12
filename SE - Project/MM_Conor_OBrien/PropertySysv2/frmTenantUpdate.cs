@@ -37,5 +37,14 @@ namespace PropertySysv2
             //go back to previousform
             parent.Show();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            DataSet ds = new DataSet();
+            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtTenantSearch.ToString()).Tables["ss"];
+
+            grdTenants.Visible = true;
+        }
     }
 }

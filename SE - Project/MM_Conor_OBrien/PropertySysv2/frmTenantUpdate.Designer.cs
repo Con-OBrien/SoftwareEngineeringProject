@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grdTenants = new System.Windows.Forms.DataGridView();
-            this.TenantID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Street = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Town = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtTenantSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpTenants = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,38 +45,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grdTenants = new System.Windows.Forms.DataGridView();
+            this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grdTenants
-            // 
-            this.grdTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdTenants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenantID,
-            this.Street,
-            this.Town});
-            this.grdTenants.Location = new System.Drawing.Point(20, 94);
-            this.grdTenants.Name = "grdTenants";
-            this.grdTenants.Size = new System.Drawing.Size(346, 96);
-            this.grdTenants.TabIndex = 28;
-            this.grdTenants.Visible = false;
-            // 
-            // TenantID
-            // 
-            this.TenantID.HeaderText = "Tenant ID";
-            this.TenantID.Name = "TenantID";
-            // 
-            // Street
-            // 
-            this.Street.HeaderText = "Forename";
-            this.Street.Name = "Street";
-            // 
-            // Town
-            // 
-            this.Town.HeaderText = "Surname";
-            this.Town.Name = "Town";
             // 
             // btnSearch
             // 
@@ -90,6 +59,7 @@
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtTenantSearch
             // 
@@ -108,25 +78,26 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Enter Surname:";
             // 
-            // groupBox1
+            // grpTenants
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Location = new System.Drawing.Point(23, 211);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 218);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Enter Tenant Details";
+            this.grpTenants.Controls.Add(this.textBox1);
+            this.grpTenants.Controls.Add(this.label8);
+            this.grpTenants.Controls.Add(this.button1);
+            this.grpTenants.Controls.Add(this.textBox2);
+            this.grpTenants.Controls.Add(this.textBox3);
+            this.grpTenants.Controls.Add(this.textBox4);
+            this.grpTenants.Controls.Add(this.textBox5);
+            this.grpTenants.Controls.Add(this.label10);
+            this.grpTenants.Controls.Add(this.label11);
+            this.grpTenants.Controls.Add(this.label12);
+            this.grpTenants.Controls.Add(this.label13);
+            this.grpTenants.Location = new System.Drawing.Point(23, 211);
+            this.grpTenants.Name = "grpTenants";
+            this.grpTenants.Size = new System.Drawing.Size(335, 218);
+            this.grpTenants.TabIndex = 30;
+            this.grpTenants.TabStop = false;
+            this.grpTenants.Text = "Enter Tenant Details";
+            this.grpTenants.Visible = false;
             // 
             // textBox1
             // 
@@ -234,13 +205,22 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
+            // grdTenants
+            // 
+            this.grdTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdTenants.Location = new System.Drawing.Point(23, 82);
+            this.grdTenants.Name = "grdTenants";
+            this.grdTenants.Size = new System.Drawing.Size(502, 123);
+            this.grdTenants.TabIndex = 32;
+            this.grdTenants.Visible = false;
+            // 
             // frmTenantUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 448);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grdTenants);
+            this.Controls.Add(this.grpTenants);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtTenantSearch);
             this.Controls.Add(this.label1);
@@ -248,22 +228,21 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTenantUpdate";
             this.Text = "frmTenantUpdate";
-            ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpTenants.ResumeLayout(false);
+            this.grpTenants.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView grdTenants;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtTenantSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpTenants;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
@@ -277,8 +256,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenantID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Street;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Town;
+        private System.Windows.Forms.DataGridView grdTenants;
     }
 }
