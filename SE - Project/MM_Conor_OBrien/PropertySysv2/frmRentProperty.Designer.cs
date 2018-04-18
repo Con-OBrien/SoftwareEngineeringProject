@@ -312,7 +312,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 276);
+            this.label6.Location = new System.Drawing.Point(12, 193);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 41;
@@ -320,7 +320,7 @@
             // 
             // btnYes
             // 
-            this.btnYes.Location = new System.Drawing.Point(21, 304);
+            this.btnYes.Location = new System.Drawing.Point(15, 221);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(55, 25);
             this.btnYes.TabIndex = 42;
@@ -330,7 +330,7 @@
             // 
             // btnNo
             // 
-            this.btnNo.Location = new System.Drawing.Point(95, 304);
+            this.btnNo.Location = new System.Drawing.Point(89, 221);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(55, 25);
             this.btnNo.TabIndex = 43;
@@ -351,7 +351,7 @@
             // grpTenantSelect
             // 
             this.grpTenantSelect.Controls.Add(this.cboTenant);
-            this.grpTenantSelect.Location = new System.Drawing.Point(15, 364);
+            this.grpTenantSelect.Location = new System.Drawing.Point(15, 282);
             this.grpTenantSelect.Name = "grpTenantSelect";
             this.grpTenantSelect.Size = new System.Drawing.Size(200, 55);
             this.grpTenantSelect.TabIndex = 46;

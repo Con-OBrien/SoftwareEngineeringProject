@@ -47,7 +47,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(932, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(701, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,14 +122,15 @@
             this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProperties.Location = new System.Drawing.Point(19, 183);
             this.dgvProperties.Name = "dgvProperties";
-            this.dgvProperties.Size = new System.Drawing.Size(644, 150);
+            this.dgvProperties.Size = new System.Drawing.Size(644, 96);
             this.dgvProperties.TabIndex = 38;
+            this.dgvProperties.Visible = false;
             // 
             // frmPropertySearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 512);
+            this.ClientSize = new System.Drawing.Size(701, 512);
             this.Controls.Add(this.dgvProperties);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblBeds);

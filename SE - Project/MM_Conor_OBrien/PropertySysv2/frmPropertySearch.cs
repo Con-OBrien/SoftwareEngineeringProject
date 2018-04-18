@@ -49,7 +49,6 @@ namespace PropertySysv2
         {
         //    make sure town is selected
             
-            
 
             DataSet ds = new DataSet();
             dgvProperties.DataSource = Property.getSpecificProps(ds,cboTown.Text,Convert.ToInt32(cboBeds.Text)).Tables["ss"];

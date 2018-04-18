@@ -198,7 +198,7 @@ namespace PropertySysv2
 
             //Define SQL query to INSERT stock record
             String strSQL = "INSERT INTO Owners VALUES(" + this.owner_id.ToString() +
-                ",'" + this.surname.ToUpper() + "','" +  this.forename.ToUpper() + "','" +
+                ",'" + this.surname.ToUpper().ToString() + "','" +  this.forename.ToUpper() + "','" +
                   this.street.ToUpper() + "','" + this.town.ToUpper() + "','" + this.county.ToUpper() + "',"
                  + this.phone.ToString() + ",'" + this.email.ToUpper() + "')";
 
@@ -209,7 +209,18 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
+        public static DataSet getSpecificOwners(DataSet DS, String Surname)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
+            String strSQL = "SELECT Forename, Surname, Phone, Email FROM Owners WHERE Surname = '" + Surname + "'";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+            conn.Close();
+            return DS;
+        }
         public void updOwner()
         {
             //connect to database

@@ -39,40 +39,19 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //check that owner number is entered
-            if (txtSearch.Text.Equals(""))
-            {
-                MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //find owner details
-            Owner srhOwner = new Owner();
-            srhOwner.getOwner(Convert.ToInt32(txtSearch.Text));
-
-            if (srhOwner.getOwnerId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //display Owner details
-            txtForename.Text = srhOwner.getForename();
-            txtSurname.Text = srhOwner.getSurname();
-            txtAdd1.Text = srhOwner.getStreet();
-            txtAdd2.Text = srhOwner.getTown();
-            txtCounty.Text = srhOwner.getCounty();
-            txtPhone.Text = srhOwner.getPhone().ToString();
-            txtEmail.Text = srhOwner.getEmail();
-
-
-            //display details
-            grpOwner.Visible = true;
+            DataSet ds = new DataSet();
+            
+            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtSurname.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
+            
+            grdOwners.Visible = true;
         }
 
         private void frmOwnerSearch_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
         }

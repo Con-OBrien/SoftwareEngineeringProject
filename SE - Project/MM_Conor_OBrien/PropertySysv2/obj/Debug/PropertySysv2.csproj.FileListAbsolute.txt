@@ -154,3 +154,8 @@ C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_C
 C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\obj\Debug\PropertySysv2.csproj.CoreCompileInputs.cache
 C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\obj\Debug\PropertySysv2.exe
 C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\obj\Debug\PropertySysv2.pdb
+C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.dll
+C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.xml
+C:\Users\t00193238\Documents\GitHub\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.SqlServer.xml
