@@ -125,6 +125,7 @@
             this.dgvProperties.Size = new System.Drawing.Size(644, 96);
             this.dgvProperties.TabIndex = 38;
             this.dgvProperties.Visible = false;
+            this.dgvProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProperties_CellContentClick);
             // 
             // frmPropertySearch
             // 

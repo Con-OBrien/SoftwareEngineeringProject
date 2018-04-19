@@ -100,7 +100,7 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(12, 73);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(97, 28);
+            this.txtSearch.Size = new System.Drawing.Size(97, 24);
             this.txtSearch.TabIndex = 7;
             this.txtSearch.Text = "Search";
             this.txtSearch.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             this.grpOwner.Controls.Add(this.label3);
             this.grpOwner.Controls.Add(this.label2);
             this.grpOwner.Controls.Add(this.label5);
-            this.grpOwner.Location = new System.Drawing.Point(15, 107);
+            this.grpOwner.Location = new System.Drawing.Point(15, 122);
             this.grpOwner.Name = "grpOwner";
             this.grpOwner.Size = new System.Drawing.Size(335, 250);
             this.grpOwner.TabIndex = 22;

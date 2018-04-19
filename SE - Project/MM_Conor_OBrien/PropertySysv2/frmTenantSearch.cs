@@ -24,14 +24,16 @@ namespace PropertySysv2
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearchTenant.Text.Equals(""))
+            if (txtSurname.Text.Equals(""))
             {
                 MessageBox.Show("Search field is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            DataSet ds = new DataSet();
 
+            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtSurname.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
+            grdTenants.AllowUserToAddRows = false;
             grdTenants.Visible = true;
-            grpTenants.Visible = true;
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -41,6 +43,11 @@ namespace PropertySysv2
 
             //go back to previousform
             parent.Show();
+        }
+
+        private void txtSearchTenant_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

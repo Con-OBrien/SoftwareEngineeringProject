@@ -54,15 +54,15 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTenant = new System.Windows.Forms.Label();
             this.btnYes = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
             this.cboTenant = new System.Windows.Forms.ComboBox();
             this.grpTenantSelect = new System.Windows.Forms.GroupBox();
             this.grpPropSelect = new System.Windows.Forms.GroupBox();
             this.btnRent = new System.Windows.Forms.Button();
-            this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.grpDates = new System.Windows.Forms.GroupBox();
+            this.btnExisting = new System.Windows.Forms.Button();
             this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTenantSelect.SuspendLayout();
@@ -90,6 +90,7 @@
             // 
             // grpTenants
             // 
+            this.grpTenants.Controls.Add(this.btnExisting);
             this.grpTenants.Controls.Add(this.dtpDOB);
             this.grpTenants.Controls.Add(this.txtTenantID);
             this.grpTenants.Controls.Add(this.label7);
@@ -143,7 +144,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(21, 281);
+            this.label1.Location = new System.Drawing.Point(6, 293);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 13);
             this.label1.TabIndex = 35;
@@ -185,7 +186,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(17, 252);
+            this.btnAdd.Location = new System.Drawing.Point(6, 239);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 19);
             this.btnAdd.TabIndex = 5;
@@ -290,6 +291,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(200, 20);
             this.dtpEnd.TabIndex = 38;
+            this.dtpEnd.Visible = false;
             // 
             // label4
             // 
@@ -308,15 +310,17 @@
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 40;
             this.label5.Text = "End Date:";
+            this.label5.Visible = false;
             // 
-            // label6
+            // lblTenant
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 193);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Existing Tenant?";
+            this.lblTenant.AutoSize = true;
+            this.lblTenant.Location = new System.Drawing.Point(12, 193);
+            this.lblTenant.Name = "lblTenant";
+            this.lblTenant.Size = new System.Drawing.Size(86, 13);
+            this.lblTenant.TabIndex = 41;
+            this.lblTenant.Text = "Existing Tenant?";
+            this.lblTenant.Visible = false;
             // 
             // btnYes
             // 
@@ -326,6 +330,7 @@
             this.btnYes.TabIndex = 42;
             this.btnYes.Text = "Yes";
             this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.Visible = false;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // btnNo
@@ -336,6 +341,7 @@
             this.btnNo.TabIndex = 43;
             this.btnNo.Text = "No";
             this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Visible = false;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
             // cboTenant
@@ -371,24 +377,13 @@
             // 
             // btnRent
             // 
-            this.btnRent.Location = new System.Drawing.Point(17, 125);
+            this.btnRent.Location = new System.Drawing.Point(17, 105);
             this.btnRent.Name = "btnRent";
             this.btnRent.Size = new System.Drawing.Size(86, 25);
             this.btnRent.TabIndex = 48;
             this.btnRent.Text = "Rent Property";
             this.btnRent.UseVisualStyleBackColor = true;
             this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
-            // 
-            // txtOwnerID
-            // 
-            this.txtOwnerID.Enabled = false;
-            this.txtOwnerID.Location = new System.Drawing.Point(15, 435);
-            this.txtOwnerID.MaxLength = 4;
-            this.txtOwnerID.Name = "txtOwnerID";
-            this.txtOwnerID.Size = new System.Drawing.Size(70, 20);
-            this.txtOwnerID.TabIndex = 49;
-            this.txtOwnerID.Visible = false;
-            this.txtOwnerID.TextChanged += new System.EventHandler(this.txtOwnerID_TextChanged);
             // 
             // grpDates
             // 
@@ -399,11 +394,22 @@
             this.grpDates.Controls.Add(this.label5);
             this.grpDates.Location = new System.Drawing.Point(257, 376);
             this.grpDates.Name = "grpDates";
-            this.grpDates.Size = new System.Drawing.Size(228, 163);
+            this.grpDates.Size = new System.Drawing.Size(228, 137);
             this.grpDates.TabIndex = 50;
             this.grpDates.TabStop = false;
             this.grpDates.Text = "Dates";
             this.grpDates.Visible = false;
+            // 
+            // btnExisting
+            // 
+            this.btnExisting.Location = new System.Drawing.Point(6, 264);
+            this.btnExisting.Name = "btnExisting";
+            this.btnExisting.Size = new System.Drawing.Size(109, 26);
+            this.btnExisting.TabIndex = 39;
+            this.btnExisting.Text = "Is this you?";
+            this.btnExisting.UseVisualStyleBackColor = true;
+            this.btnExisting.Visible = false;
+            this.btnExisting.Click += new System.EventHandler(this.btnExisting_Click);
             // 
             // frmRentProperty
             // 
@@ -411,12 +417,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 551);
             this.Controls.Add(this.grpDates);
-            this.Controls.Add(this.txtOwnerID);
             this.Controls.Add(this.grpPropSelect);
             this.Controls.Add(this.grpTenantSelect);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblTenant);
             this.Controls.Add(this.grpTenants);
             this.Controls.Add(this.txtBookingID);
             this.Controls.Add(this.label8);
@@ -462,7 +467,7 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTenant;
         private System.Windows.Forms.Button btnYes;
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.ComboBox cboTenant;
@@ -473,7 +478,7 @@
         private System.Windows.Forms.TextBox txtTenantID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpDOB;
-        private System.Windows.Forms.TextBox txtOwnerID;
         private System.Windows.Forms.GroupBox grpDates;
+        private System.Windows.Forms.Button btnExisting;
     }
 }

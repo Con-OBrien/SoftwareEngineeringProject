@@ -42,7 +42,7 @@ namespace PropertySysv2
             DataSet ds = new DataSet();
             
             grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtSurname.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
-            
+            grdOwners.AllowUserToAddRows = false;
             grdOwners.Visible = true;
         }
 

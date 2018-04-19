@@ -157,8 +157,8 @@ namespace PropertySysv2
         public static DataSet getSurnamesTenant(DataSet RS, String Surname)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            String strSQL = "SELECT Tenant_ID FROM Tenants WHERE Surname = '" + Surname + "' ORDER BY Tenant_ID";
+            String upper = Surname.ToUpper();
+            String strSQL = "SELECT * FROM Tenants WHERE Surname = '" + upper + "'";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             OracleDataAdapter ra = new OracleDataAdapter(cmd);

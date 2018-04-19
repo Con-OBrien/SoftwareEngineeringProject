@@ -87,7 +87,7 @@ namespace PropertySysv2
 
             String strSQL = "INSERT INTO Bookings VALUES(" + this.booking_id.ToString() +
                 ",'" + this.dateregistered.ToUpper() + "','" + this.startoflease.ToUpper() + "','" +
-                this.endoflease.ToUpper() + "'," + this.owner_id.ToString() + "," + this.prop_id.ToString() + ")";
+                this.endoflease.ToUpper() + "'," + this.prop_id.ToString() + ")";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             cmd.ExecuteNonQuery();

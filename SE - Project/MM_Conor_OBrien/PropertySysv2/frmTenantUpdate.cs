@@ -42,7 +42,7 @@ namespace PropertySysv2
         {
 
             DataSet ds = new DataSet();
-            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtTenantSearch.ToString()).Tables["ss"];
+            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtTenantSearch.Text).Tables["ss"];
 
             grdTenants.Visible = true;
         }

@@ -57,12 +57,12 @@ namespace PropertySysv2
 
         private void cboProperty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if resetting combo, ignore
+
             if (cboProperty.SelectedIndex == -1)
             {
                 return;
             }
-            //find stock details
+            
             Property Prop = new Property();
             Prop.getProperty(Convert.ToInt32(cboProperty.Text.Substring(0, 1)));
 
@@ -72,10 +72,12 @@ namespace PropertySysv2
                 txtBookingID.Focus();
                 return;
             }
-            txtOwnerID.Text = Prop.getOwnerId().ToString("00000");
-            //display Stock details
+          
             txtPropID.Text = Prop.getPropId().ToString("00000");
-            
+
+            lblTenant.Visible = true;
+            btnYes.Visible = true;
+            btnNo.Visible = true;
 
 
         }
@@ -133,17 +135,19 @@ namespace PropertySysv2
 
         private void btnRent_Click(object sender, EventArgs e)
         {
+            dtpEnd.Value = dtpStart.Value.AddYears(1);
             String startDate = String.Format("{0:dd-MMM-yy}", dtpStart.Value);
-            String endDate = String.Format("{0:dd-MMM-yy}", dtpEnd.Value);
-            String dateRegistered = String.Format("{0:dd-MMM-yy}", dtpDOB.Value);
+            String endDate =     String.Format("{0:dd-MMM-yy}", dtpEnd.Value);
+            String dateRegistered = String.Format("{0:dd-MMM-yy}", DateTime.Now);
+            
+            
 
             Booking newBooking = new Booking();
             newBooking.setBookingId(Convert.ToInt32(txtBookingID.Text));
             newBooking.setDateRegistered(dateRegistered);
             newBooking.setStartOfLease(startDate);
             newBooking.setEndOfLease(endDate);
-            newBooking.setPropId(Convert.ToInt32(txtPropID.Text));
-            newBooking.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
+            newBooking.setPropId(Convert.ToInt32(txtPropID.Text));        
 
             newBooking.makeBooking();
 
@@ -167,7 +171,7 @@ namespace PropertySysv2
                 txtBookingID.Focus();
                 return;
             }
-            txtPropID.Text = newTenant.getPropID().ToString();
+            
             txtTenantID.Text = newTenant.getTenantId().ToString();
             txtForename.Text = newTenant.getForename();
             txtSurname.Text = newTenant.getSurname();
@@ -175,7 +179,16 @@ namespace PropertySysv2
             txtEmail.Text = newTenant.getEmail();
             dtpDOB.Text = newTenant.getDOB();
 
-
+            grpTenants.Visible = true;
+            txtPropID.Enabled = false;
+            txtTenantID.Enabled = false;
+            txtForename.Enabled = false;
+            txtSurname.Enabled = false;
+            txtPhone.Enabled = false;
+            txtEmail.Enabled = false;
+            dtpDOB.Enabled = false;
+            btnExisting.Visible = true;
+            btnAdd.Visible = false;
         }
 
 
@@ -187,6 +200,11 @@ namespace PropertySysv2
         private void txtTenantID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExisting_Click(object sender, EventArgs e)
+        {
+            grpDates.Visible = true;
         }
     }
 }

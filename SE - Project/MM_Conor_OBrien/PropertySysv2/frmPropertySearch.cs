@@ -65,5 +65,10 @@ namespace PropertySysv2
             btnSearch.Visible = true;
 
         }
+
+        private void dgvProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
