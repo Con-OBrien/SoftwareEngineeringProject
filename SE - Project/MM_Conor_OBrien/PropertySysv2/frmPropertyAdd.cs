@@ -44,7 +44,7 @@ namespace PropertySysv2
             myProps.setStreet(txtBoxAdd1.Text);
             myProps.setTown(txtBoxAdd2.Text);
             myProps.setCounty(txtBoxCounty.Text);
-            myProps.setOwnerId(Convert.ToInt32(txtSearch.Text));
+            myProps.setOwnerId(Convert.ToInt32(txtOwnerSearch.Text));
 
             myProps.regProp();
 
@@ -57,9 +57,9 @@ namespace PropertySysv2
             txtBoxAdd1.Text = "";
             txtBoxAdd2.Text = "";
             txtBoxCounty.Text = "";
-            txtSearch.Text = "";
+            txtOwnerSearch.Text = "";
 
-            grpOwner.Visible = false;
+            grpOwners.Visible = false;
             grpProperty.Visible = false;
 
             txtPropertyID.Text = PropertySysv2.Property.getNextPropId().ToString("00000");
@@ -76,43 +76,40 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //check that owner number is entered
-            if (txtSearch.Text.Equals(""))
+            //check that surname is entered
+            if (txtOwnerSearch.Text.Equals(""))
             {
                 MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
+                txtOwnerSearch.Focus();
                 return;
             }
 
-            //find owner details
-            Owner srhOwner = new Owner();
-            srhOwner.getOwner(Convert.ToInt32(txtSearch.Text));
+            DataSet ds = new DataSet();
 
-            if (srhOwner.getOwnerId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //display Owner details
-            txtForename.Text = srhOwner.getForename();
-            txtSurname.Text = srhOwner.getSurname();
-            txtAdd1.Text = srhOwner.getStreet();
-            txtAdd2.Text = srhOwner.getTown();
-            txtCounty.Text = srhOwner.getCounty();
-            txtPhone.Text = srhOwner.getPhone().ToString();
-            txtEmail.Text = srhOwner.getEmail();
-
-
-            //display details
-            grpOwner.Visible = true;
-            grpProperty.Visible = true;
+            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtSurname.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
+            grdOwners.AllowUserToAddRows = false;
+            grdOwners.Visible = true;
+      
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void grdOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtOwnerID.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            txtForename.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            txtSurname.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtBoxAdd1.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtBoxAdd2.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtBoxCounty.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            txtPhone.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[6].Value.ToString();
+            txtEmail.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[7].Value.ToString();
+
+            grpOwners.Visible = true;
+            grpProperty.Visible = true;
         }
     }
 }

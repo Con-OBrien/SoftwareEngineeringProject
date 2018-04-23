@@ -22,48 +22,6 @@ namespace PropertySysv2
             InitializeComponent();
             parent = Parent;
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            //check that owner number is entered
-            if (txtSearch.Text.Equals(""))
-            {
-                MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //find owner details
-            Property updProp = new Property();
-            updProp.getProperty(Convert.ToInt32(txtSearch.Text));
-
-            if (updProp.getPropId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //display Owner details
-            txtRent.Text = updProp.getRentPerMonth().ToString();
-            txtBedrooms.Text = updProp.getBedrooms().ToString();
-            txtBathrooms.Text = updProp.getBathrooms().ToString();
-            txtHouse.Text = updProp.getHouseType();
-            txtAdd1.Text = updProp.getStreet();
-            txtAdd2.Text = updProp.getTown();
-            txtCounty.Text = updProp.getCounty();
-            txtOwnerId.Text = updProp.getOwnerId().ToString();
-
-
-            //display details
-            grpProperties.Visible = true;
-
-        }
-
         private void mnuBack_Click(object sender, EventArgs e)
         {
             //close current form
@@ -90,7 +48,6 @@ namespace PropertySysv2
 
             //instantiate Stock Object
             Property myProps = new Property();
-            myProps.setPropId(Convert.ToInt32(txtSearch.Text));
             myProps.setRentPerMonth(Convert.ToInt32(txtRent.Text));
             myProps.setBedrooms(Convert.ToInt32(txtBedrooms.Text));
             myProps.setBathrooms(Convert.ToInt32(txtBathrooms.Text));
@@ -104,7 +61,6 @@ namespace PropertySysv2
             myProps.updProp();
 
             //reset UI
-            txtSearch.Text = "";
             txtRent.Text = "";
             txtBedrooms.Text = "";
             txtBathrooms.Text = "";
@@ -114,7 +70,20 @@ namespace PropertySysv2
             txtCounty.Text = "";
             txtOwnerId.Text = "";
             
-            txtSearch.Focus();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            grdOwners.DataSource = PropertySysv2.Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+
+            grdOwners.Visible = true;
+            grpProperties.Visible = true;
+        }
+
+        private void frmPropertyUpdate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
