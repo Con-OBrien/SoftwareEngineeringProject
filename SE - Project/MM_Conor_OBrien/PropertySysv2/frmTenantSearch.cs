@@ -31,7 +31,7 @@ namespace PropertySysv2
             }
             DataSet ds = new DataSet();
 
-            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtSurname.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
+            grdTenants.DataSource = PropertySysv2.Tenant.getSurnamesTenant(ds, txtSurname.Text.ToUpper()).Tables["rs"];   //(ds, txtSurname.Text).Tables["ss"];
             grdTenants.AllowUserToAddRows = false;
             grdTenants.Visible = true;
         }
@@ -46,6 +46,11 @@ namespace PropertySysv2
         }
 
         private void txtSearchTenant_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdTenants_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

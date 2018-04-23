@@ -32,20 +32,19 @@
             this.txtTenantSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpTenants = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtForename = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grdTenants = new System.Windows.Forms.DataGridView();
+            this.txtTenantID = new System.Windows.Forms.TextBox();
             this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).BeginInit();
@@ -80,91 +79,76 @@
             // 
             // grpTenants
             // 
-            this.grpTenants.Controls.Add(this.textBox1);
+            this.grpTenants.Controls.Add(this.txtTenantID);
+            this.grpTenants.Controls.Add(this.txtSurname);
             this.grpTenants.Controls.Add(this.label8);
-            this.grpTenants.Controls.Add(this.button1);
-            this.grpTenants.Controls.Add(this.textBox2);
-            this.grpTenants.Controls.Add(this.textBox3);
-            this.grpTenants.Controls.Add(this.textBox4);
-            this.grpTenants.Controls.Add(this.textBox5);
-            this.grpTenants.Controls.Add(this.label10);
+            this.grpTenants.Controls.Add(this.btnUpdate);
+            this.grpTenants.Controls.Add(this.txtEmail);
+            this.grpTenants.Controls.Add(this.txtPhone);
+            this.grpTenants.Controls.Add(this.txtForename);
             this.grpTenants.Controls.Add(this.label11);
             this.grpTenants.Controls.Add(this.label12);
             this.grpTenants.Controls.Add(this.label13);
-            this.grpTenants.Location = new System.Drawing.Point(23, 211);
+            this.grpTenants.Location = new System.Drawing.Point(23, 224);
             this.grpTenants.Name = "grpTenants";
-            this.grpTenants.Size = new System.Drawing.Size(335, 218);
+            this.grpTenants.Size = new System.Drawing.Size(335, 227);
             this.grpTenants.TabIndex = 30;
             this.grpTenants.TabStop = false;
             this.grpTenants.Text = "Enter Tenant Details";
             this.grpTenants.Visible = false;
+            this.grpTenants.Enter += new System.EventHandler(this.grpTenants_Enter);
             // 
-            // textBox1
+            // txtSurname
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 20);
-            this.textBox1.TabIndex = 32;
+            this.txtSurname.Location = new System.Drawing.Point(95, 79);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(124, 20);
+            this.txtSurname.TabIndex = 32;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 63);
+            this.label8.Location = new System.Drawing.Point(6, 79);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 31;
             this.label8.Text = "Surname:";
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Location = new System.Drawing.Point(6, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 19);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Update Tenant";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(6, 169);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(109, 19);
+            this.btnUpdate.TabIndex = 26;
+            this.btnUpdate.Text = "Update Tenant";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 161);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(123, 20);
-            this.textBox2.TabIndex = 25;
+            this.txtEmail.Location = new System.Drawing.Point(96, 143);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(123, 20);
+            this.txtEmail.TabIndex = 24;
             // 
-            // textBox3
+            // txtPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(96, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(123, 20);
-            this.textBox3.TabIndex = 24;
+            this.txtPhone.Location = new System.Drawing.Point(95, 113);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(124, 20);
+            this.txtPhone.TabIndex = 23;
             // 
-            // textBox4
+            // txtForename
             // 
-            this.textBox4.Location = new System.Drawing.Point(95, 97);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(124, 20);
-            this.textBox4.TabIndex = 23;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(95, 29);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 20);
-            this.textBox5.TabIndex = 22;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 161);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "DOB:";
+            this.txtForename.Location = new System.Drawing.Point(95, 45);
+            this.txtForename.Name = "txtForename";
+            this.txtForename.Size = new System.Drawing.Size(124, 20);
+            this.txtForename.TabIndex = 22;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 130);
+            this.label11.Location = new System.Drawing.Point(6, 146);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 20;
@@ -173,7 +157,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 97);
+            this.label12.Location = new System.Drawing.Point(6, 113);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 19;
@@ -182,7 +166,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 29);
+            this.label13.Location = new System.Drawing.Point(6, 45);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 18;
@@ -207,18 +191,39 @@
             // 
             // grdTenants
             // 
+            this.grdTenants.AllowUserToAddRows = false;
+            this.grdTenants.AllowUserToDeleteRows = false;
+            this.grdTenants.AllowUserToResizeColumns = false;
+            this.grdTenants.AllowUserToResizeRows = false;
             this.grdTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdTenants.GridColor = System.Drawing.SystemColors.Info;
             this.grdTenants.Location = new System.Drawing.Point(23, 82);
+            this.grdTenants.MultiSelect = false;
             this.grdTenants.Name = "grdTenants";
+            this.grdTenants.ReadOnly = true;
+            this.grdTenants.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdTenants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grdTenants.Size = new System.Drawing.Size(502, 123);
             this.grdTenants.TabIndex = 32;
             this.grdTenants.Visible = false;
+            this.grdTenants.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTenants_CellClick);
+            this.grdTenants.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTenants_CellContentClick);
+            this.grdTenants.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTenants_CellContentDoubleClick);
+            this.grdTenants.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdTenants_RowHeaderMouseClick);
+            // 
+            // txtTenantID
+            // 
+            this.txtTenantID.Location = new System.Drawing.Point(9, 19);
+            this.txtTenantID.Name = "txtTenantID";
+            this.txtTenantID.Size = new System.Drawing.Size(28, 20);
+            this.txtTenantID.TabIndex = 33;
+            this.txtTenantID.Visible = false;
             // 
             // frmTenantUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 448);
+            this.ClientSize = new System.Drawing.Size(563, 463);
             this.Controls.Add(this.grdTenants);
             this.Controls.Add(this.grpTenants);
             this.Controls.Add(this.btnSearch);
@@ -227,7 +232,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTenantUpdate";
-            this.Text = "frmTenantUpdate";
+            this.Text = "Update Tennant";
+            this.Load += new System.EventHandler(this.frmTenantUpdate_Load);
             this.grpTenants.ResumeLayout(false);
             this.grpTenants.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -243,19 +249,18 @@
         private System.Windows.Forms.TextBox txtTenantSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpTenants;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtForename;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.DataGridView grdTenants;
+        private System.Windows.Forms.TextBox txtTenantID;
     }
 }

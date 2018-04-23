@@ -42,9 +42,95 @@ namespace PropertySysv2
         {
 
             DataSet ds = new DataSet();
-            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtTenantSearch.Text).Tables["ss"];
+            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtTenantSearch.Text).Tables["rs"];
 
             grdTenants.Visible = true;
+        }
+
+        private void grdTenants_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                
+            
+        }
+
+        private void grdTenants_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            grpTenants.Visible = true;
+
+            String forename = grdTenants.SelectedRows[0].Cells[1].Value + string.Empty;
+            String surname = grdTenants.SelectedRows[0].Cells[2].Value + string.Empty;
+            String phone = grdTenants.SelectedRows[0].Cells[3].Value + string.Empty;
+            String email = grdTenants.SelectedRows[0].Cells[4].Value + string.Empty;
+
+            txtForename.Text = forename;
+            txtSurname.Text = surname;
+            txtPhone.Text = phone;
+            txtEmail.Text = email;
+
+        }
+
+        private void grdTenants_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // validate data
+            if (txtForename.Text.Equals("") || txtSurname.Text.Equals("") || txtPhone.Text.Equals("") || txtEmail.Text.Equals(""))
+            {
+                MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }          
+
+            //Display Confirmation message
+            MessageBox.Show("Tenant Updated!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //instantiate Tenant Object
+            Tenant myTenant = new Tenant();
+            myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
+            myTenant.setForename(txtForename.Text);
+            myTenant.setSurname(txtSurname.Text);
+            myTenant.setPhone(Convert.ToInt32(txtPhone.Text));
+            myTenant.setEmail(txtEmail.Text);
+
+            //INSERT Tenant record into tenant table
+            myTenant.updTenant();
+
+            //reset UI
+            txtTenantSearch.Text = "";
+            txtForename.Text = "";
+            txtSurname.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+
+            grpTenants.Visible = false;
+            grdTenants.Visible = false;
+            txtTenantSearch.Focus();
+        }
+
+        private void grdTenants_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTenantID.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            txtForename.Text =  grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            txtSurname.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtPhone.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtEmail.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            
+          
+            grpTenants.Visible = true;
+        }
+
+        private void grpTenants_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmTenantUpdate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

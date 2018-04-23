@@ -23,40 +23,6 @@ namespace PropertySysv2
             parent = Parent;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            //check that owner number is entered
-            if (txtSrhName.Text.Equals(""))
-            {
-                MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSrhName.Focus();
-                return;
-            }
-
-            //find owner details
-            Owner updOwner = new Owner();
-            updOwner.getOwner(Convert.ToInt32(txtSrhName.Text));
-
-            if (updOwner.getOwnerId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSrhName.Focus();
-                return;
-            }
-
-            //display Owner details
-            txtForename.Text = updOwner.getForename();
-            txtSurname.Text = updOwner.getSurname();
-            txtBoxAdd1.Text = updOwner.getStreet();
-            txtBoxAdd2.Text = updOwner.getTown();
-            txtBoxCounty.Text = updOwner.getCounty();
-            txtPhone.Text = updOwner.getPhone().ToString();
-            txtEmail.Text = updOwner.getEmail();
-             
-
-            //display details
-            grpOwner.Visible = true;
-        }
 
         private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -109,7 +75,7 @@ namespace PropertySysv2
 
             //instantiate Stock Object
             Owner myOwners = new Owner();
-            myOwners.setOwnerId(Convert.ToInt32(txtSrhName.Text));
+            myOwners.setOwnerId(Convert.ToInt32(txtOwnerSearch.Text));
             myOwners.setForename(txtForename.Text);
             myOwners.setSurname(txtSurname.Text);
             myOwners.setStreet(txtBoxAdd1.Text);
@@ -122,7 +88,7 @@ namespace PropertySysv2
             myOwners.updOwner();
 
             //reset UI
-            txtSrhName.Text = "";
+            txtOwnerSearch.Text = "";
             txtSurname.Text = "";
             txtForename.Text = "";
             txtBoxAdd1.Text = "";
@@ -130,8 +96,18 @@ namespace PropertySysv2
             txtBoxCounty.Text = "";
             txtPhone.Text = "";
             txtEmail.Text = "";
-         
-            txtSrhName.Focus();
+
+            grpOwner.Visible = false;
+            grdOwners.Visible = false;
+            txtOwnerSearch.Focus();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
+
+            grdOwners.Visible = true;
         }
     }
 }

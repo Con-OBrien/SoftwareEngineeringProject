@@ -213,7 +213,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT Forename, Surname, Phone, Email FROM Owners WHERE Surname = '" + Surname + "'";
+            String strSQL = "SELECT * FROM Owners WHERE Surname = '" + Surname + "'";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 

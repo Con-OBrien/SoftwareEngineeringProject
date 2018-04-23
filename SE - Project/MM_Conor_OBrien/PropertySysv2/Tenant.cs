@@ -235,9 +235,9 @@ namespace PropertySysv2
             myConn.Open();
 
             //Define SQL query to INSERT stock record
-            String strSQL = "UPDATE Tenants VALUES(" + this.tenant_id.ToString() +
-               ",'" + this.surname.ToUpper() + "','" + this.forename.ToUpper() + "'," +
-                this.phone.ToString() + ",'" + this.email.ToUpper() + "','" + this.dob.ToString() + "')  WHERE TenantID = " + this.tenant_id.ToString();
+            String strSQL = "UPDATE Tenants SET Surname = '" + this.surname.ToUpper() + "', Forename ='"
+                + this.forename.ToUpper() + "', Phone = " + this.phone.ToString() + ", Email ='"
+                + this.email.ToUpper() + "' WHERE Tenant_ID = " + this.tenant_id.ToString();
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

@@ -46,7 +46,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(485, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(548, 24);
             this.menuStrip1.TabIndex = 32;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,9 +62,10 @@
             this.grdTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTenants.Location = new System.Drawing.Point(13, 131);
             this.grdTenants.Name = "grdTenants";
-            this.grdTenants.Size = new System.Drawing.Size(455, 96);
+            this.grdTenants.Size = new System.Drawing.Size(523, 96);
             this.grdTenants.TabIndex = 45;
             this.grdTenants.Visible = false;
+            this.grdTenants.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTenants_CellContentClick);
             // 
             // label10
             // 
@@ -113,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 270);
+            this.ClientSize = new System.Drawing.Size(548, 270);
             this.Controls.Add(this.grdTenants);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
