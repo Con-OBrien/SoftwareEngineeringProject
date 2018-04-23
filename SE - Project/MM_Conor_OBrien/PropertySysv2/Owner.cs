@@ -198,7 +198,7 @@ namespace PropertySysv2
 
             //Define SQL query to INSERT stock record
             String strSQL = "INSERT INTO Owners VALUES(" + this.owner_id.ToString() +
-                ",'" + this.surname.ToUpper().ToString() + "','" +  this.forename.ToUpper() + "','" +
+                ",'" + this.forename.ToUpper().ToString() + "','" +  this.surname.ToUpper() + "','" +
                   this.street.ToUpper() + "','" + this.town.ToUpper() + "','" + this.county.ToUpper() + "',"
                  + this.phone.ToString() + ",'" + this.email.ToUpper() + "')";
 

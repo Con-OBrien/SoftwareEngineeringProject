@@ -10,8 +10,8 @@ DROP TABLE Owners;
 
 CREATE TABLE Owners
 (Owner_ID numeric(3),
-Surname char(15) NOT NULL,
 Forename char(15) NOT NULL,
+Surname char(15) NOT NULL,
 Street char(20) NOT NULL,
 Town char(20) NOT NULL,
 County char(20) NOT NULL,

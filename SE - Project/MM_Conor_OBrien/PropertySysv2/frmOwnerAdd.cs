@@ -92,5 +92,10 @@ namespace PropertySysv2
         {
 
         }
+
+        private void grpOwner_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

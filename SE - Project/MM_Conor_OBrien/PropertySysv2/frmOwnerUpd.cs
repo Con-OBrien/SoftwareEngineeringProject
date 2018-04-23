@@ -26,7 +26,7 @@ namespace PropertySysv2
 
         private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            grpOwner.Visible = true;
+            grpOwners.Visible = true;
         }
 
         private void frmOwnerUpd_Load(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace PropertySysv2
 
             //instantiate Stock Object
             Owner myOwners = new Owner();
-            myOwners.setOwnerId(Convert.ToInt32(txtOwnerSearch.Text));
+            myOwners.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
             myOwners.setForename(txtForename.Text);
             myOwners.setSurname(txtSurname.Text);
             myOwners.setStreet(txtBoxAdd1.Text);
@@ -97,7 +97,7 @@ namespace PropertySysv2
             txtPhone.Text = "";
             txtEmail.Text = "";
 
-            grpOwner.Visible = false;
+            grpOwners.Visible = false;
             grdOwners.Visible = false;
             txtOwnerSearch.Focus();
         }
@@ -108,6 +108,20 @@ namespace PropertySysv2
             grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
 
             grdOwners.Visible = true;
+        }
+
+        private void grdOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtOwnerID.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            txtForename.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            txtSurname.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtBoxAdd1.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtBoxAdd2.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtBoxCounty.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            txtPhone.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[6].Value.ToString();
+            txtEmail.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[7].Value.ToString();
+
+            grpOwners.Visible = true;
         }
     }
 }

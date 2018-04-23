@@ -69,7 +69,6 @@
             this.txtOwnerID.Name = "txtOwnerID";
             this.txtOwnerID.Size = new System.Drawing.Size(49, 20);
             this.txtOwnerID.TabIndex = 15;
-            
             // 
             // label8
             // 
@@ -87,34 +86,35 @@
             this.grpOwner.Controls.Add(this.txtBoxCounty);
             this.grpOwner.Controls.Add(this.label7);
             this.grpOwner.Controls.Add(this.txtBoxAdd2);
+            this.grpOwner.Controls.Add(this.label1);
+            this.grpOwner.Controls.Add(this.txtSurname);
             this.grpOwner.Controls.Add(this.label6);
             this.grpOwner.Controls.Add(this.btnAdd);
             this.grpOwner.Controls.Add(this.txtBoxAdd1);
             this.grpOwner.Controls.Add(this.txtEmail);
             this.grpOwner.Controls.Add(this.txtPhone);
-            this.grpOwner.Controls.Add(this.txtSurname);
             this.grpOwner.Controls.Add(this.label4);
             this.grpOwner.Controls.Add(this.label3);
             this.grpOwner.Controls.Add(this.label2);
-            this.grpOwner.Controls.Add(this.label1);
             this.grpOwner.Location = new System.Drawing.Point(21, 91);
             this.grpOwner.Name = "grpOwner";
             this.grpOwner.Size = new System.Drawing.Size(335, 250);
             this.grpOwner.TabIndex = 18;
             this.grpOwner.TabStop = false;
             this.grpOwner.Text = "Enter Owner Details";
+            this.grpOwner.Enter += new System.EventHandler(this.grpOwner_Enter);
             // 
             // txtForename
             // 
-            this.txtForename.Location = new System.Drawing.Point(94, 48);
+            this.txtForename.Location = new System.Drawing.Point(94, 22);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(123, 20);
-            this.txtForename.TabIndex = 1;
+            this.txtForename.TabIndex = 0;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 51);
+            this.label9.Location = new System.Drawing.Point(11, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 13);
             this.label9.TabIndex = 31;
@@ -186,10 +186,10 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(94, 25);
+            this.txtSurname.Location = new System.Drawing.Point(94, 46);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(123, 20);
-            this.txtSurname.TabIndex = 0;
+            this.txtSurname.TabIndex = 1;
             // 
             // label4
             // 
@@ -221,7 +221,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 28);
+            this.label1.Location = new System.Drawing.Point(11, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 18;
