@@ -48,7 +48,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.grdOwners = new System.Windows.Forms.DataGridView();
+            this.grdProperties = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblBeds = new System.Windows.Forms.Label();
             this.cboBeds = new System.Windows.Forms.ComboBox();
@@ -57,7 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.grpProperties.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdOwners)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // grpProperties
@@ -89,6 +89,7 @@
             // 
             // txtOwnerId
             // 
+            this.txtOwnerId.Enabled = false;
             this.txtOwnerId.Location = new System.Drawing.Point(95, 257);
             this.txtOwnerId.Name = "txtOwnerId";
             this.txtOwnerId.Size = new System.Drawing.Size(122, 20);
@@ -242,23 +243,23 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
-            // grdOwners
+            // grdProperties
             // 
-            this.grdOwners.AllowUserToAddRows = false;
-            this.grdOwners.AllowUserToDeleteRows = false;
-            this.grdOwners.AllowUserToResizeColumns = false;
-            this.grdOwners.AllowUserToResizeRows = false;
-            this.grdOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdOwners.GridColor = System.Drawing.SystemColors.Info;
-            this.grdOwners.Location = new System.Drawing.Point(15, 174);
-            this.grdOwners.MultiSelect = false;
-            this.grdOwners.Name = "grdOwners";
-            this.grdOwners.ReadOnly = true;
-            this.grdOwners.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.grdOwners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.grdOwners.Size = new System.Drawing.Size(502, 100);
-            this.grdOwners.TabIndex = 40;
-            this.grdOwners.Visible = false;
+            this.grdProperties.AllowUserToAddRows = false;
+            this.grdProperties.AllowUserToDeleteRows = false;
+            this.grdProperties.AllowUserToResizeColumns = false;
+            this.grdProperties.AllowUserToResizeRows = false;
+            this.grdProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProperties.GridColor = System.Drawing.SystemColors.Info;
+            this.grdProperties.Location = new System.Drawing.Point(15, 174);
+            this.grdProperties.MultiSelect = false;
+            this.grdProperties.Name = "grdProperties";
+            this.grdProperties.ReadOnly = true;
+            this.grdProperties.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.grdProperties.Size = new System.Drawing.Size(502, 100);
+            this.grdProperties.TabIndex = 40;
+            this.grdProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellContentClick);
             // 
             // btnSearch
             // 
@@ -268,7 +269,6 @@
             this.btnSearch.TabIndex = 46;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Visible = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblBeds
@@ -279,7 +279,6 @@
             this.lblBeds.Size = new System.Drawing.Size(31, 13);
             this.lblBeds.TabIndex = 45;
             this.lblBeds.Text = "Beds";
-            this.lblBeds.Visible = false;
             // 
             // cboBeds
             // 
@@ -289,7 +288,6 @@
             this.cboBeds.Name = "cboBeds";
             this.cboBeds.Size = new System.Drawing.Size(121, 21);
             this.cboBeds.TabIndex = 44;
-            this.cboBeds.Visible = false;
             // 
             // cboTown
             // 
@@ -329,17 +327,18 @@
             this.Controls.Add(this.cboTown);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.grdOwners);
+            this.Controls.Add(this.grdProperties);
             this.Controls.Add(this.grpProperties);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPropertyUpdate";
-            this.Text = " ";
+            this.Text = " Update Property";
+            this.Load += new System.EventHandler(this.frmPropertyUpdate_Load);
             this.grpProperties.ResumeLayout(false);
             this.grpProperties.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdOwners)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +365,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.TextBox txtOwnerId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView grdOwners;
+        private System.Windows.Forms.DataGridView grdProperties;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblBeds;
         private System.Windows.Forms.ComboBox cboBeds;

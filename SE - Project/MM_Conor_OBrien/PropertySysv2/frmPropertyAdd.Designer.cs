@@ -49,6 +49,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpOwners = new System.Windows.Forms.GroupBox();
+            this.txtOwnerID = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.txtForename = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCounty = new System.Windows.Forms.TextBox();
@@ -67,8 +69,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtOwnerSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.grpProperty.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpOwners.SuspendLayout();
@@ -112,9 +112,9 @@
             this.grpProperty.Controls.Add(this.label3);
             this.grpProperty.Controls.Add(this.label2);
             this.grpProperty.Controls.Add(this.label1);
-            this.grpProperty.Location = new System.Drawing.Point(393, 245);
+            this.grpProperty.Location = new System.Drawing.Point(395, 207);
             this.grpProperty.Name = "grpProperty";
-            this.grpProperty.Size = new System.Drawing.Size(317, 290);
+            this.grpProperty.Size = new System.Drawing.Size(318, 302);
             this.grpProperty.TabIndex = 19;
             this.grpProperty.TabStop = false;
             this.grpProperty.Text = "Enter Property Details";
@@ -284,6 +284,23 @@
             this.grpOwners.TabStop = false;
             this.grpOwners.Visible = false;
             // 
+            // txtOwnerID
+            // 
+            this.txtOwnerID.Enabled = false;
+            this.txtOwnerID.Location = new System.Drawing.Point(90, 35);
+            this.txtOwnerID.Name = "txtOwnerID";
+            this.txtOwnerID.Size = new System.Drawing.Size(124, 20);
+            this.txtOwnerID.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 38);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "OwnerID:";
+            // 
             // txtForename
             // 
             this.txtForename.Enabled = false;
@@ -431,6 +448,7 @@
             this.btnSearch.TabIndex = 39;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtOwnerSearch
             // 
@@ -447,23 +465,6 @@
             this.lblSearch.Size = new System.Drawing.Size(80, 13);
             this.lblSearch.TabIndex = 37;
             this.lblSearch.Text = "Enter Surname:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 38);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "OwnerID:";
-            // 
-            // txtOwnerID
-            // 
-            this.txtOwnerID.Enabled = false;
-            this.txtOwnerID.Location = new System.Drawing.Point(90, 35);
-            this.txtOwnerID.Name = "txtOwnerID";
-            this.txtOwnerID.Size = new System.Drawing.Size(124, 20);
-            this.txtOwnerID.TabIndex = 34;
             // 
             // frmPropertyAdd
             // 

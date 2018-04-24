@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpOwners = new System.Windows.Forms.GroupBox();
+            this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.txtForename = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBoxCounty = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtOwnerSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.grpOwners.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdOwners)).BeginInit();
@@ -108,6 +108,14 @@
             this.grpOwners.TabStop = false;
             this.grpOwners.Text = "Update Owner Details";
             this.grpOwners.Visible = false;
+            // 
+            // txtOwnerID
+            // 
+            this.txtOwnerID.Location = new System.Drawing.Point(122, 14);
+            this.txtOwnerID.Name = "txtOwnerID";
+            this.txtOwnerID.Size = new System.Drawing.Size(14, 20);
+            this.txtOwnerID.TabIndex = 32;
+            this.txtOwnerID.Visible = false;
             // 
             // txtForename
             // 
@@ -249,7 +257,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(294, 20);
+            this.btnSearch.Location = new System.Drawing.Point(305, 29);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(73, 23);
             this.btnSearch.TabIndex = 39;
@@ -259,7 +267,7 @@
             // 
             // txtOwnerSearch
             // 
-            this.txtOwnerSearch.Location = new System.Drawing.Point(95, 22);
+            this.txtOwnerSearch.Location = new System.Drawing.Point(106, 31);
             this.txtOwnerSearch.Name = "txtOwnerSearch";
             this.txtOwnerSearch.Size = new System.Drawing.Size(178, 20);
             this.txtOwnerSearch.TabIndex = 38;
@@ -267,19 +275,11 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(9, 24);
+            this.lblSearch.Location = new System.Drawing.Point(20, 33);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(80, 13);
             this.lblSearch.TabIndex = 37;
             this.lblSearch.Text = "Enter Surname:";
-            // 
-            // txtOwnerID
-            // 
-            this.txtOwnerID.Location = new System.Drawing.Point(122, 14);
-            this.txtOwnerID.Name = "txtOwnerID";
-            this.txtOwnerID.Size = new System.Drawing.Size(14, 20);
-            this.txtOwnerID.TabIndex = 32;
-            this.txtOwnerID.Visible = false;
             // 
             // frmOwnerRemove
             // 

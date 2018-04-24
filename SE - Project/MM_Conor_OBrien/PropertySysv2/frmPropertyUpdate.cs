@@ -69,21 +69,47 @@ namespace PropertySysv2
             txtAdd2.Text = "";
             txtCounty.Text = "";
             txtOwnerId.Text = "";
+
+            grdProperties.Visible = false;
+            grpProperties.Visible = false;
+            cboBeds.SelectedIndex = -1;
+            cboTown.SelectedIndex = -1;
             
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            grdOwners.DataSource = PropertySysv2.Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            grdProperties.DataSource = PropertySysv2.Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
 
-            grdOwners.Visible = true;
+            grdProperties.Visible = true;
             grpProperties.Visible = true;
         }
 
         private void frmPropertyUpdate_Load(object sender, EventArgs e)
         {
+            DataSet ds = new DataSet();
+            ds = Property.getTown(ds);
 
+            for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
+                cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+
+            for (int i = 1; i <= 6; i++)
+                cboBeds.Items.Add(i.ToString());
+        }
+
+        private void grdProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtRent.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            txtBedrooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtBathrooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtHouse.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtAdd1.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            txtAdd2.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[6].Value.ToString();
+            txtCounty.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            txtOwnerId.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[8].Value.ToString();
+
+            grpProperties.Visible = true;
         }
     }
 }

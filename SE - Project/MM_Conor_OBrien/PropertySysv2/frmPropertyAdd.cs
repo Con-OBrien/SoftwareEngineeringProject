@@ -44,7 +44,7 @@ namespace PropertySysv2
             myProps.setStreet(txtBoxAdd1.Text);
             myProps.setTown(txtBoxAdd2.Text);
             myProps.setCounty(txtBoxCounty.Text);
-            myProps.setOwnerId(Convert.ToInt32(txtOwnerSearch.Text));
+            myProps.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
 
             myProps.regProp();
 
@@ -61,6 +61,7 @@ namespace PropertySysv2
 
             grpOwners.Visible = false;
             grpProperty.Visible = false;
+            grdOwners.Visible = false;
 
             txtPropertyID.Text = PropertySysv2.Property.getNextPropId().ToString("00000");
             txtRent.Focus();
@@ -73,25 +74,6 @@ namespace PropertySysv2
             //go back to previousform
             parent.Show();
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            //check that surname is entered
-            if (txtOwnerSearch.Text.Equals(""))
-            {
-                MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtOwnerSearch.Focus();
-                return;
-            }
-
-            DataSet ds = new DataSet();
-
-            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtSurname.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
-            grdOwners.AllowUserToAddRows = false;
-            grdOwners.Visible = true;
-      
-        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
@@ -102,14 +84,23 @@ namespace PropertySysv2
             txtOwnerID.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtForename.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[1].Value.ToString();
             txtSurname.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[2].Value.ToString();
-            txtBoxAdd1.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[3].Value.ToString();
-            txtBoxAdd2.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[4].Value.ToString();
-            txtBoxCounty.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            txtAdd1.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtAdd2.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtCounty.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[5].Value.ToString();
             txtPhone.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[6].Value.ToString();
             txtEmail.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[7].Value.ToString();
 
             grpOwners.Visible = true;
             grpProperty.Visible = true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+
+            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
+            grdOwners.AllowUserToAddRows = false;
+            grdOwners.Visible = true;
         }
     }
 }

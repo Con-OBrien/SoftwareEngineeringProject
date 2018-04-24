@@ -178,7 +178,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT Street, Town, County, Bedrooms, Bathrooms, RentPerMonth FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds;
+            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds;
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
@@ -246,10 +246,10 @@ namespace PropertySysv2
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            String strSQL = "UPDATE Properties SET RentPerMonth = " + this.rentpermonth.ToString() + ", Bedrooms = " + 
+            String strSQL = "UPDATE Properties SET RentPerMonth = " + this.rentpermonth.ToString() + ", Bedrooms = " +
                 this.bedrooms.ToString() + ", Bathrooms = " + this.bathrooms.ToString() + ", HouseType = '" + this.housetype.ToUpper() +
                 "', Street = '" + this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" +
-                this.county.ToUpper() + "', Owner_ID = " + this.owner_id + " WHERE Prop_ID = " + this.prop_id;
+                this.county.ToUpper() + "'";
 
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
             cmd.ExecuteNonQuery();
