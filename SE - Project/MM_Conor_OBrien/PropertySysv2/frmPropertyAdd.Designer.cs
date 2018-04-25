@@ -438,7 +438,7 @@
             this.grdOwners.Size = new System.Drawing.Size(502, 123);
             this.grdOwners.TabIndex = 40;
             this.grdOwners.Visible = false;
-            this.grdOwners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdOwners_CellContentClick);
+            this.grdOwners.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdOwners_CellClick);
             // 
             // btnSearch
             // 

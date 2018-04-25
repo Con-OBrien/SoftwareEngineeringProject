@@ -79,7 +79,7 @@ namespace PropertySysv2
 
         }
 
-        private void grdOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtOwnerID.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtForename.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[1].Value.ToString();

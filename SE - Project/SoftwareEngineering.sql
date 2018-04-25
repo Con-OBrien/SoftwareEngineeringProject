@@ -10,13 +10,14 @@ DROP TABLE Owners;
 
 CREATE TABLE Owners
 (Owner_ID numeric(3),
-Forename char(15) NOT NULL,
-Surname char(15) NOT NULL,
-Street char(20) NOT NULL,
-Town char(20) NOT NULL,
-County char(20) NOT NULL,
-Phone char(15),
-Email char(50) NOT NULL,
+Forename varchar2(15) NOT NULL,
+Surname varchar2(15) NOT NULL,
+Street varchar2(20) NOT NULL,
+Town varchar2(20) NOT NULL,
+County varchar2(20) NOT NULL,
+Phone varchar2(15),
+Email varchar2(50) NOT NULL,
+Activity char(1) NOT NULL,
 CONSTRAINT pk_Owners PRIMARY KEY (Owner_ID));
 
 CREATE TABLE Properties
@@ -24,22 +25,24 @@ CREATE TABLE Properties
 RentPerMonth decimal NOT NULL,
 Bedrooms int NOT NULL,
 Bathrooms int NOT NULL,
-HouseType char(15) NOT NULL,
-Street char(20) NOT NULL,
+HouseType varchar2(25) NOT NULL,
+Street varchar2(20) NOT NULL,
 Town varchar(20) NOT NULL,
 County char(15) NOT NULL,
+Activity char(1) NOT NULL,
 Owner_ID numeric(3),
 CONSTRAINT pk_Properties PRIMARY KEY (Prop_ID),
 CONSTRAINT fk_Properties_Owners FOREIGN KEY (Owner_ID) REFERENCES Owners);
 
 CREATE TABLE Tenants
 (Tenant_ID numeric(3),
-Forename char(15) NOT NULL,
-Surname char(15) NOT NULL,
-Phone varchar(15) NOT NULL,
-Email char(30) NOT NULL,
+Forename varchar2(15) NOT NULL,
+Surname varchar2(15) NOT NULL,
+Phone varchar2(15) NOT NULL,
+Email varchar2(30) NOT NULL,
 DOB date,
 Prop_ID numeric(3),
+Activity char(1) NOT NULL,
 CONSTRAINT pk_Tenant PRIMARY KEY (Tenant_ID),
 CONSTRAINT fk_Tenant_Properties FOREIGN KEY (Prop_ID) REFERENCES Properties);
 

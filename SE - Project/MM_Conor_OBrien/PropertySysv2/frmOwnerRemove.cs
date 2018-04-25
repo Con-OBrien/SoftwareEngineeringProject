@@ -130,6 +130,8 @@ namespace PropertySysv2
             txtPhone.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[6].Value.ToString();
             txtEmail.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[7].Value.ToString();
 
+            Height = 530;
+
             grpOwners.Visible = true;
         }
     }

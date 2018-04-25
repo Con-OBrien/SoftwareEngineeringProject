@@ -19,6 +19,7 @@ namespace PropertySysv2
         private string county;
         private int phone;
         private string email;
+        private string activity;
 
 
         // no argument constructor
@@ -32,6 +33,7 @@ namespace PropertySysv2
             county = "";
             phone = 0;
             email = "";
+            activity = "";
         }
 
 
@@ -68,6 +70,10 @@ namespace PropertySysv2
         {
             this.email = Email;
         }
+        public void setActivity(String Activity)
+        {
+            this.activity = Activity;
+        }
 
 
         //Define getters
@@ -103,6 +109,10 @@ namespace PropertySysv2
         public String getEmail()
         {
             return email;
+        }
+        public String getActivity()
+        {
+            return activity;
         }
         public void getOwner(int Oid)
         {
@@ -200,7 +210,7 @@ namespace PropertySysv2
             String strSQL = "INSERT INTO Owners VALUES(" + this.owner_id.ToString() +
                 ",'" + this.forename.ToUpper().ToString() + "','" +  this.surname.ToUpper() + "','" +
                   this.street.ToUpper() + "','" + this.town.ToUpper() + "','" + this.county.ToUpper() + "',"
-                 + this.phone.ToString() + ",'" + this.email.ToUpper() + "')";
+                 + this.phone.ToString() + ",'" + this.email.ToUpper() + "','" + this.activity.ToUpper() + "')";
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -230,7 +240,7 @@ namespace PropertySysv2
             //Define SQL query to INSERT stock record
             String strSQL = "UPDATE Owners SET Surname = '" + this.surname.ToUpper() + "', Forename = '" + this.forename.ToUpper() + "', Street = '" +
                   this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" + this.county.ToUpper() + "', Phone = "
-                 + this.phone.ToString() + ", Email = '" + this.email.ToUpper() + "'  WHERE Owner_ID = " + this.owner_id.ToString();
+                 + this.phone.ToString() + ", Email = '" + this.email.ToUpper() + "', Activity = '" + this.activity.ToUpper().ToString() + "' WHERE Owner_ID = " + this.owner_id.ToString();
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -264,7 +274,7 @@ namespace PropertySysv2
             myConn.Open();
 
             //Define SQL query to DELETE stock record
-            String strSQL = "DELETE FROM Owners WHERE Owner_ID = " + this.owner_id.ToString();
+            String strSQL = "UPDATE Owners SET Activity = '" + this.activity.ToString() + "' WHERE Owner_ID = " + this.owner_id.ToString();
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

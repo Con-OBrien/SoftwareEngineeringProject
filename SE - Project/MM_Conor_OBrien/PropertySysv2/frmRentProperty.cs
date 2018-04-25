@@ -125,12 +125,14 @@ namespace PropertySysv2
 
         private void btnYes_Click(object sender, EventArgs e)
         {
+            grpTenants.Visible = false;
             grpTenantSelect.Visible = true;
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
             grpTenants.Visible = true;
+            grpTenantSelect.Visible = false;
         }
 
         private void btnRent_Click(object sender, EventArgs e)
@@ -152,6 +154,12 @@ namespace PropertySysv2
             newBooking.makeBooking();
 
             MessageBox.Show("Booking has been made and the landlord has been notified of your booking! Thank you using our service!");
+            grpDates.Visible = false;
+            grpTenants.Visible = false;
+            grpTenantSelect.Visible = false;
+            lblTenant.Visible = false;
+            btnYes.Visible = false;
+            btnNo.Visible = false;
         }
 
         private void cboTenant_SelectedIndexChanged(object sender, EventArgs e)

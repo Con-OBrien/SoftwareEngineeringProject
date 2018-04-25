@@ -83,6 +83,7 @@ namespace PropertySysv2
             myOwners.setCounty(txtBoxCounty.Text);
             myOwners.setPhone(Convert.ToInt32(txtPhone.Text));
             myOwners.setEmail(txtEmail.Text);
+            myOwners.setActivity(txtActivity.Text);
 
             //INSERT Stock record into stock table
             myOwners.updOwner();
@@ -120,6 +121,7 @@ namespace PropertySysv2
             txtBoxCounty.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[5].Value.ToString();
             txtPhone.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[6].Value.ToString();
             txtEmail.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            txtActivity.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[8].Value.ToString();
 
             grpOwners.Visible = true;
         }

@@ -47,6 +47,7 @@ namespace PropertySysv2
             myOwners.setCounty(txtBoxCounty.Text);
             myOwners.setPhone(Convert.ToInt32(txtPhone.Text));
             myOwners.setEmail(txtEmail.Text);
+            myOwners.setActivity("A");
 
             //INSERT Stock record into stock table
             myOwners.regOwner();
@@ -65,7 +66,7 @@ namespace PropertySysv2
 
 
             txtOwnerID.Text = PropertySysv2.Owner.getNextOwnerId().ToString("00000");
-            txtSurname.Focus();
+            txtForename.Focus();
 
         }
 

@@ -1,1 +1,2 @@
-change tenant chars to varchar2's
+change sql commands where a WHERE clause is used to LIKE
+edit remove and update functions to implement activity
