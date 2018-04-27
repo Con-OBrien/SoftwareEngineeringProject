@@ -19,6 +19,7 @@ namespace PropertySysv2
         private string street;
         private string town;
         private string county;
+        private string activity;
         private int owner_id;
 
         public Property()
@@ -29,7 +30,8 @@ namespace PropertySysv2
             housetype = "";
             street = "";
             town = "";
-            county = "";     
+            county = "";
+            activity = "";
         }
 
         //Define setters
@@ -64,6 +66,11 @@ namespace PropertySysv2
         public void setCounty(String County)
         {
             this.county = County;
+        }
+
+        public void setActivity(String Activity)
+        {
+            this.activity = Activity;
         }
 
         internal void getSpecificProps(int v)
@@ -108,6 +115,10 @@ namespace PropertySysv2
         public String getCounty()
         {
             return county;
+        }
+        public String getActivity()
+        {
+            return activity;
         }
         public int getOwnerId()
         {
@@ -232,7 +243,7 @@ namespace PropertySysv2
                 "," + this.rentpermonth.ToString() + "," + this.bedrooms.ToString() +
                 "," + this.bathrooms.ToString() + ",'" + this.housetype.ToUpper() +
                 "','" + this.street.ToUpper().ToString() + "','" + this.town.ToUpper() + "','" +
-                this.county.ToUpper() + "'," + this.owner_id.ToString() + ")"; 
+                this.county.ToUpper() + "','" + this.activity.ToUpper() + "'," + this.owner_id.ToString() + ")"; 
 
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
             cmd.ExecuteNonQuery();
@@ -249,7 +260,7 @@ namespace PropertySysv2
             String strSQL = "UPDATE Properties SET RentPerMonth = " + this.rentpermonth.ToString() + ", Bedrooms = " +
                 this.bedrooms.ToString() + ", Bathrooms = " + this.bathrooms.ToString() + ", HouseType = '" + this.housetype.ToUpper() +
                 "', Street = '" + this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" +
-                this.county.ToUpper() + "'";
+                this.county.ToUpper() + "', Activity = '" + this.activity.ToUpper() + "'";
 
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
             cmd.ExecuteNonQuery();

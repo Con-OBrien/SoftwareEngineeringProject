@@ -44,6 +44,7 @@ namespace PropertySysv2
             myProps.setStreet(txtBoxAdd1.Text);
             myProps.setTown(txtBoxAdd2.Text);
             myProps.setCounty(txtBoxCounty.Text);
+            myProps.setActivity("A");
             myProps.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
 
             myProps.regProp();

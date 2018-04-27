@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grpProperties = new System.Windows.Forms.GroupBox();
-            this.txtOwnerId = new System.Windows.Forms.TextBox();
+            this.txtActivity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBedrooms = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,6 +55,8 @@
             this.cboTown = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblOwnerID = new System.Windows.Forms.Label();
+            this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.grpProperties.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
@@ -62,7 +64,9 @@
             // 
             // grpProperties
             // 
-            this.grpProperties.Controls.Add(this.txtOwnerId);
+            this.grpProperties.Controls.Add(this.txtOwnerID);
+            this.grpProperties.Controls.Add(this.lblOwnerID);
+            this.grpProperties.Controls.Add(this.txtActivity);
             this.grpProperties.Controls.Add(this.label2);
             this.grpProperties.Controls.Add(this.txtBedrooms);
             this.grpProperties.Controls.Add(this.label6);
@@ -81,28 +85,27 @@
             this.grpProperties.Controls.Add(this.label13);
             this.grpProperties.Location = new System.Drawing.Point(539, 37);
             this.grpProperties.Name = "grpProperties";
-            this.grpProperties.Size = new System.Drawing.Size(335, 332);
+            this.grpProperties.Size = new System.Drawing.Size(335, 367);
             this.grpProperties.TabIndex = 30;
             this.grpProperties.TabStop = false;
             this.grpProperties.Text = "Enter Property Details";
             this.grpProperties.Visible = false;
             // 
-            // txtOwnerId
+            // txtActivity
             // 
-            this.txtOwnerId.Enabled = false;
-            this.txtOwnerId.Location = new System.Drawing.Point(95, 257);
-            this.txtOwnerId.Name = "txtOwnerId";
-            this.txtOwnerId.Size = new System.Drawing.Size(122, 20);
-            this.txtOwnerId.TabIndex = 34;
+            this.txtActivity.Location = new System.Drawing.Point(95, 257);
+            this.txtActivity.Name = "txtActivity";
+            this.txtActivity.Size = new System.Drawing.Size(122, 20);
+            this.txtActivity.TabIndex = 34;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 260);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 33;
-            this.label2.Text = "Owner ID:";
+            this.label2.Text = "Activity:";
             // 
             // txtBedrooms
             // 
@@ -154,7 +157,7 @@
             // 
             // updProperty
             // 
-            this.updProperty.Location = new System.Drawing.Point(9, 293);
+            this.updProperty.Location = new System.Drawing.Point(9, 328);
             this.updProperty.Name = "updProperty";
             this.updProperty.Size = new System.Drawing.Size(109, 33);
             this.updProperty.TabIndex = 26;
@@ -316,11 +319,28 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "Search Requirements";
             // 
+            // lblOwnerID
+            // 
+            this.lblOwnerID.AutoSize = true;
+            this.lblOwnerID.Location = new System.Drawing.Point(6, 289);
+            this.lblOwnerID.Name = "lblOwnerID";
+            this.lblOwnerID.Size = new System.Drawing.Size(55, 13);
+            this.lblOwnerID.TabIndex = 35;
+            this.lblOwnerID.Text = "Owner ID:";
+            // 
+            // txtOwnerID
+            // 
+            this.txtOwnerID.Enabled = false;
+            this.txtOwnerID.Location = new System.Drawing.Point(94, 289);
+            this.txtOwnerID.Name = "txtOwnerID";
+            this.txtOwnerID.Size = new System.Drawing.Size(123, 20);
+            this.txtOwnerID.TabIndex = 36;
+            // 
             // frmPropertyUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 379);
+            this.ClientSize = new System.Drawing.Size(922, 416);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblBeds);
             this.Controls.Add(this.cboBeds);
@@ -363,7 +383,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.TextBox txtOwnerId;
+        private System.Windows.Forms.TextBox txtActivity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView grdProperties;
         private System.Windows.Forms.Button btnSearch;
@@ -372,5 +392,7 @@
         private System.Windows.Forms.ComboBox cboTown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtOwnerID;
+        private System.Windows.Forms.Label lblOwnerID;
     }
 }

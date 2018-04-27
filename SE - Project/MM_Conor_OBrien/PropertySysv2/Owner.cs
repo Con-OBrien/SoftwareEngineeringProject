@@ -223,7 +223,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT * FROM Owners WHERE Surname = '" + Surname + "'";
+            String strSQL = "SELECT * FROM Owners WHERE Surname = '" + Surname + "' AND Activity = 'A'";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
@@ -274,7 +274,7 @@ namespace PropertySysv2
             myConn.Open();
 
             //Define SQL query to DELETE stock record
-            String strSQL = "UPDATE Owners SET Activity = '" + this.activity.ToString() + "' WHERE Owner_ID = " + this.owner_id.ToString();
+            String strSQL = "UPDATE Owners SET Activity = 'I' WHERE Owner_ID = " + this.owner_id.ToString();
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

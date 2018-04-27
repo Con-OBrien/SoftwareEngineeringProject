@@ -34,7 +34,7 @@ namespace PropertySysv2
         private void updProperty_Click(object sender, EventArgs e)
         {
             // validate data
-            if (txtRent.Text.Equals("") || txtBedrooms.Text.Equals("") || txtBathrooms.Text.Equals("") || txtHouse.Text.Equals("") || txtAdd1.Text.Equals("") || txtAdd2.Text.Equals("") || txtCounty.Text.Equals("") || txtOwnerId.Text.Equals(""))
+            if (txtRent.Text.Equals("") || txtBedrooms.Text.Equals("") || txtBathrooms.Text.Equals("") || txtHouse.Text.Equals("") || txtAdd1.Text.Equals("") || txtAdd2.Text.Equals("") || txtCounty.Text.Equals("") || txtActivity.Text.Equals(""))
             {
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -55,7 +55,8 @@ namespace PropertySysv2
             myProps.setStreet(txtAdd1.Text);
             myProps.setTown(txtAdd2.Text);
             myProps.setCounty(txtCounty.Text);
-            myProps.setOwnerId(Convert.ToInt32(txtOwnerId.Text));
+            myProps.setActivity(txtActivity.Text);
+            myProps.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
 
             //INSERT Stock record into stock table
             myProps.updProp();
@@ -68,7 +69,8 @@ namespace PropertySysv2
             txtAdd1.Text = "";
             txtAdd2.Text = "";
             txtCounty.Text = "";
-            txtOwnerId.Text = "";
+            txtActivity.Text = "";
+            txtOwnerID.Text = "";
 
             grdProperties.Visible = false;
             grpProperties.Visible = false;
@@ -80,7 +82,7 @@ namespace PropertySysv2
         private void btnSearch_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            grdProperties.DataSource = PropertySysv2.Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
 
             grdProperties.Visible = true;
             grpProperties.Visible = true;
@@ -107,7 +109,8 @@ namespace PropertySysv2
             txtAdd1.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[5].Value.ToString();
             txtAdd2.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[6].Value.ToString();
             txtCounty.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[7].Value.ToString();
-            txtOwnerId.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[8].Value.ToString();
+            txtActivity.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[8].Value.ToString();
+            txtOwnerID.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[9].Value.ToString();
 
             grpProperties.Visible = true;
         }

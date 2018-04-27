@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.btnRmv = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.grpProperties = new System.Windows.Forms.GroupBox();
             this.txtOwnerId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,8 +48,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblBeds = new System.Windows.Forms.Label();
+            this.cboBeds = new System.Windows.Forms.ComboBox();
+            this.cboTown = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.grdProperties = new System.Windows.Forms.DataGridView();
+            this.txtPropID = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.grpProperties.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRmv
@@ -66,29 +72,13 @@
             this.btnRmv.Visible = false;
             this.btnRmv.Click += new System.EventHandler(this.btnRmv_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(111, 34);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(133, 20);
-            this.txtSearch.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Enter PropertyID:";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(479, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(633, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,18 +89,9 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(16, 60);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(97, 28);
-            this.btnSearch.TabIndex = 26;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // grpProperties
             // 
+            this.grpProperties.Controls.Add(this.txtPropID);
             this.grpProperties.Controls.Add(this.txtOwnerId);
             this.grpProperties.Controls.Add(this.label2);
             this.grpProperties.Controls.Add(this.btnRmv);
@@ -128,7 +109,7 @@
             this.grpProperties.Controls.Add(this.label11);
             this.grpProperties.Controls.Add(this.label12);
             this.grpProperties.Controls.Add(this.label13);
-            this.grpProperties.Location = new System.Drawing.Point(16, 106);
+            this.grpProperties.Location = new System.Drawing.Point(24, 272);
             this.grpProperties.Name = "grpProperties";
             this.grpProperties.Size = new System.Drawing.Size(335, 332);
             this.grpProperties.TabIndex = 31;
@@ -272,16 +253,101 @@
             this.label13.TabIndex = 18;
             this.label13.Text = "Rent per month:";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(15, 142);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(54, 19);
+            this.btnSearch.TabIndex = 53;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // lblBeds
+            // 
+            this.lblBeds.AutoSize = true;
+            this.lblBeds.Location = new System.Drawing.Point(12, 112);
+            this.lblBeds.Name = "lblBeds";
+            this.lblBeds.Size = new System.Drawing.Size(31, 13);
+            this.lblBeds.TabIndex = 52;
+            this.lblBeds.Text = "Beds";
+            // 
+            // cboBeds
+            // 
+            this.cboBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBeds.FormattingEnabled = true;
+            this.cboBeds.Location = new System.Drawing.Point(49, 109);
+            this.cboBeds.Name = "cboBeds";
+            this.cboBeds.Size = new System.Drawing.Size(121, 21);
+            this.cboBeds.TabIndex = 51;
+            // 
+            // cboTown
+            // 
+            this.cboTown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTown.FormattingEnabled = true;
+            this.cboTown.Location = new System.Drawing.Point(49, 67);
+            this.cboTown.Name = "cboTown";
+            this.cboTown.Size = new System.Drawing.Size(121, 21);
+            this.cboTown.TabIndex = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Town";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Search Requirements";
+            // 
+            // grdProperties
+            // 
+            this.grdProperties.AllowUserToAddRows = false;
+            this.grdProperties.AllowUserToDeleteRows = false;
+            this.grdProperties.AllowUserToResizeColumns = false;
+            this.grdProperties.AllowUserToResizeRows = false;
+            this.grdProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProperties.GridColor = System.Drawing.SystemColors.Info;
+            this.grdProperties.Location = new System.Drawing.Point(15, 167);
+            this.grdProperties.MultiSelect = false;
+            this.grdProperties.Name = "grdProperties";
+            this.grdProperties.ReadOnly = true;
+            this.grdProperties.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.grdProperties.Size = new System.Drawing.Size(502, 100);
+            this.grdProperties.TabIndex = 47;
+            this.grdProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellContentClick);
+            // 
+            // txtPropID
+            // 
+            this.txtPropID.Location = new System.Drawing.Point(225, 19);
+            this.txtPropID.Name = "txtPropID";
+            this.txtPropID.Size = new System.Drawing.Size(14, 20);
+            this.txtPropID.TabIndex = 35;
+            this.txtPropID.Visible = false;
+            // 
             // frmPropertyRemove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 454);
-            this.Controls.Add(this.grpProperties);
+            this.ClientSize = new System.Drawing.Size(633, 608);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grpProperties);
+            this.Controls.Add(this.lblBeds);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.cboBeds);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cboTown);
+            this.Controls.Add(this.grdProperties);
+            this.Controls.Add(this.label1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPropertyRemove";
             this.Text = "Remove Property";
@@ -289,6 +355,7 @@
             this.menuStrip1.PerformLayout();
             this.grpProperties.ResumeLayout(false);
             this.grpProperties.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,11 +364,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnRmv;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox grpProperties;
         private System.Windows.Forms.TextBox txtOwnerId;
         private System.Windows.Forms.Label label2;
@@ -319,5 +383,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblBeds;
+        private System.Windows.Forms.ComboBox cboBeds;
+        private System.Windows.Forms.ComboBox cboTown;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView grdProperties;
+        private System.Windows.Forms.TextBox txtPropID;
     }
 }

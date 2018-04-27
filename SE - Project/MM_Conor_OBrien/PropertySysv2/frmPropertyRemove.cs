@@ -28,7 +28,7 @@ namespace PropertySysv2
 
             //instantiate Stock Object
             Property myProperty = new Property();
-            myProperty.setPropId(Convert.ToInt32(txtSearch.Text));
+            myProperty.setPropId(Convert.ToInt32(txtPropID.Text));
             myProperty.setRentPerMonth(Convert.ToInt32(txtRent.Text));
             myProperty.setBedrooms(Convert.ToInt32(txtBedrooms.Text));
             myProperty.setStreet(txtAdd1.Text);
@@ -72,8 +72,8 @@ namespace PropertySysv2
                 MessageBox.Show("Search field is empty!");
                 return;
             }
-           
-            
+
+
 
             //check that owner number is entered
             if (txtSearch.Text.Equals(""))
@@ -89,8 +89,7 @@ namespace PropertySysv2
 
             if (updProp.getPropId().Equals(0))
             {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
+                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);             
                 return;
             }
 
@@ -108,6 +107,11 @@ namespace PropertySysv2
             //display details
             grpProperties.Visible = true;
             btnRmv.Visible = true;
+        }
+
+        private void grdProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
