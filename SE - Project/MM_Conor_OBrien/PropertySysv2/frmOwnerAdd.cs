@@ -35,9 +35,15 @@ namespace PropertySysv2
 
             }
 
-          
-      
-            //instantiate Stock Object
+            foreach(char c in txtPhone.Text)
+            {
+                if (c < '0' || c > '9')
+                    MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+            }
+    
+            //instantiate Owner Object
             Owner myOwners = new Owner();
             myOwners.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
             myOwners.setForename(txtForename.Text);
@@ -49,7 +55,7 @@ namespace PropertySysv2
             myOwners.setEmail(txtEmail.Text);
             myOwners.setActivity("A");
 
-            //INSERT Stock record into stock table
+            //INSERT Owner record into table
             myOwners.regOwner();
 
             //Display Confirmation Message
@@ -76,27 +82,13 @@ namespace PropertySysv2
             this.Close();
 
             //go back to previousform
-            parent.Show();
-                                         
-
+            parent.Show();                                         
         }
 
         private void frmOwnerAdd_Load(object sender, EventArgs e)
         {
-            //get the next OwnerId
-
-           
+            //get the next OwnerId           
             txtOwnerID.Text = PropertySysv2.Owner.getNextOwnerId().ToString("00000");
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpOwner_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -32,6 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpProperties = new System.Windows.Forms.GroupBox();
+            this.txtActivity = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPropID = new System.Windows.Forms.TextBox();
             this.txtOwnerId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBedrooms = new System.Windows.Forms.TextBox();
@@ -55,7 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grdProperties = new System.Windows.Forms.DataGridView();
-            this.txtPropID = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.grpProperties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
@@ -63,7 +65,7 @@
             // 
             // btnRmv
             // 
-            this.btnRmv.Location = new System.Drawing.Point(9, 298);
+            this.btnRmv.Location = new System.Drawing.Point(9, 317);
             this.btnRmv.Name = "btnRmv";
             this.btnRmv.Size = new System.Drawing.Size(97, 28);
             this.btnRmv.TabIndex = 5;
@@ -91,6 +93,8 @@
             // 
             // grpProperties
             // 
+            this.grpProperties.Controls.Add(this.txtActivity);
+            this.grpProperties.Controls.Add(this.label4);
             this.grpProperties.Controls.Add(this.txtPropID);
             this.grpProperties.Controls.Add(this.txtOwnerId);
             this.grpProperties.Controls.Add(this.label2);
@@ -111,16 +115,40 @@
             this.grpProperties.Controls.Add(this.label13);
             this.grpProperties.Location = new System.Drawing.Point(24, 272);
             this.grpProperties.Name = "grpProperties";
-            this.grpProperties.Size = new System.Drawing.Size(335, 332);
+            this.grpProperties.Size = new System.Drawing.Size(335, 355);
             this.grpProperties.TabIndex = 31;
             this.grpProperties.TabStop = false;
             this.grpProperties.Text = "Enter Property Details";
             this.grpProperties.Visible = false;
             // 
+            // txtActivity
+            // 
+            this.txtActivity.Location = new System.Drawing.Point(95, 254);
+            this.txtActivity.Name = "txtActivity";
+            this.txtActivity.Size = new System.Drawing.Size(122, 20);
+            this.txtActivity.TabIndex = 54;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 257);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "Activity:";
+            // 
+            // txtPropID
+            // 
+            this.txtPropID.Location = new System.Drawing.Point(225, 19);
+            this.txtPropID.Name = "txtPropID";
+            this.txtPropID.Size = new System.Drawing.Size(14, 20);
+            this.txtPropID.TabIndex = 35;
+            this.txtPropID.Visible = false;
+            // 
             // txtOwnerId
             // 
             this.txtOwnerId.Enabled = false;
-            this.txtOwnerId.Location = new System.Drawing.Point(95, 257);
+            this.txtOwnerId.Location = new System.Drawing.Point(95, 285);
             this.txtOwnerId.Name = "txtOwnerId";
             this.txtOwnerId.Size = new System.Drawing.Size(122, 20);
             this.txtOwnerId.TabIndex = 34;
@@ -128,7 +156,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 260);
+            this.label2.Location = new System.Drawing.Point(6, 288);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 33;
@@ -326,19 +354,11 @@
             this.grdProperties.TabIndex = 47;
             this.grdProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellContentClick);
             // 
-            // txtPropID
-            // 
-            this.txtPropID.Location = new System.Drawing.Point(225, 19);
-            this.txtPropID.Name = "txtPropID";
-            this.txtPropID.Size = new System.Drawing.Size(14, 20);
-            this.txtPropID.TabIndex = 35;
-            this.txtPropID.Visible = false;
-            // 
             // frmPropertyRemove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 608);
+            this.ClientSize = new System.Drawing.Size(633, 641);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.grpProperties);
             this.Controls.Add(this.lblBeds);
@@ -351,6 +371,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPropertyRemove";
             this.Text = "Remove Property";
+            this.Load += new System.EventHandler(this.frmPropertyRemove_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpProperties.ResumeLayout(false);
@@ -391,5 +412,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView grdProperties;
         private System.Windows.Forms.TextBox txtPropID;
+        private System.Windows.Forms.TextBox txtActivity;
+        private System.Windows.Forms.Label label4;
     }
 }

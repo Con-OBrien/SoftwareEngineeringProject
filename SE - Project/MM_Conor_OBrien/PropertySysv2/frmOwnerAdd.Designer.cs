@@ -102,7 +102,6 @@
             this.grpOwner.TabIndex = 18;
             this.grpOwner.TabStop = false;
             this.grpOwner.Text = "Enter Owner Details";
-            this.grpOwner.Enter += new System.EventHandler(this.grpOwner_Enter);
             // 
             // txtForename
             // 
@@ -175,7 +174,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
             this.txtEmail.TabIndex = 6;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtPhone
             // 

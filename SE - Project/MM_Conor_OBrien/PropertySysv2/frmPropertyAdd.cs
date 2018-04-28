@@ -24,17 +24,23 @@ namespace PropertySysv2
         }
         private void frmPropertyAdd_Load(object sender, EventArgs e)
         {
+            //Load PropertyID
+
             txtPropertyID.Text = PropertySysv2.Property.getNextPropId().ToString("00000");
         }
        
         private void btnPropertyAdd_Click(object sender, EventArgs e)
         {
+
+            //Validate Data
             if (txtRent.Text.Equals("") || txtBedroom.Text.Equals("") || txtBathroom.Text.Equals("") || txtBoxHouse.Text.Equals("") || txtBoxAdd1.Text.Equals("") || txtBoxAdd2.Text.Equals("") || txtBoxCounty.Text.Equals(""))
             {
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
+
+            //Instantiate Property
             Property myProps = new Property();
             myProps.setPropId(Convert.ToInt32(txtPropertyID.Text));
             myProps.setRentPerMonth(Convert.ToInt32(txtRent.Text));
@@ -47,10 +53,13 @@ namespace PropertySysv2
             myProps.setActivity("A");
             myProps.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
 
+            //INSERT Property into Properties Table
             myProps.regProp();
 
+            //Display Confirmation Message
             MessageBox.Show("Property Added to System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            //Reset UI
             txtRent.Text = "";
             txtBedroom.Text = "";
             txtBathroom.Text = "";
@@ -82,6 +91,8 @@ namespace PropertySysv2
 
         private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Populate text boxes with selected data from DataGrid
+
             txtOwnerID.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtForename.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[1].Value.ToString();
             txtSurname.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[2].Value.ToString();
@@ -97,6 +108,7 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //Populate DataGrid
             DataSet ds = new DataSet();
 
             grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];

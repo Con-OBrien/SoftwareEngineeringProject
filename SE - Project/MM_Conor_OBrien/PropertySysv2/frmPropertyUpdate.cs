@@ -33,20 +33,18 @@ namespace PropertySysv2
 
         private void updProperty_Click(object sender, EventArgs e)
         {
-            // validate data
+            //Validate Data
             if (txtRent.Text.Equals("") || txtBedrooms.Text.Equals("") || txtBathrooms.Text.Equals("") || txtHouse.Text.Equals("") || txtAdd1.Text.Equals("") || txtAdd2.Text.Equals("") || txtCounty.Text.Equals("") || txtActivity.Text.Equals(""))
             {
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
-            }
-
-            // Save data in Owners File
+            }        
 
             //Display Confirmation message
             MessageBox.Show("Owner Updated In System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //instantiate Stock Object
+            //Instantiate Property Object
             Property myProps = new Property();
             myProps.setRentPerMonth(Convert.ToInt32(txtRent.Text));
             myProps.setBedrooms(Convert.ToInt32(txtBedrooms.Text));
@@ -58,10 +56,10 @@ namespace PropertySysv2
             myProps.setActivity(txtActivity.Text);
             myProps.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
 
-            //INSERT Stock record into stock table
+            //INSERT Property record into Property Table
             myProps.updProp();
 
-            //reset UI
+            //Reset UI
             txtRent.Text = "";
             txtBedrooms.Text = "";
             txtBathrooms.Text = "";
@@ -81,6 +79,7 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //Populate DataGrid
             DataSet ds = new DataSet();
             grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
 
@@ -90,6 +89,7 @@ namespace PropertySysv2
 
         private void frmPropertyUpdate_Load(object sender, EventArgs e)
         {
+            //Fill combo boxes with options
             DataSet ds = new DataSet();
             ds = Property.getTown(ds);
 
@@ -102,6 +102,7 @@ namespace PropertySysv2
 
         private void grdProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Populate Text boxes with selected data from DataGrid 
             txtRent.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[1].Value.ToString();
             txtBedrooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[2].Value.ToString();
             txtBathrooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[3].Value.ToString();

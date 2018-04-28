@@ -173,6 +173,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmCalculateRent";
             this.Text = "frmCalculateRent";
+            this.Load += new System.EventHandler(this.frmCalculateRent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTenants2)).EndInit();
             this.menuStrip1.ResumeLayout(false);

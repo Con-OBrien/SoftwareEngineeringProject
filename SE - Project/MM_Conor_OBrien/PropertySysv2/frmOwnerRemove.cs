@@ -34,7 +34,7 @@ namespace PropertySysv2
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            //check that owner number is entered
+            //check that Owner Surname is entered
             if (txtOwnerSearch.Text.Equals(""))
             {
                 MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -42,7 +42,7 @@ namespace PropertySysv2
                 return;
             }
 
-            //find owner details
+            //find Owner details
             Owner rmvOwner = new Owner();
             rmvOwner.getOwner(Convert.ToInt32(txtOwnerSearch.Text));
 
@@ -81,7 +81,7 @@ namespace PropertySysv2
             //Display Confirmation message
             MessageBox.Show("Owner Removed From System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //instantiate Stock Object
+            //instantiate Owner Object
             Owner myOwners = new Owner();
             myOwners.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
             myOwners.setForename(txtForename.Text);
@@ -92,7 +92,7 @@ namespace PropertySysv2
             myOwners.setPhone(Convert.ToInt32(txtPhone.Text));
             myOwners.setEmail(txtEmail.Text);
 
-            //DELETE Stock record into stock table
+            //Set Owner Activity as Inactive
             myOwners.rmvOwner();
 
             //reset UI
@@ -113,6 +113,9 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
+            //Load DataGrid with matching data
+
             DataSet ds = new DataSet();
             grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
 
@@ -121,6 +124,8 @@ namespace PropertySysv2
 
         private void grdOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Load Text boxes with data from selected object
+
             txtOwnerID.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtForename.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[1].Value.ToString();
             txtSurname.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[2].Value.ToString();
@@ -134,5 +139,6 @@ namespace PropertySysv2
 
             grpOwners.Visible = true;
         }
+
     }
 }

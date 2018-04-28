@@ -39,9 +39,11 @@ namespace PropertySysv2
 
         private void frmRentProperty_Load(object sender, EventArgs e)
         {
+            //Load ID's
             txtBookingID.Text = PropertySysv2.Booking.getNextBookingId().ToString("00000");
             txtTenantID.Text = PropertySysv2.Tenant.getNextTenantId().ToString("00000");
 
+            //Load Combo Boxes
             DataSet ds = new DataSet();           
             ds = Property.getProp(ds);
 
@@ -62,10 +64,11 @@ namespace PropertySysv2
             {
                 return;
             }
-            
+            //Instantiate Property Object
             Property Prop = new Property();
             Prop.getProperty(Convert.ToInt32(cboProperty.Text.Substring(0, 1)));
 
+            //Validates Property Data
             if (Prop.getPropId().Equals(0))
             {
                 MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,8 +86,9 @@ namespace PropertySysv2
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
             String dob = String.Format("{0:dd-MMM-yy}", dtpDOB.Value);
-            // validate data
+            //Validate Data
             if (txtSurname.Text.Equals("") || txtForename.Text.Equals("") || txtPhone.Text.Equals("") || txtEmail.Text.Equals("") || dtpDOB.Equals(""))
             {
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -92,7 +96,7 @@ namespace PropertySysv2
 
             }
  
-            //instantiate Stock Object
+            //Instantiate Tenant Object
             Tenant myTenant = new Tenant();
             myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
             myTenant.setForename(txtForename.Text);
@@ -102,15 +106,10 @@ namespace PropertySysv2
             myTenant.setDob(dob);
             myTenant.setPropID(Convert.ToInt32(txtPropID.Text));
 
-            //INSERT Stock record into stock table
+            //INSERT Tenant Record Into Tenant Table
             myTenant.regTenant();
-
-            //Booking newBooking = new Booking();
-          //  newBooking.setBookingId(Convert.ToInt32(txtBookingID.Text));
-            //newBooking.makeBooking();
-
-           
-            //reset UI
+          
+            //Reset UI
             txtPropID.Enabled = false;
             txtSurname.Enabled = false;
             txtForename.Enabled = false;
@@ -125,25 +124,27 @@ namespace PropertySysv2
 
         private void btnYes_Click(object sender, EventArgs e)
         {
+            //Hides Alternative Options
             grpTenants.Visible = false;
             grpTenantSelect.Visible = true;
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
+            //Hides Alternative Options
             grpTenants.Visible = true;
             grpTenantSelect.Visible = false;
         }
 
         private void btnRent_Click(object sender, EventArgs e)
         {
+            //Sets dates as string values
             dtpEnd.Value = dtpStart.Value.AddYears(1);
             String startDate = String.Format("{0:dd-MMM-yy}", dtpStart.Value);
             String endDate =     String.Format("{0:dd-MMM-yy}", dtpEnd.Value);
             String dateRegistered = String.Format("{0:dd-MMM-yy}", DateTime.Now);
             
-            
-
+            //Instantiate Booking Object
             Booking newBooking = new Booking();
             newBooking.setBookingId(Convert.ToInt32(txtBookingID.Text));
             newBooking.setDateRegistered(dateRegistered);
@@ -151,9 +152,13 @@ namespace PropertySysv2
             newBooking.setEndOfLease(endDate);
             newBooking.setPropId(Convert.ToInt32(txtPropID.Text));        
 
+            //INSERT Bookings record into Bookings table
             newBooking.makeBooking();
 
+            //Show Confirmation Message
             MessageBox.Show("Booking has been made and the landlord has been notified of your booking! Thank you using our service!");
+
+            //Reset UI
             grpDates.Visible = false;
             grpTenants.Visible = false;
             grpTenantSelect.Visible = false;
@@ -169,7 +174,7 @@ namespace PropertySysv2
             {
                 return;
             }
-            //find stock details
+            //Instantiate Tenant Objects
             Tenant newTenant = new Tenant();
             newTenant.getTenant(Convert.ToInt32(cboTenant.Text.Substring(0, 1)));
 
@@ -180,6 +185,7 @@ namespace PropertySysv2
                 return;
             }
             
+            //Populate Text Boxes 
             txtTenantID.Text = newTenant.getTenantId().ToString();
             txtForename.Text = newTenant.getForename();
             txtSurname.Text = newTenant.getSurname();
@@ -187,6 +193,7 @@ namespace PropertySysv2
             txtEmail.Text = newTenant.getEmail();
             dtpDOB.Text = newTenant.getDOB();
 
+            //Reset UI
             grpTenants.Visible = true;
             txtPropID.Enabled = false;
             txtTenantID.Enabled = false;

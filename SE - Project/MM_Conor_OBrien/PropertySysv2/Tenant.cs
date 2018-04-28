@@ -264,5 +264,21 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
+        public void rmvTenant()
+        {
+            //connect to database
+            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            myConn.Open();
+
+            //Define SQL query to UPDATE Owner Activity to Inactive
+            String strSQL = "UPDATE Tenants SET Activity = 'I' WHERE Tenant_ID = " + this.tenant_id.ToString();
+
+            //Execute the command
+            OracleCommand cmd = new OracleCommand(strSQL, myConn);
+            cmd.ExecuteNonQuery();
+
+            //close DB connection
+            myConn.Close();
+        }
     }
 }

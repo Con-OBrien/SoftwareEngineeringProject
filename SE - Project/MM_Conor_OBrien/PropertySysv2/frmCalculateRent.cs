@@ -44,5 +44,10 @@ namespace PropertySysv2
             //go back to previousform
             parent.Show();
         }
+
+        private void frmCalculateRent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

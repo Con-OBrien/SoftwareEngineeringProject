@@ -128,7 +128,7 @@ namespace PropertySysv2
             //execute the SQL query
             OracleDataReader dr = cmd.ExecuteReader();
 
-            //If first stockNo, assign value 1, otherwise add 1 to MAX value
+            //If first OwnerId, assign value 1, otherwise add 1 to MAX value
             if (dr.Read())
             {
                 setOwnerId(dr.GetInt32(0));
@@ -172,7 +172,7 @@ namespace PropertySysv2
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            //Define SQL query to get MAX stock_No used
+            //Define SQL query to get MAX Owner_ID used
             String strSQL = "SELECT MAX(Owner_ID) FROM Owners";
 
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -181,11 +181,11 @@ namespace PropertySysv2
             OracleDataReader dr = cmd.ExecuteReader();
 
             //read the first (only) value returned by query
-            //If first stockNo, assign value 1, otherwise add 1 to MAX value
+            //If first ownerID, assign value 1, otherwise add 1 to MAX value
             dr.Read();
 
             //An aggregate function always returns 1 row, even if it contains a NULL value
-            // If NULL, then there are no StockNo's in the Stock File - start at 1
+            // If NULL, then there are no OwnerID's in the Owner File - start at 1
             //Otherwise add 1 to the value read
 
             if (dr.IsDBNull(0))
@@ -196,7 +196,7 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
 
-            //return next StockNo
+            //return next OwnerID
             return intNextOwnerId;
         }
 
@@ -206,7 +206,7 @@ namespace PropertySysv2
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            //Define SQL query to INSERT stock record
+            //Define SQL query to INSERT Owner record
             String strSQL = "INSERT INTO Owners VALUES(" + this.owner_id.ToString() +
                 ",'" + this.forename.ToUpper().ToString() + "','" +  this.surname.ToUpper() + "','" +
                   this.street.ToUpper() + "','" + this.town.ToUpper() + "','" + this.county.ToUpper() + "',"
@@ -237,7 +237,7 @@ namespace PropertySysv2
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            //Define SQL query to INSERT stock record
+            //Define SQL query to UPDATE Owner record
             String strSQL = "UPDATE Owners SET Surname = '" + this.surname.ToUpper() + "', Forename = '" + this.forename.ToUpper() + "', Street = '" +
                   this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" + this.county.ToUpper() + "', Phone = "
                  + this.phone.ToString() + ", Email = '" + this.email.ToUpper() + "', Activity = '" + this.activity.ToUpper().ToString() + "' WHERE Owner_ID = " + this.owner_id.ToString();
@@ -255,7 +255,7 @@ namespace PropertySysv2
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            //Define SQL query to INSERT stock record
+            //Define SQL query to UPDATE Owner record
             String strSQL = "UPDATE Owners SET Surname = '" + this.surname.ToUpper() + "', Forename = '" + this.forename.ToUpper() + "', Street = '" +
           this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" + this.county.ToUpper() + "', Phone = "
          + this.phone.ToString() + ", Email = '" + this.email.ToUpper() + "'  WHERE Owner_ID = " + Oid + "')";
@@ -273,7 +273,7 @@ namespace PropertySysv2
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            //Define SQL query to DELETE stock record
+            //Define SQL query to UPDATE Owner Activity to Inactive
             String strSQL = "UPDATE Owners SET Activity = 'I' WHERE Owner_ID = " + this.owner_id.ToString();
 
             //Execute the command
@@ -289,7 +289,7 @@ namespace PropertySysv2
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            //Define SQL query to DELETE stock record
+            //Define SQL query to UPDATE Owner Activity to Inactive
             String strSQL = "DELETE FROM Owners WHERE Owner_ID = " + Oid;
 
             //Execute the command

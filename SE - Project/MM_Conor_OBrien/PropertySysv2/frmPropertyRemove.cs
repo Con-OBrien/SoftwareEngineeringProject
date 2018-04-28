@@ -23,10 +23,8 @@ namespace PropertySysv2
             parent = Parent;
         }
         private void btnRmv_Click(object sender, EventArgs e)
-        {
-           
-
-            //instantiate Stock Object
+        {         
+            //instantiate Property Object
             Property myProperty = new Property();
             myProperty.setPropId(Convert.ToInt32(txtPropID.Text));
             myProperty.setRentPerMonth(Convert.ToInt32(txtRent.Text));
@@ -37,14 +35,13 @@ namespace PropertySysv2
             myProperty.setHouseType(txtHouse.Text);
             myProperty.setOwnerId(Convert.ToInt32(txtOwnerId.Text));
 
-            //DELETE Stock record into stock table
+            //Set Property record in table as Inactive
             myProperty.rmvProperty();
 
             //Display Confirmation message
             MessageBox.Show("Property Removed From System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //reset UI
-            txtSearch.Text = "";
+            //Reset UI           
             txtRent.Text = "";
             txtBedrooms.Text = "";
             txtBathrooms.Text = "";
@@ -54,7 +51,6 @@ namespace PropertySysv2
             txtHouse.Text = "";
             txtOwnerId.Text = "";
 
-            txtSearch.Focus();
         }
         private void mnuBack_Click(object sender, EventArgs e)
         {
@@ -67,49 +63,30 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text.Equals(""))
-            {
-                MessageBox.Show("Search field is empty!");
-                return;
-            }
+            //Populate DataGrid
+            DataSet ds = new DataSet();
+            grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
 
-
-
-            //check that owner number is entered
-            if (txtSearch.Text.Equals(""))
-            {
-                MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtSearch.Focus();
-                return;
-            }
-
-            //find owner details
-            Property updProp = new Property();
-            updProp.getProperty(Convert.ToInt32(txtSearch.Text));
-
-            if (updProp.getPropId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);             
-                return;
-            }
-
-            //display Owner details
-            txtRent.Text = updProp.getRentPerMonth().ToString();
-            txtBedrooms.Text = updProp.getBedrooms().ToString();
-            txtBathrooms.Text = updProp.getBathrooms().ToString();
-            txtHouse.Text = updProp.getHouseType();
-            txtAdd1.Text = updProp.getStreet();
-            txtAdd2.Text = updProp.getTown();
-            txtCounty.Text = updProp.getCounty();
-            txtOwnerId.Text = updProp.getOwnerId().ToString();
-
-
-            //display details
-            grpProperties.Visible = true;
-            btnRmv.Visible = true;
+            grdProperties.Visible = true;              
         }
 
         private void grdProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Populate Text boxes with data from selected object from GridView
+            txtRent.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            txtBedrooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtBathrooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtHouse.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtAdd1.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            txtAdd2.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[6].Value.ToString();
+            txtCounty.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            txtActivity.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[8].Value.ToString();
+            txtOwnerId.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[9].Value.ToString();
+
+            grpProperties.Visible = true;
+        }
+
+        private void frmPropertyRemove_Load(object sender, EventArgs e)
         {
 
         }

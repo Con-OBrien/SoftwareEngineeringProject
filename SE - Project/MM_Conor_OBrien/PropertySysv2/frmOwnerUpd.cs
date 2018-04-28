@@ -73,7 +73,7 @@ namespace PropertySysv2
             //Display Confirmation message
             MessageBox.Show("Owner Updated In System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //instantiate Stock Object
+            //instantiate Owner Object
             Owner myOwners = new Owner();
             myOwners.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
             myOwners.setForename(txtForename.Text);
@@ -85,7 +85,7 @@ namespace PropertySysv2
             myOwners.setEmail(txtEmail.Text);
             myOwners.setActivity(txtActivity.Text);
 
-            //INSERT Stock record into stock table
+            //UPDATE Owner record in Owner table
             myOwners.updOwner();
 
             //reset UI

@@ -35,6 +35,7 @@ namespace PropertySysv2
 
         private void frmPropertySearch_Load(object sender, EventArgs e)
         {
+            //Populate Combo Boxes
             DataSet ds = new DataSet();
             ds = Property.getTown(ds);
 
@@ -47,9 +48,7 @@ namespace PropertySysv2
       
         private void button1_Click(object sender, EventArgs e)
         {
-        //    make sure town is selected
-            
-
+            //Populate DataGrid         
             DataSet ds = new DataSet();
             dgvProperties.DataSource = Property.getSpecificProps(ds,cboTown.Text,Convert.ToInt32(cboBeds.Text)).Tables["ss"];
 
@@ -63,7 +62,6 @@ namespace PropertySysv2
             cboBeds.Visible = true;
             lblBeds.Visible = true;
             btnSearch.Visible = true;
-
         }
 
         private void dgvProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)

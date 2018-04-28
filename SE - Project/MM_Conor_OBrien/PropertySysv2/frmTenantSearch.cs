@@ -31,7 +31,7 @@ namespace PropertySysv2
             }
             DataSet ds = new DataSet();
 
-            grdTenants.DataSource = PropertySysv2.Tenant.getSurnamesTenant(ds, txtSurname.Text.ToUpper()).Tables["rs"];   //(ds, txtSurname.Text).Tables["ss"];
+            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtSurname.Text.ToUpper()).Tables["rs"];   //(ds, txtSurname.Text).Tables["ss"];
             grdTenants.AllowUserToAddRows = false;
             grdTenants.Visible = true;
         }
