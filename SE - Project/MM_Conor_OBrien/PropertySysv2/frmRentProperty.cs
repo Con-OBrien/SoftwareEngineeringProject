@@ -93,9 +93,18 @@ namespace PropertySysv2
             {
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
- 
+
+            String phone = txtPhone.Text;
+            foreach (char c in phone)
+            {
+                if (c < '0' || c > '9')
+                {
+                    MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
             //Instantiate Tenant Object
             Tenant myTenant = new Tenant();
             myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
@@ -205,18 +214,6 @@ namespace PropertySysv2
             btnExisting.Visible = true;
             btnAdd.Visible = false;
         }
-
-
-        private void txtOwnerID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenantID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExisting_Click(object sender, EventArgs e)
         {
             grpDates.Visible = true;

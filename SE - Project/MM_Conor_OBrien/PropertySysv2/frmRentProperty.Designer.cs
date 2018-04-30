@@ -31,6 +31,7 @@
             this.txtBookingID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.grpTenants = new System.Windows.Forms.GroupBox();
+            this.btnExisting = new System.Windows.Forms.Button();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.txtTenantID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.grpPropSelect = new System.Windows.Forms.GroupBox();
             this.btnRent = new System.Windows.Forms.Button();
             this.grpDates = new System.Windows.Forms.GroupBox();
-            this.btnExisting = new System.Windows.Forms.Button();
             this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTenantSelect.SuspendLayout();
@@ -115,6 +115,17 @@
             this.grpTenants.Text = "Enter Tenant Details";
             this.grpTenants.Visible = false;
             // 
+            // btnExisting
+            // 
+            this.btnExisting.Location = new System.Drawing.Point(6, 264);
+            this.btnExisting.Name = "btnExisting";
+            this.btnExisting.Size = new System.Drawing.Size(109, 26);
+            this.btnExisting.TabIndex = 39;
+            this.btnExisting.Text = "Is this you?";
+            this.btnExisting.UseVisualStyleBackColor = true;
+            this.btnExisting.Visible = false;
+            this.btnExisting.Click += new System.EventHandler(this.btnExisting_Click);
+            // 
             // dtpDOB
             // 
             this.dtpDOB.Location = new System.Drawing.Point(104, 208);
@@ -129,7 +140,6 @@
             this.txtTenantID.Name = "txtTenantID";
             this.txtTenantID.Size = new System.Drawing.Size(124, 20);
             this.txtTenantID.TabIndex = 37;
-            this.txtTenantID.TextChanged += new System.EventHandler(this.txtTenantID_TextChanged);
             // 
             // label7
             // 
@@ -400,21 +410,11 @@
             this.grpDates.Text = "Dates";
             this.grpDates.Visible = false;
             // 
-            // btnExisting
-            // 
-            this.btnExisting.Location = new System.Drawing.Point(6, 264);
-            this.btnExisting.Name = "btnExisting";
-            this.btnExisting.Size = new System.Drawing.Size(109, 26);
-            this.btnExisting.TabIndex = 39;
-            this.btnExisting.Text = "Is this you?";
-            this.btnExisting.UseVisualStyleBackColor = true;
-            this.btnExisting.Visible = false;
-            this.btnExisting.Click += new System.EventHandler(this.btnExisting_Click);
-            // 
             // frmRentProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(618, 551);
             this.Controls.Add(this.grpDates);
             this.Controls.Add(this.grpPropSelect);
@@ -428,7 +428,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmRentProperty";
-            this.Text = "frmRentProperty";
+            this.Text = "Rent Property";
             this.Load += new System.EventHandler(this.frmRentProperty_Load);
             this.grpTenants.ResumeLayout(false);
             this.grpTenants.PerformLayout();

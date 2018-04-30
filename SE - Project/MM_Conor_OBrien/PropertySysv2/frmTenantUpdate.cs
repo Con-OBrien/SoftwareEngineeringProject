@@ -83,7 +83,17 @@ namespace PropertySysv2
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
-            }          
+            }
+
+            String phone = txtPhone.Text;
+            foreach (char c in phone)
+            {
+                if (c < '0' || c > '9')
+                {
+                    MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             //Display Confirmation message
             MessageBox.Show("Tenant Updated!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpProperties = new System.Windows.Forms.GroupBox();
+            this.txtOwnerID = new System.Windows.Forms.TextBox();
+            this.lblOwnerID = new System.Windows.Forms.Label();
             this.txtActivity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBedrooms = new System.Windows.Forms.TextBox();
@@ -55,8 +57,6 @@
             this.cboTown = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblOwnerID = new System.Windows.Forms.Label();
-            this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.grpProperties.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
@@ -90,6 +90,23 @@
             this.grpProperties.TabStop = false;
             this.grpProperties.Text = "Enter Property Details";
             this.grpProperties.Visible = false;
+            // 
+            // txtOwnerID
+            // 
+            this.txtOwnerID.Enabled = false;
+            this.txtOwnerID.Location = new System.Drawing.Point(94, 289);
+            this.txtOwnerID.Name = "txtOwnerID";
+            this.txtOwnerID.Size = new System.Drawing.Size(123, 20);
+            this.txtOwnerID.TabIndex = 36;
+            // 
+            // lblOwnerID
+            // 
+            this.lblOwnerID.AutoSize = true;
+            this.lblOwnerID.Location = new System.Drawing.Point(6, 289);
+            this.lblOwnerID.Name = "lblOwnerID";
+            this.lblOwnerID.Size = new System.Drawing.Size(55, 13);
+            this.lblOwnerID.TabIndex = 35;
+            this.lblOwnerID.Text = "Owner ID:";
             // 
             // txtActivity
             // 
@@ -319,27 +336,11 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "Search Requirements";
             // 
-            // lblOwnerID
-            // 
-            this.lblOwnerID.AutoSize = true;
-            this.lblOwnerID.Location = new System.Drawing.Point(6, 289);
-            this.lblOwnerID.Name = "lblOwnerID";
-            this.lblOwnerID.Size = new System.Drawing.Size(55, 13);
-            this.lblOwnerID.TabIndex = 35;
-            this.lblOwnerID.Text = "Owner ID:";
-            // 
-            // txtOwnerID
-            // 
-            this.txtOwnerID.Enabled = false;
-            this.txtOwnerID.Location = new System.Drawing.Point(94, 289);
-            this.txtOwnerID.Name = "txtOwnerID";
-            this.txtOwnerID.Size = new System.Drawing.Size(123, 20);
-            this.txtOwnerID.TabIndex = 36;
-            // 
             // frmPropertyUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(922, 416);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblBeds);

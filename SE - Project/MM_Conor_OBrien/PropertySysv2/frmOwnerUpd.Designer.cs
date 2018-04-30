@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpOwners = new System.Windows.Forms.GroupBox();
+            this.txtActivity = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.txtForename = new System.Windows.Forms.TextBox();
             this.lblForename = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtOwnerSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtActivity = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.grpOwners.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdOwners)).BeginInit();
@@ -102,6 +102,22 @@
             this.grpOwners.TabStop = false;
             this.grpOwners.Text = "Update Owner Details";
             this.grpOwners.Visible = false;
+            // 
+            // txtActivity
+            // 
+            this.txtActivity.Location = new System.Drawing.Point(108, 215);
+            this.txtActivity.Name = "txtActivity";
+            this.txtActivity.Size = new System.Drawing.Size(41, 20);
+            this.txtActivity.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Activity:";
             // 
             // txtOwnerID
             // 
@@ -278,26 +294,11 @@
             this.lblSearch.TabIndex = 33;
             this.lblSearch.Text = "Enter Surname:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 215);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Activity:";
-            // 
-            // txtActivity
-            // 
-            this.txtActivity.Location = new System.Drawing.Point(108, 215);
-            this.txtActivity.Name = "txtActivity";
-            this.txtActivity.Size = new System.Drawing.Size(41, 20);
-            this.txtActivity.TabIndex = 39;
-            // 
             // frmOwnerUpd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(585, 544);
             this.Controls.Add(this.grdOwners);
             this.Controls.Add(this.btnSearch);

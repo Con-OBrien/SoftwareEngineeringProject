@@ -32,6 +32,7 @@
             this.txtTenantSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpTenants = new System.Windows.Forms.GroupBox();
+            this.txtTenantID = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grdTenants = new System.Windows.Forms.DataGridView();
-            this.txtTenantID = new System.Windows.Forms.TextBox();
             this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).BeginInit();
@@ -97,6 +97,14 @@
             this.grpTenants.Text = "Enter Tenant Details";
             this.grpTenants.Visible = false;
             this.grpTenants.Enter += new System.EventHandler(this.grpTenants_Enter);
+            // 
+            // txtTenantID
+            // 
+            this.txtTenantID.Location = new System.Drawing.Point(9, 19);
+            this.txtTenantID.Name = "txtTenantID";
+            this.txtTenantID.Size = new System.Drawing.Size(28, 20);
+            this.txtTenantID.TabIndex = 33;
+            this.txtTenantID.Visible = false;
             // 
             // txtSurname
             // 
@@ -211,18 +219,11 @@
             this.grdTenants.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTenants_CellContentDoubleClick);
             this.grdTenants.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdTenants_RowHeaderMouseClick);
             // 
-            // txtTenantID
-            // 
-            this.txtTenantID.Location = new System.Drawing.Point(9, 19);
-            this.txtTenantID.Name = "txtTenantID";
-            this.txtTenantID.Size = new System.Drawing.Size(28, 20);
-            this.txtTenantID.TabIndex = 33;
-            this.txtTenantID.Visible = false;
-            // 
             // frmTenantUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(563, 463);
             this.Controls.Add(this.grdTenants);
             this.Controls.Add(this.grpTenants);
@@ -232,7 +233,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTenantUpdate";
-            this.Text = "Update Tennant";
+            this.Text = "Update Tenant";
             this.Load += new System.EventHandler(this.frmTenantUpdate_Load);
             this.grpTenants.ResumeLayout(false);
             this.grpTenants.PerformLayout();

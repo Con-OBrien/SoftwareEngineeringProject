@@ -26,7 +26,7 @@ namespace PropertySysv2
         {
             //Load PropertyID
 
-            txtPropertyID.Text = PropertySysv2.Property.getNextPropId().ToString("00000");
+            txtPropertyID.Text = Property.getNextPropId().ToString("00000");
         }
        
         private void btnPropertyAdd_Click(object sender, EventArgs e)
@@ -38,6 +38,16 @@ namespace PropertySysv2
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
+            }
+
+            String rent = txtRent.Text;
+            foreach (char c in rent)
+            {
+                if (c < '0' || c > '9')
+                {
+                    MessageBox.Show("Rent must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
 
             //Instantiate Property

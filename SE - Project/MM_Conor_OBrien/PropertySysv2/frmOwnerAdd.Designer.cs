@@ -37,16 +37,16 @@
             this.txtBoxCounty = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBoxAdd2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtBoxAdd1 = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtSurname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpOwner.SuspendLayout();
@@ -142,6 +142,22 @@
             this.txtBoxAdd2.Size = new System.Drawing.Size(123, 20);
             this.txtBoxAdd2.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Surname:";
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.Location = new System.Drawing.Point(94, 46);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(123, 20);
+            this.txtSurname.TabIndex = 1;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -182,13 +198,6 @@
             this.txtPhone.Size = new System.Drawing.Size(123, 20);
             this.txtPhone.TabIndex = 5;
             // 
-            // txtSurname
-            // 
-            this.txtSurname.Location = new System.Drawing.Point(94, 46);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(123, 20);
-            this.txtSurname.TabIndex = 1;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -216,15 +225,6 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Phone:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Surname:";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -246,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(406, 361);
             this.Controls.Add(this.grpOwner);
             this.Controls.Add(this.txtOwnerID);
