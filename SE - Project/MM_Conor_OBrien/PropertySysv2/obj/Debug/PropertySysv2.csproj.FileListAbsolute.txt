@@ -188,3 +188,8 @@ C:\Users\Conor\Desktop\github\SoftwareEngineeringProject\SE - Project\MM_Conor_O
 C:\Users\Conor\Desktop\github\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
 C:\Users\Conor\Desktop\github\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.xml
 C:\Users\Conor\Desktop\github\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\t00193238\Desktop\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.dll
+C:\Users\t00193238\Desktop\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\t00193238\Desktop\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\t00193238\Desktop\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.xml
+C:\Users\t00193238\Desktop\SoftwareEngineeringProject\SE - Project\MM_Conor_OBrien\PropertySysv2\bin\Debug\EntityFramework.SqlServer.xml

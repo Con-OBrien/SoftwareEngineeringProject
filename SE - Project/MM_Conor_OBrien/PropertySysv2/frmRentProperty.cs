@@ -50,6 +50,12 @@ namespace PropertySysv2
             for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
                 cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
 
+            DataSet ts = new DataSet();
+            ts = Tenant.getTenant(ts);
+
+            for (int i = 0; i < ts.Tables["ss"].Rows.Count; i++)
+                cboTenant.Items.Add(ts.Tables[0].Rows[i][0].ToString());
+
             for (int i = 1; i <= 6; i++)
                 cboBeds.Items.Add(i.ToString());
         }
@@ -84,8 +90,12 @@ namespace PropertySysv2
             myTenant.setDob(dob);
             myTenant.setActivity(activity);
             myTenant.setPropID(Convert.ToInt32(txtPropID.Text));
-            
 
+            Tenant total = new Tenant();
+            int totalTenants = total.getSumTenants(Convert.ToInt32(txtPropID.Text));
+            txtTotal.Text = totalTenants.ToString();
+
+            
             //INSERT Tenant Record Into Tenant Table
             myTenant.regTenant();
           
@@ -107,6 +117,11 @@ namespace PropertySysv2
             //Hides Alternative Options
             grpTenants.Visible = false;
             grpTenantSelect.Visible = true;
+
+            txtForename.Enabled = false;
+            txtSurname.Enabled = false;
+            txtPhone.Enabled = false;
+            txtEmail.Enabled = false;
         }
 
         private void btnNo_Click(object sender, EventArgs e)
@@ -114,6 +129,19 @@ namespace PropertySysv2
             //Hides Alternative Options
             grpTenants.Visible = true;
             grpTenantSelect.Visible = false;
+            grpDates.Visible = false;
+            btnExisting.Visible = false;
+            btnAdd.Visible = true;
+
+            txtForename.Text = "";
+            txtSurname.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtForename.Enabled = true;
+            txtSurname.Enabled = true;
+            txtPhone.Enabled = true;
+            txtEmail.Enabled = true;
+            dtpDOB.Enabled = true;
         }
 
         private void btnRent_Click(object sender, EventArgs e)
@@ -148,6 +176,19 @@ namespace PropertySysv2
             lblTenant.Visible = false;
             btnYes.Visible = false;
             btnNo.Visible = false;
+
+            txtPropID.Text = "";
+            txtTenantID.Text = "";
+            txtForename.Text = "";
+            txtSurname.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            dtpDOB.ResetText();
+            dtpStart.ResetText();
+            dtpEnd.ResetText();
+            txtBookingID.Text = PropertySysv2.Booking.getNextBookingId().ToString("00000");
+            txtTenantID.Text = PropertySysv2.Tenant.getNextTenantId().ToString("00000");
+            lblMsg.Visible = false;
         }
 
         private void cboTenant_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,6 +201,7 @@ namespace PropertySysv2
             //Instantiate Tenant Objects
             Tenant newTenant = new Tenant();
             newTenant.getTenant(Convert.ToInt32(cboTenant.Text.Substring(0, 1)));
+            
 
             if (newTenant.getTenantId().Equals(0))
             {
@@ -198,8 +240,9 @@ namespace PropertySysv2
             //Populate DataGrid
             DataSet ds = new DataSet();
             grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+           
+            grdProperties.Visible = true;
 
-            grdProperties.Visible = true;          
         }
 
         private void grdProperties_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -207,6 +250,7 @@ namespace PropertySysv2
             txtPropID.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtRooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[2].Value.ToString();
 
+           
 
             lblTenant.Visible = true;
             btnYes.Visible = true;
@@ -214,5 +258,14 @@ namespace PropertySysv2
 
         }
 
+        private void txtRooms_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

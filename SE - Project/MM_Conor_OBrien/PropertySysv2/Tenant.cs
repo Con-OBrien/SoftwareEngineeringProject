@@ -131,17 +131,13 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
-
-        //define a static method to get data
-        public static DataSet getAllTenants(DataSet DS)
+        public static DataSet getTenant(DataSet DS)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            //connection name conn.Open();
-            String strSQL = "SELECT * FROM Tenants";
+            String strSQL = "SELECT Tenant_ID FROM Tenants ORDER BY Tenant_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
-            //cmd.CommandType = CommandType.Text;
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
             da.Fill(DS, "ss");
@@ -149,21 +145,6 @@ namespace PropertySysv2
             conn.Close();
 
             return DS;
-        }
-        public static DataSet getTenant(DataSet RS)
-        {
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            String strSQL = "SELECT Tenant_ID FROM Tenants ORDER BY Tenant_ID";
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            OracleDataAdapter ra = new OracleDataAdapter(cmd);
-
-            ra.Fill(RS, "rs");
-
-            conn.Close();
-
-            return RS;
         }
         public static DataSet getSurnamesTenant(DataSet RS, String Surname)
         {
@@ -216,6 +197,26 @@ namespace PropertySysv2
 
             //return next StockNo
             return intNextTenantId;
+        }
+        public int getSumTenants(int PropID)
+        {
+
+            int total;
+
+            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            myConn.Open();
+            String strSQL = "SELECT COUNT(Prop_ID) FROM Tenants WHERE Prop_ID = " + PropID;
+            OracleCommand cmd = new OracleCommand(strSQL, myConn);
+            OracleDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            if (dr.IsDBNull(0))
+                total = 0;
+            else
+                total = Convert.ToInt16(dr.GetValue(0));
+
+            myConn.Close();
+            return total;
         }
 
         public void regTenant()
@@ -275,6 +276,7 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
+
         public void rmvTenant()
         {
             //connect to database

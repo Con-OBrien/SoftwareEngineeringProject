@@ -69,6 +69,7 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.grdProperties = new System.Windows.Forms.DataGridView();
             this.txtRooms = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTenantSelect.SuspendLayout();
@@ -113,7 +114,7 @@
             this.grpTenants.Controls.Add(this.lblEmail);
             this.grpTenants.Controls.Add(this.lblPhone);
             this.grpTenants.Controls.Add(this.lblForename);
-            this.grpTenants.Location = new System.Drawing.Point(486, 46);
+            this.grpTenants.Location = new System.Drawing.Point(748, 46);
             this.grpTenants.Name = "grpTenants";
             this.grpTenants.Size = new System.Drawing.Size(335, 318);
             this.grpTenants.TabIndex = 34;
@@ -273,7 +274,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(830, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1119, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -321,7 +322,7 @@
             // lblTenant
             // 
             this.lblTenant.AutoSize = true;
-            this.lblTenant.Location = new System.Drawing.Point(12, 310);
+            this.lblTenant.Location = new System.Drawing.Point(528, 50);
             this.lblTenant.Name = "lblTenant";
             this.lblTenant.Size = new System.Drawing.Size(86, 13);
             this.lblTenant.TabIndex = 41;
@@ -330,7 +331,7 @@
             // 
             // btnYes
             // 
-            this.btnYes.Location = new System.Drawing.Point(15, 335);
+            this.btnYes.Location = new System.Drawing.Point(531, 75);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(55, 25);
             this.btnYes.TabIndex = 42;
@@ -341,7 +342,7 @@
             // 
             // btnNo
             // 
-            this.btnNo.Location = new System.Drawing.Point(89, 335);
+            this.btnNo.Location = new System.Drawing.Point(605, 75);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(55, 25);
             this.btnNo.TabIndex = 43;
@@ -363,7 +364,7 @@
             // grpTenantSelect
             // 
             this.grpTenantSelect.Controls.Add(this.cboTenant);
-            this.grpTenantSelect.Location = new System.Drawing.Point(15, 396);
+            this.grpTenantSelect.Location = new System.Drawing.Point(531, 136);
             this.grpTenantSelect.Name = "grpTenantSelect";
             this.grpTenantSelect.Size = new System.Drawing.Size(200, 55);
             this.grpTenantSelect.TabIndex = 46;
@@ -388,7 +389,7 @@
             this.grpDates.Controls.Add(this.btnRent);
             this.grpDates.Controls.Add(this.dtpEnd);
             this.grpDates.Controls.Add(this.lblEnd);
-            this.grpDates.Location = new System.Drawing.Point(495, 370);
+            this.grpDates.Location = new System.Drawing.Point(757, 370);
             this.grpDates.Name = "grpDates";
             this.grpDates.Size = new System.Drawing.Size(329, 172);
             this.grpDates.TabIndex = 50;
@@ -468,21 +469,31 @@
             this.grdProperties.Size = new System.Drawing.Size(420, 100);
             this.grdProperties.TabIndex = 51;
             this.grdProperties.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellClick);
+            this.grdProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellContentClick);
             // 
             // txtRooms
             // 
-            this.txtRooms.Location = new System.Drawing.Point(317, 337);
+            this.txtRooms.Location = new System.Drawing.Point(681, 204);
             this.txtRooms.Name = "txtRooms";
             this.txtRooms.Size = new System.Drawing.Size(25, 20);
             this.txtRooms.TabIndex = 58;
             this.txtRooms.Visible = false;
+            this.txtRooms.TextChanged += new System.EventHandler(this.txtRooms_TextChanged);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(635, 230);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(62, 20);
+            this.txtTotal.TabIndex = 59;
             // 
             // frmRentProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(830, 551);
+            this.ClientSize = new System.Drawing.Size(1119, 551);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtRooms);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblBeds);
@@ -560,5 +571,6 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView grdProperties;
         private System.Windows.Forms.TextBox txtRooms;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }
