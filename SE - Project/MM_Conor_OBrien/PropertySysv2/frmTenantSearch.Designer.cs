@@ -32,10 +32,10 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grdTenants = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSurname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).BeginInit();
             this.SuspendLayout();
@@ -75,14 +75,14 @@
             this.label10.Size = new System.Drawing.Size(0, 13);
             this.label10.TabIndex = 44;
             // 
-            // label8
+            // lblSurname
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Surname:";
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Location = new System.Drawing.Point(12, 67);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(52, 13);
+            this.lblSurname.TabIndex = 43;
+            this.lblSurname.Text = "Surname:";
             // 
             // btnSearch
             // 
@@ -101,14 +101,14 @@
             this.txtSurname.Size = new System.Drawing.Size(114, 20);
             this.txtSurname.TabIndex = 41;
             // 
-            // label1
+            // lblSearch
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Search Requirements";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(12, 38);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(109, 13);
+            this.lblSearch.TabIndex = 40;
+            this.lblSearch.Text = "Search Requirements";
             // 
             // frmTenantSearch
             // 
@@ -118,10 +118,10 @@
             this.ClientSize = new System.Drawing.Size(548, 270);
             this.Controls.Add(this.grdTenants);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSurname);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTenantSearch";
@@ -139,9 +139,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.DataGridView grdTenants;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSearch;
     }
 }

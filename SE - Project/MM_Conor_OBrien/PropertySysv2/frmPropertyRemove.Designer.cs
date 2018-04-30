@@ -33,30 +33,30 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpProperties = new System.Windows.Forms.GroupBox();
             this.txtActivity = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblActivity = new System.Windows.Forms.Label();
             this.txtPropID = new System.Windows.Forms.TextBox();
             this.txtOwnerId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblOwnerID = new System.Windows.Forms.Label();
             this.txtBedrooms = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblBedrooms = new System.Windows.Forms.Label();
             this.txtCounty = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblCounty = new System.Windows.Forms.Label();
             this.txtAdd2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblPropAddress2 = new System.Windows.Forms.Label();
             this.txtAdd1 = new System.Windows.Forms.TextBox();
             this.txtHouse = new System.Windows.Forms.TextBox();
             this.txtBathrooms = new System.Windows.Forms.TextBox();
             this.txtRent = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblPropAddress1 = new System.Windows.Forms.Label();
+            this.lblHouse = new System.Windows.Forms.Label();
+            this.lblBathrooms = new System.Windows.Forms.Label();
+            this.lblRent = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblBeds = new System.Windows.Forms.Label();
             this.cboBeds = new System.Windows.Forms.ComboBox();
             this.cboTown = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTown = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.grdProperties = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.grpProperties.SuspendLayout();
@@ -94,25 +94,25 @@
             // grpProperties
             // 
             this.grpProperties.Controls.Add(this.txtActivity);
-            this.grpProperties.Controls.Add(this.label4);
+            this.grpProperties.Controls.Add(this.lblActivity);
             this.grpProperties.Controls.Add(this.txtPropID);
             this.grpProperties.Controls.Add(this.txtOwnerId);
-            this.grpProperties.Controls.Add(this.label2);
+            this.grpProperties.Controls.Add(this.lblOwnerID);
             this.grpProperties.Controls.Add(this.btnRmv);
             this.grpProperties.Controls.Add(this.txtBedrooms);
-            this.grpProperties.Controls.Add(this.label6);
+            this.grpProperties.Controls.Add(this.lblBedrooms);
             this.grpProperties.Controls.Add(this.txtCounty);
-            this.grpProperties.Controls.Add(this.label7);
+            this.grpProperties.Controls.Add(this.lblCounty);
             this.grpProperties.Controls.Add(this.txtAdd2);
-            this.grpProperties.Controls.Add(this.label8);
+            this.grpProperties.Controls.Add(this.lblPropAddress2);
             this.grpProperties.Controls.Add(this.txtAdd1);
             this.grpProperties.Controls.Add(this.txtHouse);
             this.grpProperties.Controls.Add(this.txtBathrooms);
             this.grpProperties.Controls.Add(this.txtRent);
-            this.grpProperties.Controls.Add(this.label10);
-            this.grpProperties.Controls.Add(this.label11);
-            this.grpProperties.Controls.Add(this.label12);
-            this.grpProperties.Controls.Add(this.label13);
+            this.grpProperties.Controls.Add(this.lblPropAddress1);
+            this.grpProperties.Controls.Add(this.lblHouse);
+            this.grpProperties.Controls.Add(this.lblBathrooms);
+            this.grpProperties.Controls.Add(this.lblRent);
             this.grpProperties.Location = new System.Drawing.Point(24, 272);
             this.grpProperties.Name = "grpProperties";
             this.grpProperties.Size = new System.Drawing.Size(335, 355);
@@ -128,14 +128,14 @@
             this.txtActivity.Size = new System.Drawing.Size(122, 20);
             this.txtActivity.TabIndex = 54;
             // 
-            // label4
+            // lblActivity
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 257);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Activity:";
+            this.lblActivity.AutoSize = true;
+            this.lblActivity.Location = new System.Drawing.Point(6, 257);
+            this.lblActivity.Name = "lblActivity";
+            this.lblActivity.Size = new System.Drawing.Size(44, 13);
+            this.lblActivity.TabIndex = 54;
+            this.lblActivity.Text = "Activity:";
             // 
             // txtPropID
             // 
@@ -153,14 +153,14 @@
             this.txtOwnerId.Size = new System.Drawing.Size(122, 20);
             this.txtOwnerId.TabIndex = 34;
             // 
-            // label2
+            // lblOwnerID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 288);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Owner ID:";
+            this.lblOwnerID.AutoSize = true;
+            this.lblOwnerID.Location = new System.Drawing.Point(6, 288);
+            this.lblOwnerID.Name = "lblOwnerID";
+            this.lblOwnerID.Size = new System.Drawing.Size(55, 13);
+            this.lblOwnerID.TabIndex = 33;
+            this.lblOwnerID.Text = "Owner ID:";
             // 
             // txtBedrooms
             // 
@@ -170,14 +170,14 @@
             this.txtBedrooms.Size = new System.Drawing.Size(124, 20);
             this.txtBedrooms.TabIndex = 32;
             // 
-            // label6
+            // lblBedrooms
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Bedrooms:";
+            this.lblBedrooms.AutoSize = true;
+            this.lblBedrooms.Location = new System.Drawing.Point(6, 63);
+            this.lblBedrooms.Name = "lblBedrooms";
+            this.lblBedrooms.Size = new System.Drawing.Size(57, 13);
+            this.lblBedrooms.TabIndex = 31;
+            this.lblBedrooms.Text = "Bedrooms:";
             // 
             // txtCounty
             // 
@@ -187,14 +187,14 @@
             this.txtCounty.Size = new System.Drawing.Size(122, 20);
             this.txtCounty.TabIndex = 30;
             // 
-            // label7
+            // lblCounty
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 223);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "County:";
+            this.lblCounty.AutoSize = true;
+            this.lblCounty.Location = new System.Drawing.Point(6, 223);
+            this.lblCounty.Name = "lblCounty";
+            this.lblCounty.Size = new System.Drawing.Size(43, 13);
+            this.lblCounty.TabIndex = 29;
+            this.lblCounty.Text = "County:";
             // 
             // txtAdd2
             // 
@@ -204,14 +204,14 @@
             this.txtAdd2.Size = new System.Drawing.Size(123, 20);
             this.txtAdd2.TabIndex = 28;
             // 
-            // label8
+            // lblPropAddress2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 193);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Address Line 2:";
+            this.lblPropAddress2.AutoSize = true;
+            this.lblPropAddress2.Location = new System.Drawing.Point(6, 193);
+            this.lblPropAddress2.Name = "lblPropAddress2";
+            this.lblPropAddress2.Size = new System.Drawing.Size(80, 13);
+            this.lblPropAddress2.TabIndex = 27;
+            this.lblPropAddress2.Text = "Address Line 2:";
             // 
             // txtAdd1
             // 
@@ -245,41 +245,41 @@
             this.txtRent.Size = new System.Drawing.Size(124, 20);
             this.txtRent.TabIndex = 22;
             // 
-            // label10
+            // lblPropAddress1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 161);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Address Line 1:";
+            this.lblPropAddress1.AutoSize = true;
+            this.lblPropAddress1.Location = new System.Drawing.Point(6, 161);
+            this.lblPropAddress1.Name = "lblPropAddress1";
+            this.lblPropAddress1.Size = new System.Drawing.Size(80, 13);
+            this.lblPropAddress1.TabIndex = 21;
+            this.lblPropAddress1.Text = "Address Line 1:";
             // 
-            // label11
+            // lblHouse
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 130);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 13);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "House Type:";
+            this.lblHouse.AutoSize = true;
+            this.lblHouse.Location = new System.Drawing.Point(6, 130);
+            this.lblHouse.Name = "lblHouse";
+            this.lblHouse.Size = new System.Drawing.Size(68, 13);
+            this.lblHouse.TabIndex = 20;
+            this.lblHouse.Text = "House Type:";
             // 
-            // label12
+            // lblBathrooms
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 97);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 13);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Bathrooms:";
+            this.lblBathrooms.AutoSize = true;
+            this.lblBathrooms.Location = new System.Drawing.Point(6, 97);
+            this.lblBathrooms.Name = "lblBathrooms";
+            this.lblBathrooms.Size = new System.Drawing.Size(60, 13);
+            this.lblBathrooms.TabIndex = 19;
+            this.lblBathrooms.Text = "Bathrooms:";
             // 
-            // label13
+            // lblRent
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 13);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Rent per month:";
+            this.lblRent.AutoSize = true;
+            this.lblRent.Location = new System.Drawing.Point(6, 29);
+            this.lblRent.Name = "lblRent";
+            this.lblRent.Size = new System.Drawing.Size(83, 13);
+            this.lblRent.TabIndex = 18;
+            this.lblRent.Text = "Rent per month:";
             // 
             // btnSearch
             // 
@@ -318,23 +318,23 @@
             this.cboTown.Size = new System.Drawing.Size(121, 21);
             this.cboTown.TabIndex = 50;
             // 
-            // label1
+            // lblTown
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Town";
+            this.lblTown.AutoSize = true;
+            this.lblTown.Location = new System.Drawing.Point(9, 70);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(34, 13);
+            this.lblTown.TabIndex = 49;
+            this.lblTown.Text = "Town";
             // 
-            // label3
+            // lblSearch
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Search Requirements";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(12, 41);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(109, 13);
+            this.lblSearch.TabIndex = 48;
+            this.lblSearch.Text = "Search Requirements";
             // 
             // grdProperties
             // 
@@ -365,10 +365,10 @@
             this.Controls.Add(this.lblBeds);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.cboBeds);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.cboTown);
             this.Controls.Add(this.grdProperties);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTown);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPropertyRemove";
             this.Text = "Remove Property";
@@ -390,30 +390,30 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.GroupBox grpProperties;
         private System.Windows.Forms.TextBox txtOwnerId;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblOwnerID;
         private System.Windows.Forms.TextBox txtBedrooms;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblBedrooms;
         private System.Windows.Forms.TextBox txtCounty;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCounty;
         private System.Windows.Forms.TextBox txtAdd2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblPropAddress2;
         private System.Windows.Forms.TextBox txtAdd1;
         private System.Windows.Forms.TextBox txtHouse;
         private System.Windows.Forms.TextBox txtBathrooms;
         private System.Windows.Forms.TextBox txtRent;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblPropAddress1;
+        private System.Windows.Forms.Label lblHouse;
+        private System.Windows.Forms.Label lblBathrooms;
+        private System.Windows.Forms.Label lblRent;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblBeds;
         private System.Windows.Forms.ComboBox cboBeds;
         private System.Windows.Forms.ComboBox cboTown;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTown;
+        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView grdProperties;
         private System.Windows.Forms.TextBox txtPropID;
         private System.Windows.Forms.TextBox txtActivity;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblActivity;
     }
 }

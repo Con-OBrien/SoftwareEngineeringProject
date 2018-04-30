@@ -32,7 +32,7 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpOwners = new System.Windows.Forms.GroupBox();
             this.txtActivity = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblActivity = new System.Windows.Forms.Label();
             this.txtOwnerID = new System.Windows.Forms.TextBox();
             this.txtForename = new System.Windows.Forms.TextBox();
             this.lblForename = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             // grpOwners
             // 
             this.grpOwners.Controls.Add(this.txtActivity);
-            this.grpOwners.Controls.Add(this.label1);
+            this.grpOwners.Controls.Add(this.lblActivity);
             this.grpOwners.Controls.Add(this.txtOwnerID);
             this.grpOwners.Controls.Add(this.txtForename);
             this.grpOwners.Controls.Add(this.lblForename);
@@ -110,14 +110,14 @@
             this.txtActivity.Size = new System.Drawing.Size(41, 20);
             this.txtActivity.TabIndex = 39;
             // 
-            // label1
+            // lblActivity
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 215);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Activity:";
+            this.lblActivity.AutoSize = true;
+            this.lblActivity.Location = new System.Drawing.Point(25, 218);
+            this.lblActivity.Name = "lblActivity";
+            this.lblActivity.Size = new System.Drawing.Size(44, 13);
+            this.lblActivity.TabIndex = 38;
+            this.lblActivity.Text = "Activity:";
             // 
             // txtOwnerID
             // 
@@ -234,7 +234,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(25, 193);
+            this.lblEmail.Location = new System.Drawing.Point(25, 196);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 20;
@@ -345,6 +345,6 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtOwnerID;
         private System.Windows.Forms.TextBox txtActivity;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblActivity;
     }
 }

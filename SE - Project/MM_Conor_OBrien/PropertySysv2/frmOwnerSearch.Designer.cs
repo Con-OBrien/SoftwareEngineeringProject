@@ -30,10 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.grdOwners = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
@@ -57,14 +57,14 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
-            // label1
+            // lblSearch
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search Requirements";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(12, 42);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(109, 13);
+            this.lblSearch.TabIndex = 0;
+            this.lblSearch.Text = "Search Requirements";
             // 
             // txtSurname
             // 
@@ -84,14 +84,14 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // label8
+            // lblSurname
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Surname:";
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Location = new System.Drawing.Point(12, 71);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(52, 13);
+            this.lblSurname.TabIndex = 28;
+            this.lblSurname.Text = "Surname:";
             // 
             // label10
             // 
@@ -118,10 +118,10 @@
             this.ClientSize = new System.Drawing.Size(665, 266);
             this.Controls.Add(this.grdOwners);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSurname);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmOwnerSearch";
@@ -138,10 +138,10 @@
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView grdOwners;
     }

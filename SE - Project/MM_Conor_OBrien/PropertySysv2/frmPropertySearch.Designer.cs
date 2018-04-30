@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.lblTown = new System.Windows.Forms.Label();
             this.cboTown = new System.Windows.Forms.ComboBox();
             this.cboBeds = new System.Windows.Forms.ComboBox();
             this.lblBeds = new System.Windows.Forms.Label();
@@ -58,23 +58,23 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
-            // label8
+            // lblSearch
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 13);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Search Requirements";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(19, 40);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(109, 13);
+            this.lblSearch.TabIndex = 32;
+            this.lblSearch.Text = "Search Requirements";
             // 
-            // label10
+            // lblTown
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 13);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Town";
+            this.lblTown.AutoSize = true;
+            this.lblTown.Location = new System.Drawing.Point(16, 69);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(34, 13);
+            this.lblTown.TabIndex = 33;
+            this.lblTown.Text = "Town";
             // 
             // cboTown
             // 
@@ -138,8 +138,8 @@
             this.Controls.Add(this.lblBeds);
             this.Controls.Add(this.cboBeds);
             this.Controls.Add(this.cboTown);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblTown);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPropertySearch";
@@ -156,8 +156,8 @@
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Label lblTown;
         private System.Windows.Forms.ComboBox cboTown;
         private System.Windows.Forms.ComboBox cboBeds;
         private System.Windows.Forms.Label lblBeds;

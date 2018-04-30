@@ -96,7 +96,7 @@ namespace PropertySysv2
             txtPhone.Enabled = false;
             txtEmail.Enabled = false;
             dtpDOB.Enabled = false;
-            label1.Visible = true;
+            lblMsg.Visible = true;
 
             grpDates.Visible = true;
                  
@@ -205,9 +205,14 @@ namespace PropertySysv2
         private void grdProperties_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtPropID.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            txtRooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[2].Value.ToString();
+
+
             lblTenant.Visible = true;
             btnYes.Visible = true;
             btnNo.Visible = true;
+
         }
+
     }
 }
