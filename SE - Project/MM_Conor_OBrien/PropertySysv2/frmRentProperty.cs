@@ -43,50 +43,19 @@ namespace PropertySysv2
             txtBookingID.Text = PropertySysv2.Booking.getNextBookingId().ToString("00000");
             txtTenantID.Text = PropertySysv2.Tenant.getNextTenantId().ToString("00000");
 
-            //Load Combo Boxes
-            DataSet ds = new DataSet();           
-            ds = Property.getProp(ds);
+            //Fill combo boxes with options
+            DataSet ds = new DataSet();
+            ds = Property.getTown(ds);
 
             for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
-                cboProperty.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+                cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
 
-            DataSet rs = new DataSet();
-            rs = Tenant.getTenant(rs);
-
-            for (int u = 0; u < rs.Tables["rs"].Rows.Count; u++)
-                cboTenant.Items.Add(rs.Tables[0].Rows[u][0].ToString());
-        }
-
-        private void cboProperty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (cboProperty.SelectedIndex == -1)
-            {
-                return;
-            }
-            //Instantiate Property Object
-            Property Prop = new Property();
-            Prop.getProperty(Convert.ToInt32(cboProperty.Text.Substring(0, 1)));
-
-            //Validates Property Data
-            if (Prop.getPropId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtBookingID.Focus();
-                return;
-            }
-          
-            txtPropID.Text = Prop.getPropId().ToString("00000");
-
-            lblTenant.Visible = true;
-            btnYes.Visible = true;
-            btnNo.Visible = true;
-
-
+            for (int i = 1; i <= 6; i++)
+                cboBeds.Items.Add(i.ToString());
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            String activity = "A";
             String dob = String.Format("{0:dd-MMM-yy}", dtpDOB.Value);
             //Validate Data
             if (txtSurname.Text.Equals("") || txtForename.Text.Equals("") || txtPhone.Text.Equals("") || txtEmail.Text.Equals("") || dtpDOB.Equals(""))
@@ -113,7 +82,9 @@ namespace PropertySysv2
             myTenant.setPhone(Convert.ToInt32(txtPhone.Text));
             myTenant.setEmail(txtEmail.Text);
             myTenant.setDob(dob);
+            myTenant.setActivity(activity);
             myTenant.setPropID(Convert.ToInt32(txtPropID.Text));
+            
 
             //INSERT Tenant Record Into Tenant Table
             myTenant.regTenant();
@@ -168,6 +139,9 @@ namespace PropertySysv2
             MessageBox.Show("Booking has been made and the landlord has been notified of your booking! Thank you using our service!");
 
             //Reset UI
+            cboTown.SelectedIndex = -1;
+            cboBeds.SelectedIndex = -1;
+            grdProperties.Visible = false;
             grpDates.Visible = false;
             grpTenants.Visible = false;
             grpTenantSelect.Visible = false;
@@ -217,6 +191,23 @@ namespace PropertySysv2
         private void btnExisting_Click(object sender, EventArgs e)
         {
             grpDates.Visible = true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //Populate DataGrid
+            DataSet ds = new DataSet();
+            grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+
+            grdProperties.Visible = true;          
+        }
+
+        private void grdProperties_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtPropID.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            lblTenant.Visible = true;
+            btnYes.Visible = true;
+            btnNo.Visible = true;
         }
     }
 }

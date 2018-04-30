@@ -41,8 +41,8 @@ Surname varchar2(15) NOT NULL,
 Phone varchar2(15) NOT NULL,
 Email varchar2(30) NOT NULL,
 DOB date,
-Prop_ID numeric(3),
 Activity char(1) NOT NULL,
+Prop_ID numeric(3),
 CONSTRAINT pk_Tenant PRIMARY KEY (Tenant_ID),
 CONSTRAINT fk_Tenant_Properties FOREIGN KEY (Prop_ID) REFERENCES Properties);
 

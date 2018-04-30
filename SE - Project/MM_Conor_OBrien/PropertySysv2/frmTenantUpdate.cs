@@ -46,35 +46,6 @@ namespace PropertySysv2
 
             grdTenants.Visible = true;
         }
-
-        private void grdTenants_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-                
-            
-        }
-
-        private void grdTenants_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            grpTenants.Visible = true;
-
-            String forename = grdTenants.SelectedRows[0].Cells[1].Value + string.Empty;
-            String surname = grdTenants.SelectedRows[0].Cells[2].Value + string.Empty;
-            String phone = grdTenants.SelectedRows[0].Cells[3].Value + string.Empty;
-            String email = grdTenants.SelectedRows[0].Cells[4].Value + string.Empty;
-
-            txtForename.Text = forename;
-            txtSurname.Text = surname;
-            txtPhone.Text = phone;
-            txtEmail.Text = email;
-
-        }
-
-        private void grdTenants_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // validate data
@@ -105,6 +76,7 @@ namespace PropertySysv2
             myTenant.setSurname(txtSurname.Text);
             myTenant.setPhone(Convert.ToInt32(txtPhone.Text));
             myTenant.setEmail(txtEmail.Text);
+            myTenant.setActivity(txtActivity.Text);
 
             //INSERT Tenant record into tenant table
             myTenant.updTenant();
@@ -115,6 +87,7 @@ namespace PropertySysv2
             txtSurname.Text = "";
             txtPhone.Text = "";
             txtEmail.Text = "";
+            txtActivity.Text = "";
 
             grpTenants.Visible = false;
             grdTenants.Visible = false;
@@ -128,19 +101,10 @@ namespace PropertySysv2
             txtSurname.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[2].Value.ToString();
             txtPhone.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[3].Value.ToString();
             txtEmail.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[4].Value.ToString();
-            
-          
+            txtActivity.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[6].Value.ToString();
+
+
             grpTenants.Visible = true;
-        }
-
-        private void grpTenants_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmTenantUpdate_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

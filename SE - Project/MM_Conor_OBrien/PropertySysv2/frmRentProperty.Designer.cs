@@ -50,7 +50,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.cboProperty = new System.Windows.Forms.ComboBox();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,14 +59,20 @@
             this.btnNo = new System.Windows.Forms.Button();
             this.cboTenant = new System.Windows.Forms.ComboBox();
             this.grpTenantSelect = new System.Windows.Forms.GroupBox();
-            this.grpPropSelect = new System.Windows.Forms.GroupBox();
             this.btnRent = new System.Windows.Forms.Button();
             this.grpDates = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblBeds = new System.Windows.Forms.Label();
+            this.cboBeds = new System.Windows.Forms.ComboBox();
+            this.cboTown = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.grdProperties = new System.Windows.Forms.DataGridView();
             this.grpTenants.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTenantSelect.SuspendLayout();
-            this.grpPropSelect.SuspendLayout();
             this.grpDates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBookingID
@@ -107,7 +112,7 @@
             this.grpTenants.Controls.Add(this.label11);
             this.grpTenants.Controls.Add(this.label12);
             this.grpTenants.Controls.Add(this.label13);
-            this.grpTenants.Location = new System.Drawing.Point(257, 43);
+            this.grpTenants.Location = new System.Drawing.Point(486, 46);
             this.grpTenants.Name = "grpTenants";
             this.grpTenants.Size = new System.Drawing.Size(335, 318);
             this.grpTenants.TabIndex = 34;
@@ -267,7 +272,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(618, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(830, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -277,16 +282,6 @@
             this.mnuBack.Size = new System.Drawing.Size(44, 20);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
-            // 
-            // cboProperty
-            // 
-            this.cboProperty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProperty.FormattingEnabled = true;
-            this.cboProperty.Location = new System.Drawing.Point(9, 20);
-            this.cboProperty.Name = "cboProperty";
-            this.cboProperty.Size = new System.Drawing.Size(169, 21);
-            this.cboProperty.TabIndex = 36;
-            this.cboProperty.SelectedIndexChanged += new System.EventHandler(this.cboProperty_SelectedIndexChanged);
             // 
             // dtpStart
             // 
@@ -325,7 +320,7 @@
             // lblTenant
             // 
             this.lblTenant.AutoSize = true;
-            this.lblTenant.Location = new System.Drawing.Point(12, 193);
+            this.lblTenant.Location = new System.Drawing.Point(12, 310);
             this.lblTenant.Name = "lblTenant";
             this.lblTenant.Size = new System.Drawing.Size(86, 13);
             this.lblTenant.TabIndex = 41;
@@ -334,7 +329,7 @@
             // 
             // btnYes
             // 
-            this.btnYes.Location = new System.Drawing.Point(15, 221);
+            this.btnYes.Location = new System.Drawing.Point(15, 335);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(55, 25);
             this.btnYes.TabIndex = 42;
@@ -345,7 +340,7 @@
             // 
             // btnNo
             // 
-            this.btnNo.Location = new System.Drawing.Point(89, 221);
+            this.btnNo.Location = new System.Drawing.Point(89, 335);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(55, 25);
             this.btnNo.TabIndex = 43;
@@ -367,23 +362,13 @@
             // grpTenantSelect
             // 
             this.grpTenantSelect.Controls.Add(this.cboTenant);
-            this.grpTenantSelect.Location = new System.Drawing.Point(15, 282);
+            this.grpTenantSelect.Location = new System.Drawing.Point(15, 396);
             this.grpTenantSelect.Name = "grpTenantSelect";
             this.grpTenantSelect.Size = new System.Drawing.Size(200, 55);
             this.grpTenantSelect.TabIndex = 46;
             this.grpTenantSelect.TabStop = false;
             this.grpTenantSelect.Text = "Select your TenantID";
             this.grpTenantSelect.Visible = false;
-            // 
-            // grpPropSelect
-            // 
-            this.grpPropSelect.Controls.Add(this.cboProperty);
-            this.grpPropSelect.Location = new System.Drawing.Point(12, 90);
-            this.grpPropSelect.Name = "grpPropSelect";
-            this.grpPropSelect.Size = new System.Drawing.Size(200, 82);
-            this.grpPropSelect.TabIndex = 47;
-            this.grpPropSelect.TabStop = false;
-            this.grpPropSelect.Text = "Select your PropertyID";
             // 
             // btnRent
             // 
@@ -402,22 +387,101 @@
             this.grpDates.Controls.Add(this.btnRent);
             this.grpDates.Controls.Add(this.dtpEnd);
             this.grpDates.Controls.Add(this.label5);
-            this.grpDates.Location = new System.Drawing.Point(257, 376);
+            this.grpDates.Location = new System.Drawing.Point(495, 370);
             this.grpDates.Name = "grpDates";
-            this.grpDates.Size = new System.Drawing.Size(228, 137);
+            this.grpDates.Size = new System.Drawing.Size(329, 172);
             this.grpDates.TabIndex = 50;
             this.grpDates.TabStop = false;
             this.grpDates.Text = "Dates";
             this.grpDates.Visible = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(15, 179);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(73, 19);
+            this.btnSearch.TabIndex = 57;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // lblBeds
+            // 
+            this.lblBeds.AutoSize = true;
+            this.lblBeds.Location = new System.Drawing.Point(12, 149);
+            this.lblBeds.Name = "lblBeds";
+            this.lblBeds.Size = new System.Drawing.Size(31, 13);
+            this.lblBeds.TabIndex = 56;
+            this.lblBeds.Text = "Beds";
+            // 
+            // cboBeds
+            // 
+            this.cboBeds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBeds.FormattingEnabled = true;
+            this.cboBeds.Location = new System.Drawing.Point(55, 146);
+            this.cboBeds.Name = "cboBeds";
+            this.cboBeds.Size = new System.Drawing.Size(92, 21);
+            this.cboBeds.TabIndex = 55;
+            // 
+            // cboTown
+            // 
+            this.cboTown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTown.FormattingEnabled = true;
+            this.cboTown.Location = new System.Drawing.Point(55, 104);
+            this.cboTown.Name = "cboTown";
+            this.cboTown.Size = new System.Drawing.Size(92, 21);
+            this.cboTown.TabIndex = 54;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 107);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 53;
+            this.label6.Text = "Town";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 78);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(109, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Search Requirements";
+            // 
+            // grdProperties
+            // 
+            this.grdProperties.AllowUserToAddRows = false;
+            this.grdProperties.AllowUserToDeleteRows = false;
+            this.grdProperties.AllowUserToResizeColumns = false;
+            this.grdProperties.AllowUserToResizeRows = false;
+            this.grdProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProperties.GridColor = System.Drawing.SystemColors.Info;
+            this.grdProperties.Location = new System.Drawing.Point(15, 204);
+            this.grdProperties.MultiSelect = false;
+            this.grdProperties.Name = "grdProperties";
+            this.grdProperties.ReadOnly = true;
+            this.grdProperties.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.grdProperties.Size = new System.Drawing.Size(420, 100);
+            this.grdProperties.TabIndex = 51;
+            this.grdProperties.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellClick);
             // 
             // frmRentProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(618, 551);
+            this.ClientSize = new System.Drawing.Size(830, 551);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.lblBeds);
+            this.Controls.Add(this.cboBeds);
+            this.Controls.Add(this.cboTown);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.grdProperties);
             this.Controls.Add(this.grpDates);
-            this.Controls.Add(this.grpPropSelect);
             this.Controls.Add(this.grpTenantSelect);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
@@ -435,9 +499,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpTenantSelect.ResumeLayout(false);
-            this.grpPropSelect.ResumeLayout(false);
             this.grpDates.ResumeLayout(false);
             this.grpDates.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,7 +524,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.ComboBox cboProperty;
         private System.Windows.Forms.TextBox txtPropID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpStart;
@@ -472,7 +535,6 @@
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.ComboBox cboTenant;
         private System.Windows.Forms.GroupBox grpTenantSelect;
-        private System.Windows.Forms.GroupBox grpPropSelect;
         private System.Windows.Forms.Button btnRent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenantID;
@@ -480,5 +542,12 @@
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.GroupBox grpDates;
         private System.Windows.Forms.Button btnExisting;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblBeds;
+        private System.Windows.Forms.ComboBox cboBeds;
+        private System.Windows.Forms.ComboBox cboTown;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView grdProperties;
     }
 }

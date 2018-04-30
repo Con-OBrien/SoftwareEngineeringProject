@@ -17,6 +17,7 @@ namespace PropertySysv2
         private int phone;
         private string email;
         private string dob;
+        private string activity;
         private int prop_id;
 
 
@@ -29,6 +30,7 @@ namespace PropertySysv2
             phone = 0;
             email = "";
             dob = "";
+            activity = "";
             prop_id = 0;
         }
 
@@ -58,10 +60,15 @@ namespace PropertySysv2
         {
             this.dob = DOB;
         }
+        public void setActivity(String Activity)
+        {
+            this.activity = Activity;
+        }
         public void setPropID(int Prop_ID)
         {
             this.prop_id = Prop_ID;
         }
+       
 
         //Define getters
         public int getTenantId()
@@ -88,6 +95,10 @@ namespace PropertySysv2
         public String getDOB()
         {
             return dob;
+        }
+        public String getActivity()
+        {
+            return activity;
         }
         public int getPropID()
         {
@@ -217,7 +228,7 @@ namespace PropertySysv2
             String strSQL = "INSERT INTO Tenants VALUES(" + this.tenant_id.ToString() +
                 ",'" + this.forename.ToUpper() + "','" + this.surname.ToUpper() + 
                   "'," + this.phone.ToString() + ",'" + this.email.ToUpper() + "','" 
-                  + this.dob.ToString() + "'," + this.prop_id.ToString() + ")";
+                  + this.dob.ToString() + "','" + this.activity.ToUpper() + "'," + this.prop_id.ToString() + ")";
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -237,7 +248,7 @@ namespace PropertySysv2
             //Define SQL query to INSERT stock record
             String strSQL = "UPDATE Tenants SET Surname = '" + this.surname.ToUpper() + "', Forename ='"
                 + this.forename.ToUpper() + "', Phone = " + this.phone.ToString() + ", Email ='"
-                + this.email.ToUpper() + "' WHERE Tenant_ID = " + this.tenant_id.ToString();
+                + this.email.ToUpper() + "', Activity = '" + this.activity.ToUpper() + "' WHERE Tenant_ID = " + this.tenant_id.ToString();
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
