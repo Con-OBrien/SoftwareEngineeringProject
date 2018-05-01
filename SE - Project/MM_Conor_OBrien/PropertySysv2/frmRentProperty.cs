@@ -91,9 +91,7 @@ namespace PropertySysv2
             myTenant.setActivity(activity);
             myTenant.setPropID(Convert.ToInt32(txtPropID.Text));
 
-            Tenant total = new Tenant();
-            int totalTenants = total.getSumTenants(Convert.ToInt32(txtPropID.Text));
-            txtTotal.Text = totalTenants.ToString();
+           
 
             
             //INSERT Tenant Record Into Tenant Table
@@ -250,7 +248,15 @@ namespace PropertySysv2
             txtPropID.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtRooms.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[2].Value.ToString();
 
-           
+            int NoOfRooms = Convert.ToInt32(txtRooms.Text);          
+            Tenant total = new Tenant();
+            int NoOfTenants = total.getSumTenants(Convert.ToInt32(txtPropID.Text));
+
+            if(NoOfRooms <= NoOfTenants)
+            {
+                MessageBox.Show("Rooms all booked out!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);              
+                return;
+            }
 
             lblTenant.Visible = true;
             btnYes.Visible = true;

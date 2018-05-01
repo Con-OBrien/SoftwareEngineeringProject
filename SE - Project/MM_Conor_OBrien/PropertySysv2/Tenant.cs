@@ -205,7 +205,7 @@ namespace PropertySysv2
 
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
-            String strSQL = "SELECT COUNT(Prop_ID) FROM Tenants WHERE Prop_ID = " + PropID;
+            String strSQL = "SELECT COUNT(Prop_ID) FROM Bookings WHERE Prop_ID = " + PropID;
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
             OracleDataReader dr = cmd.ExecuteReader();
             dr.Read();
