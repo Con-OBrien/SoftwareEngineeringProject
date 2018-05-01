@@ -173,8 +173,25 @@ namespace PropertySysv2
         public static DataSet getTown(DataSet DS)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
 
             String strSQL = "SELECT DISTINCT Town FROM Properties ORDER BY Town";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            conn.Close();
+
+            return DS;
+        }
+        public static DataSet getCounty(DataSet DS)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
+
+            String strSQL = "SELECT DISTINCT County FROM Properties ORDER BY County";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -190,6 +207,18 @@ namespace PropertySysv2
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds;
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+            conn.Close();
+            return DS;
+        }
+        public static DataSet getSpecificProps(DataSet DS, String Town)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "'";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 

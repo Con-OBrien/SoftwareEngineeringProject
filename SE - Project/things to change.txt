@@ -1,6 +1,4 @@
 calculate rent function
-tenants cant rent a property that has all bedrooms filled 
-- to fix
 tenants cant rent a property if they arent 18
 owners can own a property if they arent 18
 

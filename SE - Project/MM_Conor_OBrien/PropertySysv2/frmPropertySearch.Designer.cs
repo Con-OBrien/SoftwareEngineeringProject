@@ -36,9 +36,9 @@
             this.cboBeds = new System.Windows.Forms.ComboBox();
             this.lblBeds = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.dgvProperties = new System.Windows.Forms.DataGridView();
+            this.grdProperties = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -115,17 +115,16 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Visible = false;
-            this.btnSearch.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // dgvProperties
+            // grdProperties
             // 
-            this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProperties.Location = new System.Drawing.Point(19, 183);
-            this.dgvProperties.Name = "dgvProperties";
-            this.dgvProperties.Size = new System.Drawing.Size(644, 96);
-            this.dgvProperties.TabIndex = 38;
-            this.dgvProperties.Visible = false;
-            this.dgvProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProperties_CellContentClick);
+            this.grdProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProperties.Location = new System.Drawing.Point(19, 183);
+            this.grdProperties.Name = "grdProperties";
+            this.grdProperties.Size = new System.Drawing.Size(644, 96);
+            this.grdProperties.TabIndex = 38;
+            this.grdProperties.Visible = false;
             // 
             // frmPropertySearch
             // 
@@ -133,7 +132,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(701, 320);
-            this.Controls.Add(this.dgvProperties);
+            this.Controls.Add(this.grdProperties);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblBeds);
             this.Controls.Add(this.cboBeds);
@@ -147,7 +146,7 @@
             this.Load += new System.EventHandler(this.frmPropertySearch_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +161,6 @@
         private System.Windows.Forms.ComboBox cboBeds;
         private System.Windows.Forms.Label lblBeds;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dgvProperties;
+        private System.Windows.Forms.DataGridView grdProperties;
     }
 }

@@ -91,7 +91,15 @@ namespace PropertySysv2
         {
             //Populate DataGrid
             DataSet ds = new DataSet();
-            grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            if(cboBeds.SelectedItem == null)
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text).Tables["ss"];
+                
+            }
+            else
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            }
 
             grdProperties.Visible = true;
             grpProperties.Visible = true;
@@ -110,7 +118,7 @@ namespace PropertySysv2
                 cboBeds.Items.Add(i.ToString());
         }
 
-        private void grdProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdProperties_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Populate Text boxes with selected data from DataGrid 
             txtRent.Text = grdProperties.Rows[grdProperties.CurrentCell.RowIndex].Cells[1].Value.ToString();

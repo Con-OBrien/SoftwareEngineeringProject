@@ -22,12 +22,6 @@ namespace PropertySysv2
             InitializeComponent();
             parent = Parent;
         }
-
-        private void grdTenants_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            grpTenants.Visible = true;
-        }
-
         private void mnuBack_Click(object sender, EventArgs e)
         {
             //close current form
@@ -41,7 +35,7 @@ namespace PropertySysv2
         {
             //Load ID's
             txtBookingID.Text = PropertySysv2.Booking.getNextBookingId().ToString("00000");
-            txtTenantID.Text = PropertySysv2.Tenant.getNextTenantId().ToString("00000");
+            
 
             //Fill combo boxes with options
             DataSet ds = new DataSet();
@@ -63,6 +57,17 @@ namespace PropertySysv2
         {
             String activity = "A";
             String dob = String.Format("{0:dd-MMM-yy}", dtpDOB.Value);
+            var today = DateTime.Today;
+            var birth = dtpDOB.Value.Year;
+            int age = today.Year - birth;
+
+            if(age < 18)
+            {
+                MessageBox.Show("Tenant must be 18 or over!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpDOB.Focus();
+                return;
+            }
+
             //Validate Data
             if (txtSurname.Text.Equals("") || txtForename.Text.Equals("") || txtPhone.Text.Equals("") || txtEmail.Text.Equals("") || dtpDOB.Equals(""))
             {
@@ -90,9 +95,7 @@ namespace PropertySysv2
             myTenant.setDob(dob);
             myTenant.setActivity(activity);
             myTenant.setPropID(Convert.ToInt32(txtPropID.Text));
-
-           
-
+        
             
             //INSERT Tenant Record Into Tenant Table
             myTenant.regTenant();
@@ -131,6 +134,7 @@ namespace PropertySysv2
             btnExisting.Visible = false;
             btnAdd.Visible = true;
 
+            txtTenantID.Text = PropertySysv2.Tenant.getNextTenantId().ToString("00000");
             txtForename.Text = "";
             txtSurname.Text = "";
             txtPhone.Text = "";
@@ -209,6 +213,7 @@ namespace PropertySysv2
             }
             
             //Populate Text Boxes 
+           
             txtTenantID.Text = newTenant.getTenantId().ToString();
             txtForename.Text = newTenant.getForename();
             txtSurname.Text = newTenant.getSurname();
@@ -237,8 +242,16 @@ namespace PropertySysv2
         {
             //Populate DataGrid
             DataSet ds = new DataSet();
-            grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
-           
+            if (cboBeds.SelectedItem == null)
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text).Tables["ss"];
+
+            }
+            else
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            }
+
             grdProperties.Visible = true;
 
         }
@@ -261,16 +274,6 @@ namespace PropertySysv2
             lblTenant.Visible = true;
             btnYes.Visible = true;
             btnNo.Visible = true;
-
-        }
-
-        private void txtRooms_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }

@@ -469,7 +469,7 @@
             this.grdProperties.Size = new System.Drawing.Size(420, 100);
             this.grdProperties.TabIndex = 51;
             this.grdProperties.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellClick);
-            this.grdProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellContentClick);
+
             // 
             // txtRooms
             // 
@@ -478,7 +478,7 @@
             this.txtRooms.Size = new System.Drawing.Size(25, 20);
             this.txtRooms.TabIndex = 58;
             this.txtRooms.Visible = false;
-            this.txtRooms.TextChanged += new System.EventHandler(this.txtRooms_TextChanged);
+
             // 
             // txtTotal
             // 
@@ -486,6 +486,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(62, 20);
             this.txtTotal.TabIndex = 59;
+            this.txtTotal.Visible = false;
             // 
             // frmRentProperty
             // 

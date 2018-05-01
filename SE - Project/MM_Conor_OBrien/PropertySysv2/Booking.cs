@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -129,6 +130,56 @@ namespace PropertySysv2
 
             //return next StockNo
             return intNextBookingId;
+        }
+        public static int getMonthlyData(String County, String Town)
+        {
+            int total;
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
+
+            //connection name conn.Open();
+            String strSQL = "SELECT SUM(RentPerMonth) FROM Properties WHERE Town = '" + Town + "' AND COUNTY = '" + County + "'";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //cmd.CommandType = CommandType.Text;
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            //read the first (only) value returned by query
+            //If first stockNo, assign value 1, otherwise add 1 to MAX value
+            dr.Read();
+
+            if (dr.IsDBNull(0))
+                total = 0;
+            else
+                total = Convert.ToInt16(dr.GetValue(0));
+            conn.Close();
+
+            return total;
+        }
+        public static int getMonthlyData(String County)
+        {
+            int total;
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
+
+            //connection name conn.Open();
+            String strSQL = "SELECT SUM(RentPerMonth) FROM Properties WHERE COUNTY = '" + County + "'";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //cmd.CommandType = CommandType.Text;
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            //read the first (only) value returned by query
+            //If first stockNo, assign value 1, otherwise add 1 to MAX value
+            dr.Read();
+
+            if (dr.IsDBNull(0))
+                total = 0;
+            else
+                total = Convert.ToInt16(dr.GetValue(0));
+            conn.Close();
+
+            return total;
         }
     }
 }

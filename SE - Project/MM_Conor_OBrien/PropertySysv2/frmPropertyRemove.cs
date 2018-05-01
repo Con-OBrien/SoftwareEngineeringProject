@@ -65,7 +65,15 @@ namespace PropertySysv2
         {
             //Populate DataGrid
             DataSet ds = new DataSet();
-            grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            if (cboBeds.SelectedItem == null)
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text).Tables["ss"];
+
+            }
+            else
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            }
 
             grdProperties.Visible = true;              
         }

@@ -279,7 +279,7 @@
             this.grdProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grdProperties.Size = new System.Drawing.Size(502, 100);
             this.grdProperties.TabIndex = 40;
-            this.grdProperties.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellContentClick);
+            this.grdProperties.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellClick);
             // 
             // btnSearch
             // 

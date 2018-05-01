@@ -45,17 +45,7 @@ namespace PropertySysv2
             for (int i = 1; i < 6; i++)
                 cboBeds.Items.Add(i.ToString());
         }
-      
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Populate DataGrid         
-            DataSet ds = new DataSet();
-            dgvProperties.DataSource = Property.getSpecificProps(ds,cboTown.Text,Convert.ToInt32(cboBeds.Text)).Tables["ss"];
-
-            dgvProperties.Visible = true;
-
-
-        }
+  
 
         private void cboTown_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -64,8 +54,21 @@ namespace PropertySysv2
             btnSearch.Visible = true;
         }
 
-        private void dgvProperties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
+            //Populate DataGrid         
+            DataSet ds = new DataSet();
+            if (cboBeds.SelectedItem == null)
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text).Tables["ss"];
+
+            }
+            else
+            {
+                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+            }
+
+            grdProperties.Visible = true;
 
         }
     }
