@@ -62,7 +62,7 @@
             this.mnuExit});
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Size = new System.Drawing.Size(603, 24);
+            this.mnuMainMenu.Size = new System.Drawing.Size(808, 24);
             this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "menuStrip1";
             // 
@@ -207,20 +207,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PropertySysv2.Properties.Resources.Rental_Property;
+            this.pictureBox1.Image = global::PropertySysv2.Properties.Resources.lux;
             this.pictureBox1.Location = new System.Drawing.Point(0, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(603, 403);
+            this.pictureBox1.Size = new System.Drawing.Size(808, 449);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(603, 430);
+            this.ClientSize = new System.Drawing.Size(808, 476);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mnuMainMenu);
             this.MainMenuStrip = this.mnuMainMenu;
