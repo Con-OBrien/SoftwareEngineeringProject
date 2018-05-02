@@ -231,6 +231,18 @@ namespace PropertySysv2
             conn.Close();
             return DS;
         }
+        public static DataSet getSpecificAllOwners(DataSet DS, String Surname)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            String strSQL = "SELECT * FROM Owners WHERE Surname LIKE '%" + Surname + "%'";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+            conn.Close();
+            return DS;
+        }
         public void updOwner()
         {
             //connect to database

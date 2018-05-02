@@ -161,6 +161,21 @@ namespace PropertySysv2
 
             return RS;
         }
+        public static DataSet getSurnamesAllTenant(DataSet RS, String Surname)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            String upper = Surname.ToUpper();
+            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + upper + "%' AND Activity = 'A'";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataAdapter ra = new OracleDataAdapter(cmd);
+
+            ra.Fill(RS, "rs");
+
+            conn.Close();
+
+            return RS;
+        }
 
         public static int getNextTenantId()
         {

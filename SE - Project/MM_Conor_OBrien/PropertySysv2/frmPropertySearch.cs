@@ -60,12 +60,12 @@ namespace PropertySysv2
             DataSet ds = new DataSet();
             if (cboBeds.SelectedItem == null)
             {
-                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text).Tables["ss"];
+                grdProperties.DataSource = Property.getSpecificAllProps(ds, cboTown.Text).Tables["ss"];
 
             }
             else
             {
-                grdProperties.DataSource = Property.getSpecificProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
+                grdProperties.DataSource = Property.getSpecificAllProps(ds, cboTown.Text, Convert.ToInt32(cboBeds.Text)).Tables["ss"];
             }
 
             grdProperties.Visible = true;

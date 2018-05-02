@@ -218,6 +218,30 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
+            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Activity = 'A'";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+            conn.Close();
+            return DS;
+        }
+        public static DataSet getSpecificAllProps(DataSet DS, String Town, int Beds)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds;
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+            conn.Close();
+            return DS;
+        }
+        public static DataSet getSpecificAllProps(DataSet DS, String Town)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
             String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "'";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
