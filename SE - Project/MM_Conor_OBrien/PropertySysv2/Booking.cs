@@ -44,10 +44,6 @@ namespace PropertySysv2
         {
             this.endoflease = EndOfLease;
         }
-        public void setOwnerId(int Owner_ID)
-        {
-            this.owner_id = Owner_ID;
-        }
         public void setPropId(int Prop_ID)
         {
             this.prop_id = Prop_ID;
@@ -71,10 +67,6 @@ namespace PropertySysv2
         public String getEndOfLease()
         {
             return endoflease;
-        }
-        public int getOwnerId()
-        {
-            return owner_id;
         }
         public int getPropId()
         {

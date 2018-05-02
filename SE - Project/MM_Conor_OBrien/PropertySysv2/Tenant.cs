@@ -273,25 +273,6 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
-        public void updTenant(int Tid)
-        {
-            //connect to database
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            //Define SQL query to INSERT stock record
-            String strSQL = "UPDATE Tenants VALUES(" + this.tenant_id.ToString() +
-              ",'" + this.surname.ToUpper() + "','" + this.forename.ToUpper() + "'," +
-               this.phone.ToString() + ",'" + this.email.ToUpper() + "','" + this.dob.ToString() + "')  WHERE TenantID = " + Tid;
-
-            //Execute the command
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
-
-            //close DB connection
-            myConn.Close();
-        }
-
         public void rmvTenant()
         {
             //connect to database

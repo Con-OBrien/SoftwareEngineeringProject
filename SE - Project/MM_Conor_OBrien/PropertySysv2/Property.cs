@@ -22,6 +22,7 @@ namespace PropertySysv2
         private string activity;
         private int owner_id;
 
+        //No Argument constructor
         public Property()
         {
             rentpermonth = 0;
@@ -123,52 +124,6 @@ namespace PropertySysv2
         public int getOwnerId()
         {
             return owner_id;
-        }
-
-        public void getProperty(int Pid)
-        {
-            //Connect to the DB
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            //Define SQL query to get MAX prop_id used
-            String strSQL = "SELECT * FROM Properties WHERE Prop_ID = " + Pid;
-
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-
-            //execute the SQL Query
-            OracleDataReader dr = cmd.ExecuteReader();
-
-            if (dr.Read())
-            {
-                setPropId(dr.GetInt32(0));
-                setRentPerMonth(dr.GetInt32(1));
-                setBedrooms(dr.GetInt32(2));
-                setBathrooms(dr.GetInt32(3));
-                setHouseType(dr.GetString(4));
-                setStreet(dr.GetString(5));
-                setTown(dr.GetString(6));
-                setCounty(dr.GetString(7));
-                setOwnerId(dr.GetInt32(8));
-            }
-
-            //close DB connection
-            myConn.Close();
-        }
-        public static DataSet getProp(DataSet DS)
-        {
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            String strSQL = "SELECT Prop_ID FROM Properties ORDER BY Prop_ID";
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            conn.Close();
-
-            return DS;
         }
         public static DataSet getTown(DataSet DS)
         {
@@ -319,23 +274,6 @@ namespace PropertySysv2
             cmd.ExecuteNonQuery();
             myConn.Close();
         }
-
-        public void updProp(int Pid)
-        {
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            String strSQL = "UPDATE Properties SET VALUES(" + this.prop_id.ToString() +
-                "," + this.rentpermonth.ToString() + "," + this.bedrooms.ToString() +
-                "," + this.bathrooms.ToString() + ",'" + this.housetype.ToUpper() +
-                "','" + this.street.ToUpper() + "','" + this.town.ToUpper() + "','" +
-                this.county.ToUpper() + "') WHERE Prop_ID = " + Pid;
-
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
-
-            myConn.Close();
-        }
         public void rmvProperty()
         {
             //connect to database
@@ -344,22 +282,6 @@ namespace PropertySysv2
 
             //Define SQL query to DELETE stock record
             String strSQL = "DELETE FROM Properties WHERE Prop_ID = " + this.prop_id.ToString();
-
-            //Execute the command
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
-
-            //close DB connection
-            myConn.Close();
-        }
-        public void rmvProperty(int Pid)
-        {
-            //connect to database
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            //Define SQL query to DELETE stock record
-            String strSQL = "DELETE FROM Properties WHERE Prop_ID = " + Pid;
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

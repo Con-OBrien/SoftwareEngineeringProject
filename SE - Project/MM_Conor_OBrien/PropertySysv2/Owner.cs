@@ -144,25 +144,6 @@ namespace PropertySysv2
             myConn.Close();
         }
 
-        //define a static method to get data
-        public static DataSet getAllOwners(DataSet DS)
-        {
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            //connection name conn.Open();
-            String strSQL = "SELECT * FROM Owners";
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //cmd.CommandType = CommandType.Text;
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            conn.Close();
-
-            return DS;
-        }
-
         public static int getNextOwnerId()
         {
             // variable to hold value to be returned
@@ -180,11 +161,10 @@ namespace PropertySysv2
             //execute the SQL query and put result in OracleDataReader object
             OracleDataReader dr = cmd.ExecuteReader();
 
-            //read the first (only) value returned by query
-            //If first ownerID, assign value 1, otherwise add 1 to MAX value
+            //read the first (only) value returned by query         
             dr.Read();
 
-            //An aggregate function always returns 1 row, even if it contains a NULL value
+           
             // If NULL, then there are no OwnerID's in the Owner File - start at 1
             //Otherwise add 1 to the value read
 
@@ -261,24 +241,6 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
-        public void updOwner(int Oid)
-        {
-            //connect to database
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            //Define SQL query to UPDATE Owner record
-            String strSQL = "UPDATE Owners SET Surname = '" + this.surname.ToUpper() + "', Forename = '" + this.forename.ToUpper() + "', Street = '" +
-          this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" + this.county.ToUpper() + "', Phone = "
-         + this.phone.ToString() + ", Email = '" + this.email.ToUpper() + "'  WHERE Owner_ID = " + Oid + "')";
-
-            //Execute the command
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
-
-            //close DB connection
-            myConn.Close();
-        }
         public void rmvOwner()
         {
             //connect to database
@@ -295,22 +257,5 @@ namespace PropertySysv2
             //close DB connection
             myConn.Close();
         }
-        public void rmvOwner(int Oid)
-        {
-            //connect to database
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            //Define SQL query to UPDATE Owner Activity to Inactive
-            String strSQL = "DELETE FROM Owners WHERE Owner_ID = " + Oid;
-
-            //Execute the command
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
-
-            //close DB connection
-            myConn.Close();
-        }
-
     }
 }
