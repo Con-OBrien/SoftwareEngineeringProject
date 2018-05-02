@@ -206,7 +206,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds;
+            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds + " AND Activity = 'A'";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 

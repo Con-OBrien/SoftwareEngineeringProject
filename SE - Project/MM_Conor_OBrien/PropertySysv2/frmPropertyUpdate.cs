@@ -51,6 +51,13 @@ namespace PropertySysv2
                 }
             }
 
+
+            if (txtActivity.Text.ToUpper() != "A" && txtActivity.Text.ToUpper() != "I")
+            {
+                MessageBox.Show("Activity must be A or I!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             //Display Confirmation message
             MessageBox.Show("Owner Updated In System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

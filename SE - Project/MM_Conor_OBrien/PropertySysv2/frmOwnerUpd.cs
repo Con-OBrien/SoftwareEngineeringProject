@@ -22,32 +22,10 @@ namespace PropertySysv2
             InitializeComponent();
             parent = Parent;
         }
-
-
-        private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            grpOwners.Visible = true;
-        }
-
         private void frmOwnerUpd_Load(object sender, EventArgs e)
         {
 
         }
-
-       
-
-        private void btnUpd_Click(object sender, EventArgs e)
-        {
-            if(txtSurname.Text.Equals("") || txtForename.Text.Equals("") || txtPhone.Text.Equals("") || txtEmail.Text.Equals("") || txtBoxAdd1.Text.Equals("") || txtBoxAdd2.Text.Equals("") || txtBoxCounty.Text.Equals(""))
-            {
-                MessageBox.Show("All fields must be entered to update!");
-                return;
-            }
-
-            MessageBox.Show("Owner was updated!");
-
-        }
-
         private void mnuBack_Click(object sender, EventArgs e)
         {
             //close current form
@@ -61,7 +39,7 @@ namespace PropertySysv2
         {
 
             // validate data
-            if (txtSurname.Text.Equals("") || txtForename.Text.Equals("") || txtPhone.Text.Equals("") || txtEmail.Text.Equals("") || txtBoxAdd1.Text.Equals("") || txtBoxAdd2.Text.Equals(""))
+            if (txtSurname.Text.Equals("") || txtForename.Text.Equals("") || txtPhone.Text.Equals("") || txtEmail.Text.Equals("") || txtBoxAdd1.Text.Equals("") || txtBoxAdd2.Text.Equals("") || txtActivity.Text.Equals(""))
             {
                 MessageBox.Show("All fields must be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -76,6 +54,12 @@ namespace PropertySysv2
                     MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+            }
+
+            if(txtActivity.Text.ToUpper() != "A" && txtActivity.Text.ToUpper() != "I")
+            {
+                MessageBox.Show("Activity must be A or I!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             //Display Confirmation message
@@ -119,7 +103,7 @@ namespace PropertySysv2
             grdOwners.Visible = true;
         }
 
-        private void grdOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtOwnerID.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtForename.Text = grdOwners.Rows[grdOwners.CurrentCell.RowIndex].Cells[1].Value.ToString();

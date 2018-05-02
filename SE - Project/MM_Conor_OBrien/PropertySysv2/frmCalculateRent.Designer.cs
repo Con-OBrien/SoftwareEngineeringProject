@@ -97,7 +97,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(15, 111);
+            this.btnSearch.Location = new System.Drawing.Point(12, 111);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(56, 20);
             this.btnSearch.TabIndex = 43;
@@ -129,7 +129,7 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(61, 157);
+            this.txtTotal.Location = new System.Drawing.Point(61, 140);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(115, 20);
             this.txtTotal.TabIndex = 46;
@@ -138,7 +138,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(12, 160);
+            this.lblTotal.Location = new System.Drawing.Point(12, 143);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 47;
@@ -163,7 +163,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmCalculateRent";
-            this.Text = "frmCalculateRent";
+            this.Text = "Calculate Location Rent";
             this.Load += new System.EventHandler(this.frmCalculateRent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
