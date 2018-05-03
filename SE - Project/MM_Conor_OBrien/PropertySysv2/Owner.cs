@@ -150,7 +150,7 @@ namespace PropertySysv2
             }
         }
 
-        public static bool validhNumbers(String text)
+        public static bool validNumbers(String text)
         {
             if (Regex.IsMatch(text, @"^[0-9]+$"))
             {

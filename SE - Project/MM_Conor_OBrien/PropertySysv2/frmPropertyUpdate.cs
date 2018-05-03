@@ -63,13 +63,93 @@ namespace PropertySysv2
 
             //Instantiate Property Object
             Property myProps = new Property();
-            myProps.setRentPerMonth(Convert.ToInt32(txtRent.Text));
-            myProps.setBedrooms(Convert.ToInt32(txtBedrooms.Text));
-            myProps.setBathrooms(Convert.ToInt32(txtBathrooms.Text));
-            myProps.setHouseType(txtHouse.Text);
-            myProps.setStreet(txtAdd1.Text);
-            myProps.setTown(txtAdd2.Text);
-            myProps.setCounty(txtCounty.Text);
+            if (PropertySysv2.Owner.validNumbers(txtRent.Text))
+            {
+                myProps.setRentPerMonth(Convert.ToInt32(txtRent.Text));
+            }
+            else
+            {
+                MessageBox.Show("Rent must be numbers only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRent.Text = "";
+                txtRent.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validNumbers(txtBedrooms.Text))
+            {
+                myProps.setBedrooms(Convert.ToInt32(txtBedrooms.Text));
+            }
+            else
+            {
+                MessageBox.Show("Bedrooms must be numbers only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBedrooms.Text = "";
+                txtBedrooms.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validNumbers(txtBathrooms.Text))
+            {
+                myProps.setBathrooms(Convert.ToInt32(txtBathrooms.Text));
+            }
+            else
+            {
+                MessageBox.Show("Bathrooms must be numbers only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBathrooms.Text = "";
+                txtBathrooms.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validText(txtHouse.Text))
+            {
+                myProps.setHouseType(txtHouse.Text);
+            }
+            else
+            {
+                MessageBox.Show("House Type must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtHouse.Text = "";
+                txtHouse.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validText(txtAdd1.Text))
+            {
+                myProps.setStreet(txtAdd1.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 1 must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAdd1.Text = "";
+                txtAdd1.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtAdd2.Text))
+            {
+                myProps.setTown(txtAdd2.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 2 must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAdd2.Text = "";
+                txtAdd2.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtCounty.Text))
+            {
+                myProps.setCounty(txtCounty.Text);
+            }
+            else
+            {
+                MessageBox.Show("County must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCounty.Text = "";
+                txtCounty.Focus();
+                return;
+            }
             myProps.setActivity(txtActivity.Text);
             myProps.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
 
