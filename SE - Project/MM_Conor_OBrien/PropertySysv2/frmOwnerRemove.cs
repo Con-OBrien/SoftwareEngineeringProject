@@ -88,7 +88,7 @@ namespace PropertySysv2
                 return;
             }
             //Load DataGrid with matching data
-            if (Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
                 grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];

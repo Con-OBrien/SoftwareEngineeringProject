@@ -50,7 +50,7 @@ namespace PropertySysv2
             String phone = txtPhone.Text;
             foreach (char c in phone)
             {
-                if (c < '0' || c > '9')
+                if (c <= '0' || c >= '9')
                 {
                     MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -63,8 +63,7 @@ namespace PropertySysv2
                 return;
             }
 
-            //Display Confirmation message
-            MessageBox.Show("Owner Updated In System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
 
             //instantiate Owner Object
             Owner myOwners = new Owner();
@@ -148,6 +147,9 @@ namespace PropertySysv2
             //UPDATE Owner record in Owner table
             myOwners.updOwner();
 
+            //Display Confirmation message
+            MessageBox.Show("Owner Updated In System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             //reset UI
             txtOwnerSearch.Text = "";
             txtSurname.Text = "";
@@ -172,10 +174,10 @@ namespace PropertySysv2
                 txtOwnerSearch.Focus();
                 return;
             }
-            if(Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z]+$"))
+            if(Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
-                grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
+                grdOwners.DataSource = PropertySysv2.Owner.getSpecificAllOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
 
                 grdOwners.Visible = true;
             }

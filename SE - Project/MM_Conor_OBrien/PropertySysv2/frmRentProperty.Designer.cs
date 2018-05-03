@@ -292,6 +292,7 @@
             // dtpStart
             // 
             this.dtpStart.Location = new System.Drawing.Point(17, 36);
+            this.dtpStart.MinDate = new System.DateTime(2018, 5, 3, 0, 0, 0, 0);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(200, 20);
             this.dtpStart.TabIndex = 37;
@@ -470,7 +471,7 @@
             this.grdProperties.ReadOnly = true;
             this.grdProperties.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grdProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.grdProperties.Size = new System.Drawing.Size(420, 100);
+            this.grdProperties.Size = new System.Drawing.Size(614, 100);
             this.grdProperties.TabIndex = 51;
             this.grdProperties.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellClick);
             // 

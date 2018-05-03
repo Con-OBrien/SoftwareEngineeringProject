@@ -207,7 +207,7 @@
             // 
             // txtRent
             // 
-            this.txtRent.Location = new System.Drawing.Point(105, 57);
+            this.txtRent.Location = new System.Drawing.Point(105, 54);
             this.txtRent.MaxLength = 4;
             this.txtRent.Name = "txtRent";
             this.txtRent.Size = new System.Drawing.Size(124, 20);

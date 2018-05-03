@@ -161,7 +161,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds + " AND Activity = 'A'";
+            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Bedrooms = " + Beds + " AND Activity = 'A' ORDER BY Prop_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
@@ -173,7 +173,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Activity = 'A'";
+            String strSQL = "SELECT * FROM Properties WHERE Town = '" + Town + "' AND Activity = 'A' ORDER BY Prop_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 

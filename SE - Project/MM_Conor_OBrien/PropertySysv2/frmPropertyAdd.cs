@@ -71,7 +71,17 @@ namespace PropertySysv2
 
             if (PropertySysv2.Owner.validNumbers(txtBedroom.Text))
             {
-                myProps.setBedrooms(Convert.ToInt32(txtBedroom.Text));
+                if(Convert.ToInt32(txtBedroom.Text) >= 7)
+                {
+                    MessageBox.Show("Bedrooms can't be greater than 6", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtBedroom.Text = "";
+                    txtBedroom.Focus();
+                    return;
+                }
+                else
+                {
+                    myProps.setBedrooms(Convert.ToInt32(txtBedroom.Text));
+                }               
             }
             else
             {
@@ -212,7 +222,7 @@ namespace PropertySysv2
             }
 
             //Populate DataGrid
-            if (Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
                 grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];

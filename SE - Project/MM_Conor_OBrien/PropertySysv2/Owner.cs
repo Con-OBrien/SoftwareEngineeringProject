@@ -250,7 +250,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT * FROM Owners WHERE Surname LIKE '%" + Surname + "%' AND Activity = 'A'";
+            String strSQL = "SELECT * FROM Owners WHERE Surname LIKE '%" + Surname + "%' AND Activity = 'A' ORDER BY Owner_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
@@ -262,7 +262,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            String strSQL = "SELECT * FROM Owners WHERE Surname LIKE '%" + Surname + "%'";
+            String strSQL = "SELECT * FROM Owners WHERE Surname LIKE '%" + Surname + "%' ORDER BY Owner_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 

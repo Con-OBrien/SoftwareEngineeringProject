@@ -48,7 +48,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(627, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(427, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(163, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 37;
@@ -71,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Location = new System.Drawing.Point(6, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 38;
@@ -80,7 +80,7 @@
             // lblTown
             // 
             this.lblTown.AutoSize = true;
-            this.lblTown.Location = new System.Drawing.Point(12, 87);
+            this.lblTown.Location = new System.Drawing.Point(208, 67);
             this.lblTown.Name = "lblTown";
             this.lblTown.Size = new System.Drawing.Size(37, 13);
             this.lblTown.TabIndex = 39;
@@ -90,14 +90,14 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(373, 124);
+            this.label4.Location = new System.Drawing.Point(271, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 40;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(12, 111);
+            this.btnSearch.Location = new System.Drawing.Point(189, 114);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(56, 20);
             this.btnSearch.TabIndex = 43;
@@ -110,7 +110,7 @@
             // 
             this.cboCounty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCounty.FormattingEnabled = true;
-            this.cboCounty.Location = new System.Drawing.Point(61, 57);
+            this.cboCounty.Location = new System.Drawing.Point(67, 64);
             this.cboCounty.Name = "cboCounty";
             this.cboCounty.Size = new System.Drawing.Size(121, 21);
             this.cboCounty.TabIndex = 44;
@@ -120,7 +120,7 @@
             // 
             this.cboTown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTown.FormattingEnabled = true;
-            this.cboTown.Location = new System.Drawing.Point(61, 84);
+            this.cboTown.Location = new System.Drawing.Point(251, 64);
             this.cboTown.Name = "cboTown";
             this.cboTown.Size = new System.Drawing.Size(121, 21);
             this.cboTown.TabIndex = 45;
@@ -129,16 +129,16 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(61, 140);
+            this.txtTotal.Location = new System.Drawing.Point(135, 151);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(115, 20);
+            this.txtTotal.Size = new System.Drawing.Size(175, 20);
             this.txtTotal.TabIndex = 46;
             this.txtTotal.Visible = false;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(12, 143);
+            this.lblTotal.Location = new System.Drawing.Point(77, 154);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 47;
@@ -150,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(627, 179);
+            this.ClientSize = new System.Drawing.Size(427, 187);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.cboTown);

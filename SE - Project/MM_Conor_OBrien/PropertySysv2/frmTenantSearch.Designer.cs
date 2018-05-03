@@ -59,6 +59,10 @@
             // 
             // grdTenants
             // 
+            this.grdTenants.AllowUserToAddRows = false;
+            this.grdTenants.AllowUserToDeleteRows = false;
+            this.grdTenants.AllowUserToResizeColumns = false;
+            this.grdTenants.AllowUserToResizeRows = false;
             this.grdTenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTenants.Location = new System.Drawing.Point(13, 131);
             this.grdTenants.Name = "grdTenants";

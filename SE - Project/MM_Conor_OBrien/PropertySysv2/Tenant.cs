@@ -151,7 +151,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
             String upper = Surname.ToUpper();
-            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + upper + "%'";
+            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + upper + "%' ORDER BY Tenant_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             OracleDataAdapter ra = new OracleDataAdapter(cmd);
@@ -166,7 +166,7 @@ namespace PropertySysv2
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
             String upper = Surname.ToUpper();
-            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + upper + "%' AND Activity = 'A'";
+            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + upper + "%' AND Activity = 'A' ORDER BY Tenant_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             OracleDataAdapter ra = new OracleDataAdapter(cmd);

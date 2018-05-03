@@ -89,9 +89,45 @@ namespace PropertySysv2
             //Instantiate Tenant Object
             Tenant myTenant = new Tenant();
             myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
-            myTenant.setForename(txtForename.Text);
-            myTenant.setSurname(txtSurname.Text);          
-            myTenant.setPhone(txtPhone.Text);
+            if (PropertySysv2.Owner.validText(txtForename.Text))
+            {
+                myTenant.setForename(txtForename.Text);
+            }
+            else
+            {
+                MessageBox.Show("Forename must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtForename.Text = "";
+                txtForename.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validText(txtSurname.Text))
+            {
+                myTenant.setSurname(txtSurname.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 2 must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSurname.Text = "";
+                txtSurname.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validNumbers(txtPhone.Text))
+            {
+                myTenant.setPhone(txtPhone.Text);
+            }
+            else
+            {
+                MessageBox.Show("Phone must be numbers only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPhone.Text = "";
+                txtPhone.Focus();
+                return;
+            }
+     
+           
             if (PropertySysv2.Owner.validEmail(txtEmail.Text))
             {
                 myTenant.setEmail(txtEmail.Text);
@@ -102,6 +138,7 @@ namespace PropertySysv2
                 txtEmail.Focus();
                 return;
             }
+
             myTenant.setDob(dob);
             myTenant.setActivity(activity);
             myTenant.setPropID(Convert.ToInt32(txtPropID.Text));

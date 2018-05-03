@@ -96,7 +96,14 @@ namespace PropertySysv2
 
         private void frmPropertyRemove_Load(object sender, EventArgs e)
         {
+            DataSet ds = new DataSet();
+            ds = Property.getTown(ds);
 
+            for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
+                cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+
+            for (int i = 1; i < 6; i++)
+                cboBeds.Items.Add(i.ToString());
         }
     }
 }

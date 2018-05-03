@@ -58,8 +58,7 @@ namespace PropertySysv2
                 return;
             }
 
-            //Display Confirmation message
-            MessageBox.Show("Owner Updated In System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
 
             //Instantiate Property Object
             Property myProps = new Property();
@@ -155,6 +154,9 @@ namespace PropertySysv2
 
             //INSERT Property record into Property Table
             myProps.updProp();
+
+            //Display Confirmation message
+            MessageBox.Show("Owner Updated In System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //Reset UI
             txtRent.Text = "";

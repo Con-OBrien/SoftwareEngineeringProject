@@ -87,7 +87,7 @@ namespace PropertySysv2
                 return;
             }
 
-            if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
                 grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtTenantSearch.Text.ToUpper()).Tables["ss"];

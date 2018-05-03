@@ -30,7 +30,7 @@ namespace PropertySysv2
                 MessageBox.Show("Search field is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (Regex.IsMatch(txtSurname.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtSurname.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
                 grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtSurname.Text.ToUpper()).Tables["ss"];

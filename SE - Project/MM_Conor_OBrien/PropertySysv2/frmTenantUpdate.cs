@@ -47,7 +47,7 @@ namespace PropertySysv2
                 txtTenantSearch.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
                 grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtTenantSearch.Text.ToUpper()).Tables["ss"];
@@ -96,8 +96,33 @@ namespace PropertySysv2
             //instantiate Tenant Object
             Tenant myTenant = new Tenant();
             myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
-            myTenant.setForename(txtForename.Text);
-            myTenant.setSurname(txtSurname.Text);
+
+            if (PropertySysv2.Owner.validText(txtForename.Text))
+            {
+                myTenant.setForename(txtForename.Text);
+            }
+            else
+            {
+                MessageBox.Show("Forename must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtForename.Text = "";
+                txtForename.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validText(txtSurname.Text))
+            {
+                myTenant.setSurname(txtSurname.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 2 must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSurname.Text = "";
+                txtSurname.Focus();
+                return;
+            }
+
+
             myTenant.setPhone(txtPhone.Text);
             if (PropertySysv2.Owner.validEmail(txtEmail.Text))
             {
