@@ -188,6 +188,7 @@
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(104, 116);
+            this.txtSurname.MaxLength = 20;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(124, 20);
             this.txtSurname.TabIndex = 1;
@@ -214,6 +215,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(105, 180);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
             this.txtEmail.TabIndex = 3;
@@ -221,6 +223,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(104, 150);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(124, 20);
             this.txtPhone.TabIndex = 2;
@@ -228,6 +231,7 @@
             // txtForename
             // 
             this.txtForename.Location = new System.Drawing.Point(104, 82);
+            this.txtForename.MaxLength = 20;
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(124, 20);
             this.txtForename.TabIndex = 0;
@@ -469,7 +473,6 @@
             this.grdProperties.Size = new System.Drawing.Size(420, 100);
             this.grdProperties.TabIndex = 51;
             this.grdProperties.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProperties_CellClick);
-
             // 
             // txtRooms
             // 
@@ -478,7 +481,6 @@
             this.txtRooms.Size = new System.Drawing.Size(25, 20);
             this.txtRooms.TabIndex = 58;
             this.txtRooms.Visible = false;
-
             // 
             // txtTotal
             // 

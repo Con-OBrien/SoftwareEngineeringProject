@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 
@@ -14,7 +15,7 @@ namespace PropertySysv2
         private int tenant_id;
         private string surname;
         private string forename;     
-        private int phone;
+        private string phone;
         private string email;
         private string dob;
         private string activity;
@@ -27,7 +28,7 @@ namespace PropertySysv2
             tenant_id = 0;
             surname = "";
             forename = ""; 
-            phone = 0;
+            phone = "";
             email = "";
             dob = "";
             activity = "";
@@ -48,7 +49,7 @@ namespace PropertySysv2
         {
             this.forename = Forename;
         }  
-        public void setPhone(int Phone)
+        public void setPhone(String Phone)
         {
             this.phone = Phone;
         }
@@ -84,7 +85,7 @@ namespace PropertySysv2
         {
             return forename;
         }
-        public int getPhone()
+        public String getPhone()
         {
             return phone;
         }
@@ -124,7 +125,7 @@ namespace PropertySysv2
                 setTenantId(dr.GetInt32(0));
                 setForename(dr.GetString(1));
                 setSurname(dr.GetString(2));    
-                setPhone(Convert.ToInt32(dr.GetString(3)));
+                setPhone(dr.GetString(3));
                 setEmail(dr.GetString(4));
                 setDob(dr.GetValue(5).ToString());
             }
@@ -243,7 +244,7 @@ namespace PropertySysv2
             //Define SQL query to INSERT stock record
             String strSQL = "INSERT INTO Tenants VALUES(" + this.tenant_id.ToString() +
                 ",'" + this.forename.ToUpper() + "','" + this.surname.ToUpper() + 
-                  "'," + this.phone.ToString() + ",'" + this.email.ToUpper() + "','" 
+                  "','" + this.phone + "','" + this.email.ToUpper() + "','" 
                   + this.dob.ToString() + "','" + this.activity.ToUpper() + "'," + this.prop_id.ToString() + ")";
 
             //Execute the command
@@ -263,7 +264,7 @@ namespace PropertySysv2
 
             //Define SQL query to INSERT stock record
             String strSQL = "UPDATE Tenants SET Surname = '" + this.surname.ToUpper() + "', Forename ='"
-                + this.forename.ToUpper() + "', Phone = " + this.phone.ToString() + ", Email ='"
+                + this.forename.ToUpper() + "', Phone = '" + this.phone + "', Email ='"
                 + this.email.ToUpper() + "', Activity = '" + this.activity.ToUpper() + "' WHERE Tenant_ID = " + this.tenant_id.ToString();
 
             //Execute the command

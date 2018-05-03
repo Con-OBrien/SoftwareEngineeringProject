@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
+using System.Text.RegularExpressions;
 
 namespace PropertySysv2
 {
@@ -17,7 +18,7 @@ namespace PropertySysv2
         private string street;
         private string town;
         private string county;
-        private int phone;
+        private string phone;
         private string email;
         private string activity;
 
@@ -31,7 +32,7 @@ namespace PropertySysv2
             street = "";
             town = "";
             county = "";
-            phone = 0;
+            phone = "";
             email = "";
             activity = "";
         }
@@ -62,7 +63,7 @@ namespace PropertySysv2
         {
             this.county = County;
         }
-        public void setPhone(int Phone)
+        public void setPhone(String Phone)
         {
             this.phone = Phone;
         }
@@ -102,7 +103,7 @@ namespace PropertySysv2
         {
             return county;
         }
-        public int getPhone()
+        public String getPhone()
         {
             return phone;
         }
@@ -113,6 +114,52 @@ namespace PropertySysv2
         public String getActivity()
         {
             return activity;
+        }
+        public static bool validEmail(String inStr)
+        {
+            if (Regex.IsMatch(inStr, @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool validText(String text)
+        {
+            if(Regex.IsMatch(text, @"^[a-zA-Z]+$"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public static bool validTextWithNumbers(String text)
+        {
+            if (Regex.IsMatch(text, @"^[a-zA-Z0-9 ]+$"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool validhNumbers(String text)
+        {
+            if (Regex.IsMatch(text, @"^[0-9]+$"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public void getOwner(int Oid)
         {
@@ -137,7 +184,7 @@ namespace PropertySysv2
                 setStreet(dr.GetString(3));
                 setTown(dr.GetString(4));
                 setCounty(dr.GetString(5));
-                setPhone(Convert.ToInt32(dr.GetString(6)));
+                setPhone(dr.GetString(6));
                 setEmail(dr.GetString(7));            
             }
             //close DB connection
@@ -189,8 +236,8 @@ namespace PropertySysv2
             //Define SQL query to INSERT Owner record
             String strSQL = "INSERT INTO Owners VALUES(" + this.owner_id.ToString() +
                 ",'" + this.forename.ToUpper().ToString() + "','" +  this.surname.ToUpper() + "','" +
-                  this.street.ToUpper() + "','" + this.town.ToUpper() + "','" + this.county.ToUpper() + "',"
-                 + this.phone.ToString() + ",'" + this.email.ToUpper() + "','" + this.activity.ToUpper() + "')";
+                  this.street.ToUpper() + "','" + this.town.ToUpper() + "','" + this.county.ToUpper() + "','"
+                 + this.phone + "','" + this.email.ToUpper() + "','" + this.activity.ToUpper() + "')";
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -231,8 +278,8 @@ namespace PropertySysv2
 
             //Define SQL query to UPDATE Owner record
             String strSQL = "UPDATE Owners SET Surname = '" + this.surname.ToUpper() + "', Forename = '" + this.forename.ToUpper() + "', Street = '" +
-                  this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" + this.county.ToUpper() + "', Phone = "
-                 + this.phone.ToString() + ", Email = '" + this.email.ToUpper() + "', Activity = '" + this.activity.ToUpper().ToString() + "' WHERE Owner_ID = " + this.owner_id.ToString();
+                  this.street.ToUpper() + "', Town = '" + this.town.ToUpper() + "', County = '" + this.county.ToUpper() + "', Phone = '"
+                 + this.phone + "', Email = '" + this.email.ToUpper() + "', Activity = '" + this.activity.ToUpper().ToString() + "' WHERE Owner_ID = " + this.owner_id.ToString();
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

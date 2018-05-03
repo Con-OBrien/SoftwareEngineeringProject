@@ -34,12 +34,15 @@ namespace PropertySysv2
                 return;
 
             }
+           
             String phone = txtPhone.Text;
             foreach(char c in phone)
             {
                 if (c < '0' || c > '9')
                 {
                     MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPhone.Text = "";
+                    txtPhone.Focus();
                     return;
                 }
             }
@@ -47,13 +50,80 @@ namespace PropertySysv2
             //instantiate Owner Object
             Owner myOwners = new Owner();
             myOwners.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
-            myOwners.setForename(txtForename.Text);
-            myOwners.setSurname(txtSurname.Text);
-            myOwners.setStreet(txtBoxAdd1.Text);
-            myOwners.setTown(txtBoxAdd2.Text);
-            myOwners.setCounty(txtBoxCounty.Text);
-            myOwners.setPhone(Convert.ToInt32(txtPhone.Text));
-            myOwners.setEmail(txtEmail.Text);
+            if (PropertySysv2.Owner.validText(txtForename.Text))
+            {
+                myOwners.setForename(txtForename.Text);
+            }
+            else
+            {
+                MessageBox.Show("Forename must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtForename.Text = "";
+                txtForename.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtSurname.Text))
+            {
+                myOwners.setSurname(txtSurname.Text);
+            }
+            else
+            {
+                MessageBox.Show("Surname must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSurname.Text = "";
+                txtSurname.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validTextWithNumbers(txtBoxAdd1.Text))
+            {
+                myOwners.setStreet(txtBoxAdd1.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 1 must be numbers and letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxAdd1.Text = "";
+                txtBoxAdd1.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtBoxAdd2.Text))
+            {
+                myOwners.setTown(txtBoxAdd2.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 2 must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxAdd2.Text = "";
+                txtBoxAdd2.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtBoxCounty.Text))
+            {
+                myOwners.setCounty(txtBoxCounty.Text);
+            }
+            else
+            {
+                MessageBox.Show("County must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxCounty.Text = "";
+                txtBoxCounty.Focus();
+                return;
+            }
+           
+            myOwners.setPhone(txtPhone.Text);
+
+            if(PropertySysv2.Owner.validEmail(txtEmail.Text))
+            {
+                myOwners.setEmail(txtEmail.Text);
+            }
+            else
+            {
+                MessageBox.Show("Email must be correct format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Text = "";
+                txtEmail.Focus();
+                return;
+            }
             myOwners.setActivity("A");
 
             //INSERT Owner record into table
@@ -90,6 +160,11 @@ namespace PropertySysv2
         {
             //get the next OwnerId           
             txtOwnerID.Text = PropertySysv2.Owner.getNextOwnerId().ToString("00000");
+        }
+
+        private void grpOwner_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,7 +14,6 @@ namespace PropertySysv2
         private String dateregistered;
         private String startoflease;
         private String endoflease;
-        private int owner_id;
         private int prop_id;
 
         public Booking()
@@ -23,7 +22,6 @@ namespace PropertySysv2
             dateregistered = "";
             startoflease = "";
             endoflease = "";
-            owner_id = 0;
             prop_id = 0;
         }
 

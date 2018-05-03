@@ -111,6 +111,7 @@
             // txtActivity
             // 
             this.txtActivity.Location = new System.Drawing.Point(94, 254);
+            this.txtActivity.MaxLength = 1;
             this.txtActivity.Name = "txtActivity";
             this.txtActivity.Size = new System.Drawing.Size(122, 20);
             this.txtActivity.TabIndex = 34;
@@ -127,6 +128,7 @@
             // txtBedrooms
             // 
             this.txtBedrooms.Location = new System.Drawing.Point(95, 63);
+            this.txtBedrooms.MaxLength = 2;
             this.txtBedrooms.Name = "txtBedrooms";
             this.txtBedrooms.Size = new System.Drawing.Size(124, 20);
             this.txtBedrooms.TabIndex = 32;
@@ -143,6 +145,7 @@
             // txtCounty
             // 
             this.txtCounty.Location = new System.Drawing.Point(95, 223);
+            this.txtCounty.MaxLength = 20;
             this.txtCounty.Name = "txtCounty";
             this.txtCounty.Size = new System.Drawing.Size(122, 20);
             this.txtCounty.TabIndex = 30;
@@ -159,6 +162,7 @@
             // txtAdd2
             // 
             this.txtAdd2.Location = new System.Drawing.Point(96, 193);
+            this.txtAdd2.MaxLength = 20;
             this.txtAdd2.Name = "txtAdd2";
             this.txtAdd2.Size = new System.Drawing.Size(123, 20);
             this.txtAdd2.TabIndex = 28;
@@ -185,6 +189,7 @@
             // txtAdd1
             // 
             this.txtAdd1.Location = new System.Drawing.Point(96, 161);
+            this.txtAdd1.MaxLength = 20;
             this.txtAdd1.Name = "txtAdd1";
             this.txtAdd1.Size = new System.Drawing.Size(123, 20);
             this.txtAdd1.TabIndex = 25;
@@ -192,6 +197,7 @@
             // txtHouse
             // 
             this.txtHouse.Location = new System.Drawing.Point(96, 127);
+            this.txtHouse.MaxLength = 25;
             this.txtHouse.Name = "txtHouse";
             this.txtHouse.Size = new System.Drawing.Size(123, 20);
             this.txtHouse.TabIndex = 24;
@@ -199,6 +205,7 @@
             // txtBathrooms
             // 
             this.txtBathrooms.Location = new System.Drawing.Point(95, 97);
+            this.txtBathrooms.MaxLength = 2;
             this.txtBathrooms.Name = "txtBathrooms";
             this.txtBathrooms.Size = new System.Drawing.Size(124, 20);
             this.txtBathrooms.TabIndex = 23;
@@ -206,6 +213,7 @@
             // txtRent
             // 
             this.txtRent.Location = new System.Drawing.Point(95, 29);
+            this.txtRent.MaxLength = 4;
             this.txtRent.Name = "txtRent";
             this.txtRent.Size = new System.Drawing.Size(124, 20);
             this.txtRent.TabIndex = 22;

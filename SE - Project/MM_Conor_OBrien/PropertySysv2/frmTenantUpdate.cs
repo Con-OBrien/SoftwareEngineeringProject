@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,11 +41,25 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (txtTenantSearch.Text == "")
+            {
+                MessageBox.Show("Search must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenantSearch.Focus();
+                return;
+            }
+            if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z]+$"))
+            {
+                DataSet ds = new DataSet();
+                grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtTenantSearch.Text.ToUpper()).Tables["ss"];
 
-            DataSet ds = new DataSet();
-            grdTenants.DataSource = Tenant.getSurnamesTenant(ds, txtTenantSearch.Text).Tables["rs"];
-
-            grdTenants.Visible = true;
+                grdTenants.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Search must be valid characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenantSearch.Focus();
+                return;
+            }
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -62,6 +77,7 @@ namespace PropertySysv2
                 if (c < '0' || c > '9')
                 {
                     MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPhone.Text = "";
                     return;
                 }
             }
@@ -70,6 +86,7 @@ namespace PropertySysv2
             if (txtActivity.Text.ToUpper() != "A" && txtActivity.Text.ToUpper() != "I")
             {
                 MessageBox.Show("Activity must be A or I!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtActivity.Text = "";
                 return;
             }
 
@@ -81,8 +98,17 @@ namespace PropertySysv2
             myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
             myTenant.setForename(txtForename.Text);
             myTenant.setSurname(txtSurname.Text);
-            myTenant.setPhone(Convert.ToInt32(txtPhone.Text));
-            myTenant.setEmail(txtEmail.Text);
+            myTenant.setPhone(txtPhone.Text);
+            if (PropertySysv2.Owner.validEmail(txtEmail.Text))
+            {
+                myTenant.setEmail(txtEmail.Text);
+            }
+            else
+            {
+                MessageBox.Show("Email must be correct format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
             myTenant.setActivity(txtActivity.Text);
 
             //INSERT Tenant record into tenant table

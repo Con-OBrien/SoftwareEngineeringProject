@@ -106,6 +106,7 @@
             // txtActivity
             // 
             this.txtActivity.Location = new System.Drawing.Point(108, 215);
+            this.txtActivity.MaxLength = 1;
             this.txtActivity.Name = "txtActivity";
             this.txtActivity.Size = new System.Drawing.Size(41, 20);
             this.txtActivity.TabIndex = 39;
@@ -130,6 +131,7 @@
             // txtForename
             // 
             this.txtForename.Location = new System.Drawing.Point(108, 36);
+            this.txtForename.MaxLength = 20;
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(123, 20);
             this.txtForename.TabIndex = 0;
@@ -146,6 +148,7 @@
             // txtBoxCounty
             // 
             this.txtBoxCounty.Location = new System.Drawing.Point(108, 141);
+            this.txtBoxCounty.MaxLength = 20;
             this.txtBoxCounty.Name = "txtBoxCounty";
             this.txtBoxCounty.Size = new System.Drawing.Size(123, 20);
             this.txtBoxCounty.TabIndex = 4;
@@ -162,6 +165,7 @@
             // txtBoxAdd2
             // 
             this.txtBoxAdd2.Location = new System.Drawing.Point(108, 112);
+            this.txtBoxAdd2.MaxLength = 20;
             this.txtBoxAdd2.Name = "txtBoxAdd2";
             this.txtBoxAdd2.Size = new System.Drawing.Size(123, 20);
             this.txtBoxAdd2.TabIndex = 3;
@@ -178,6 +182,7 @@
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(108, 59);
+            this.txtSurname.MaxLength = 20;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(123, 20);
             this.txtSurname.TabIndex = 1;
@@ -204,6 +209,7 @@
             // txtBoxAdd1
             // 
             this.txtBoxAdd1.Location = new System.Drawing.Point(108, 84);
+            this.txtBoxAdd1.MaxLength = 20;
             this.txtBoxAdd1.Name = "txtBoxAdd1";
             this.txtBoxAdd1.Size = new System.Drawing.Size(123, 20);
             this.txtBoxAdd1.TabIndex = 2;
@@ -211,6 +217,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(108, 193);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
             this.txtEmail.TabIndex = 6;
@@ -218,6 +225,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(108, 167);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(123, 20);
             this.txtPhone.TabIndex = 5;
@@ -281,6 +289,7 @@
             // txtOwnerSearch
             // 
             this.txtOwnerSearch.Location = new System.Drawing.Point(108, 34);
+            this.txtOwnerSearch.MaxLength = 20;
             this.txtOwnerSearch.Name = "txtOwnerSearch";
             this.txtOwnerSearch.Size = new System.Drawing.Size(178, 20);
             this.txtOwnerSearch.TabIndex = 34;

@@ -65,6 +65,7 @@
             // txtTenantSearch
             // 
             this.txtTenantSearch.Location = new System.Drawing.Point(106, 56);
+            this.txtTenantSearch.MaxLength = 20;
             this.txtTenantSearch.Name = "txtTenantSearch";
             this.txtTenantSearch.Size = new System.Drawing.Size(178, 20);
             this.txtTenantSearch.TabIndex = 26;
@@ -113,6 +114,7 @@
             // txtActivity
             // 
             this.txtActivity.Location = new System.Drawing.Point(95, 169);
+            this.txtActivity.MaxLength = 1;
             this.txtActivity.Name = "txtActivity";
             this.txtActivity.Size = new System.Drawing.Size(124, 20);
             this.txtActivity.TabIndex = 33;
@@ -128,6 +130,7 @@
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(95, 79);
+            this.txtSurname.MaxLength = 20;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(124, 20);
             this.txtSurname.TabIndex = 32;
@@ -154,6 +157,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(96, 143);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
             this.txtEmail.TabIndex = 24;
@@ -161,6 +165,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(95, 113);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(124, 20);
             this.txtPhone.TabIndex = 23;
@@ -168,6 +173,7 @@
             // txtForename
             // 
             this.txtForename.Location = new System.Drawing.Point(95, 45);
+            this.txtForename.MaxLength = 20;
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(124, 20);
             this.txtForename.TabIndex = 22;

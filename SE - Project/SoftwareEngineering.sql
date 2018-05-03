@@ -10,12 +10,12 @@ DROP TABLE Owners;
 
 CREATE TABLE Owners
 (Owner_ID numeric(3),
-Forename varchar2(15) NOT NULL,
-Surname varchar2(15) NOT NULL,
+Forename varchar2(20) NOT NULL,
+Surname varchar2(20) NOT NULL,
 Street varchar2(20) NOT NULL,
 Town varchar2(20) NOT NULL,
 County varchar2(20) NOT NULL,
-Phone varchar2(15),
+Phone char(10),
 Email varchar2(50) NOT NULL,
 Activity char(1) NOT NULL,
 CONSTRAINT pk_Owners PRIMARY KEY (Owner_ID));
@@ -36,10 +36,10 @@ CONSTRAINT fk_Properties_Owners FOREIGN KEY (Owner_ID) REFERENCES Owners);
 
 CREATE TABLE Tenants
 (Tenant_ID numeric(3),
-Forename varchar2(15) NOT NULL,
-Surname varchar2(15) NOT NULL,
-Phone varchar2(15) NOT NULL,
-Email varchar2(30) NOT NULL,
+Forename varchar2(20) NOT NULL,
+Surname varchar2(20) NOT NULL,
+Phone char(10) NOT NULL,
+Email varchar2(50) NOT NULL,
 DOB date,
 Activity char(1) NOT NULL,
 Prop_ID numeric(3),

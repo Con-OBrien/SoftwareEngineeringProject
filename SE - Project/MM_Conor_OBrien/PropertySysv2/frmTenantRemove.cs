@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,8 +32,8 @@ namespace PropertySysv2
             Tenant myTenant = new Tenant();
             myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
             myTenant.setForename(txtForename.Text);
-            myTenant.setSurname(txtSurname.Text);
-            myTenant.setPhone(Convert.ToInt32(txtPhone.Text));
+            myTenant.setSurname(txtTenantSearch.Text);
+            myTenant.setPhone(txtPhone.Text);
             myTenant.setEmail(txtEmail.Text);
 
             //Set Tenant record in table as Inactive
@@ -44,7 +45,7 @@ namespace PropertySysv2
             //Reset UI           
             txtTenantID.Text = "";
             txtForename.Text = "";
-            txtSurname.Text = "";
+            txtTenantSearch.Text = "";
             txtPhone.Text = "";
             txtEmail.Text = "";         
 
@@ -70,11 +71,36 @@ namespace PropertySysv2
         {
             //Populate Text boxes with data from selected object from GridView
             txtForename.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[1].Value.ToString();
-            txtSurname.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtTenantSearch.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[2].Value.ToString();
             txtPhone.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[3].Value.ToString();
             txtEmail.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[4].Value.ToString();
 
             grpTenants.Visible = true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtTenantSearch.Text == "")
+            {
+                MessageBox.Show("Search must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenantSearch.Focus();
+                return;
+            }
+
+            if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z]+$"))
+            {
+                DataSet ds = new DataSet();
+                grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtTenantSearch.Text.ToUpper()).Tables["ss"];
+
+                grdTenants.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Search must be valid characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenantSearch.Text = "";
+                txtTenantSearch.Focus();
+                return;
+            }
         }
     }
 }

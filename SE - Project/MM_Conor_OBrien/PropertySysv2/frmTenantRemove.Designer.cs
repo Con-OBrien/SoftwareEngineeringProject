@@ -35,11 +35,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblSurnameSearch = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtTenantSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grpTenants = new System.Windows.Forms.GroupBox();
             this.txtTenantID = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -114,13 +114,14 @@
             this.btnSearch.TabIndex = 42;
             this.btnSearch.Text = "Search:";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtSurname
+            // txtTenantSearch
             // 
-            this.txtSurname.Location = new System.Drawing.Point(77, 59);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(114, 20);
-            this.txtSurname.TabIndex = 41;
+            this.txtTenantSearch.Location = new System.Drawing.Point(77, 59);
+            this.txtTenantSearch.Name = "txtTenantSearch";
+            this.txtTenantSearch.Size = new System.Drawing.Size(114, 20);
+            this.txtTenantSearch.TabIndex = 41;
             // 
             // lblSearch
             // 
@@ -134,7 +135,7 @@
             // grpTenants
             // 
             this.grpTenants.Controls.Add(this.txtTenantID);
-            this.grpTenants.Controls.Add(this.textBox1);
+            this.grpTenants.Controls.Add(this.txtSurname);
             this.grpTenants.Controls.Add(this.lblSurname);
             this.grpTenants.Controls.Add(this.txtEmail);
             this.grpTenants.Controls.Add(this.txtPhone);
@@ -159,12 +160,12 @@
             this.txtTenantID.TabIndex = 33;
             this.txtTenantID.Visible = false;
             // 
-            // textBox1
+            // txtSurname
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 20);
-            this.textBox1.TabIndex = 32;
+            this.txtSurname.Location = new System.Drawing.Point(95, 79);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(124, 20);
+            this.txtSurname.TabIndex = 32;
             // 
             // lblSurname
             // 
@@ -234,7 +235,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblSurnameSearch);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSurname);
+            this.Controls.Add(this.txtTenantSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -259,11 +260,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblSurnameSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox txtTenantSearch;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.GroupBox grpTenants;
         private System.Windows.Forms.TextBox txtTenantID;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,41 +33,6 @@ namespace PropertySysv2
             parent.Show();
         }
 
-        private void txtSearch_Click(object sender, EventArgs e)
-        {
-            //check that Owner Surname is entered
-            if (txtOwnerSearch.Text.Equals(""))
-            {
-                MessageBox.Show("OwnerID must be Entered!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtOwnerSearch.Focus();
-                return;
-            }
-
-            //find Owner details
-            Owner rmvOwner = new Owner();
-            rmvOwner.getOwner(Convert.ToInt32(txtOwnerSearch.Text));
-
-            if (rmvOwner.getOwnerId().Equals(0))
-            {
-                MessageBox.Show("No details found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtOwnerSearch.Focus();
-                return;
-            }
-
-            //display Owner details
-            txtForename.Text = rmvOwner.getForename();
-            txtSurname.Text = rmvOwner.getSurname();
-            txtBoxAdd1.Text = rmvOwner.getStreet();
-            txtBoxAdd2.Text = rmvOwner.getTown();
-            txtBoxCounty.Text = rmvOwner.getCounty();
-            txtPhone.Text = rmvOwner.getPhone().ToString();
-            txtEmail.Text = rmvOwner.getEmail();
-
-
-            //display details
-            grpOwners.Visible = true;
-        }
-
         private void btnRmv_Click(object sender, EventArgs e)
         {
             // validate data
@@ -76,6 +42,7 @@ namespace PropertySysv2
                 return;
 
             }
+            
             // Save data in Owners File
 
             //Display Confirmation message
@@ -89,7 +56,7 @@ namespace PropertySysv2
             myOwners.setStreet(txtBoxAdd1.Text);
             myOwners.setTown(txtBoxAdd2.Text);
             myOwners.setCounty(txtBoxCounty.Text);
-            myOwners.setPhone(Convert.ToInt32(txtPhone.Text));
+            myOwners.setPhone(txtPhone.Text);
             myOwners.setEmail(txtEmail.Text);
 
             //Set Owner Activity as Inactive
@@ -113,13 +80,28 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            if (txtOwnerSearch.Text == "")
+            {
+                MessageBox.Show("Search must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtOwnerSearch.Text = "";
+                txtOwnerSearch.Focus();
+                return;
+            }
             //Load DataGrid with matching data
+            if (Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z]+$"))
+            {
+                DataSet ds = new DataSet();
+                grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
 
-            DataSet ds = new DataSet();
-            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
-
-            grdOwners.Visible = true;
+                grdOwners.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Search must be valid characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtOwnerSearch.Text = "";
+                txtOwnerSearch.Focus();
+                return;
+            }
         }
 
         private void grdOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -81,6 +81,7 @@ namespace PropertySysv2
                 if (c < '0' || c > '9')
                 {
                     MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPhone.Text = "";
                     return;
                 }
             }
@@ -90,8 +91,17 @@ namespace PropertySysv2
             myTenant.setTenantId(Convert.ToInt32(txtTenantID.Text));
             myTenant.setForename(txtForename.Text);
             myTenant.setSurname(txtSurname.Text);          
-            myTenant.setPhone(Convert.ToInt32(txtPhone.Text));
-            myTenant.setEmail(txtEmail.Text);
+            myTenant.setPhone(txtPhone.Text);
+            if (PropertySysv2.Owner.validEmail(txtEmail.Text))
+            {
+                myTenant.setEmail(txtEmail.Text);
+            }
+            else
+            {
+                MessageBox.Show("Email must be correct format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
             myTenant.setDob(dob);
             myTenant.setActivity(activity);
             myTenant.setPropID(Convert.ToInt32(txtPropID.Text));

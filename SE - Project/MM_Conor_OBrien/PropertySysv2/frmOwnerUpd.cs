@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -68,13 +69,80 @@ namespace PropertySysv2
             //instantiate Owner Object
             Owner myOwners = new Owner();
             myOwners.setOwnerId(Convert.ToInt32(txtOwnerID.Text));
-            myOwners.setForename(txtForename.Text);
-            myOwners.setSurname(txtSurname.Text);
-            myOwners.setStreet(txtBoxAdd1.Text);
-            myOwners.setTown(txtBoxAdd2.Text);
-            myOwners.setCounty(txtBoxCounty.Text);
-            myOwners.setPhone(Convert.ToInt32(txtPhone.Text));
-            myOwners.setEmail(txtEmail.Text);
+            if (PropertySysv2.Owner.validText(txtForename.Text))
+            {
+                myOwners.setForename(txtForename.Text);
+            }
+            else
+            {
+                MessageBox.Show("Forename must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtForename.Text = "";
+                txtForename.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtSurname.Text))
+            {
+                myOwners.setSurname(txtSurname.Text);
+            }
+            else
+            {
+                MessageBox.Show("Surname must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSurname.Text = "";
+                txtSurname.Focus();
+                return;
+            }
+
+
+            if (PropertySysv2.Owner.validTextWithNumbers(txtBoxAdd1.Text))
+            {
+                myOwners.setStreet(txtBoxAdd1.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 1 must be numbers and letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxAdd1.Text = "";
+                txtBoxAdd1.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtBoxAdd2.Text))
+            {
+                myOwners.setTown(txtBoxAdd2.Text);
+            }
+            else
+            {
+                MessageBox.Show("Address Line 2 must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxAdd2.Text = "";
+                txtBoxAdd2.Focus();
+                return;
+            }
+
+            if (PropertySysv2.Owner.validText(txtBoxCounty.Text))
+            {
+                myOwners.setCounty(txtBoxCounty.Text);
+            }
+            else
+            {
+                MessageBox.Show("County must be letters only", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxCounty.Text = "";
+                txtBoxCounty.Focus();
+                return;
+            }
+
+            myOwners.setPhone(txtPhone.Text);
+
+            if (PropertySysv2.Owner.validEmail(txtEmail.Text))
+            {
+                myOwners.setEmail(txtEmail.Text);
+            }
+            else
+            {
+                MessageBox.Show("Email must be correct format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Text = "";
+                txtEmail.Focus();
+                return;
+            }        
             myOwners.setActivity(txtActivity.Text);
 
             //UPDATE Owner record in Owner table
@@ -97,10 +165,32 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
+            if(txtOwnerSearch.Text == "")
+            {
+                MessageBox.Show("Search must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                txtOwnerSearch.Focus();
+                return;
+            }
+            if(Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z]+$"))
+            {
+                DataSet ds = new DataSet();
+                grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
 
-            grdOwners.Visible = true;
+                grdOwners.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Search must be valid characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtOwnerSearch.Text = "";
+                txtOwnerSearch.Focus();
+                return;
+            }
+
+
+
+
+            
         }
 
         private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,6 +47,7 @@ namespace PropertySysv2
                 if (c < '0' || c > '9')
                 {
                     MessageBox.Show("Rent must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtRent.Text = "";
                     return;
                 }
             }
@@ -118,12 +120,28 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //Populate DataGrid
-            DataSet ds = new DataSet();
+            if (txtOwnerSearch.Text == "")
+            {
+                MessageBox.Show("Search must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtOwnerSearch.Focus();
+                return;
+            }
 
-            grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];   //(ds, txtSurname.Text).Tables["ss"];
-            grdOwners.AllowUserToAddRows = false;
-            grdOwners.Visible = true;
+            //Populate DataGrid
+            if (Regex.IsMatch(txtOwnerSearch.Text, @"^[a-zA-Z]+$"))
+            {
+                DataSet ds = new DataSet();
+                grdOwners.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtOwnerSearch.Text.ToUpper()).Tables["ss"];
+
+                grdOwners.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Search must be valid characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtOwnerSearch.Text = "";
+                txtOwnerSearch.Focus();
+                return;
+            }
         }
     }
 }

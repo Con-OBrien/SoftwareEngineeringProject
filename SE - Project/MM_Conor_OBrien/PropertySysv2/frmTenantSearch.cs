@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,11 +30,20 @@ namespace PropertySysv2
                 MessageBox.Show("Search field is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            DataSet ds = new DataSet();
+            if (Regex.IsMatch(txtSurname.Text, @"^[a-zA-Z]+$"))
+            {
+                DataSet ds = new DataSet();
+                grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtSurname.Text.ToUpper()).Tables["ss"];
 
-            grdTenants.DataSource = Tenant.getSurnamesAllTenant(ds, txtSurname.Text.ToUpper()).Tables["rs"];   //(ds, txtSurname.Text).Tables["ss"];
-            grdTenants.AllowUserToAddRows = false;
-            grdTenants.Visible = true;
+                grdTenants.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Search must be valid characters!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSurname.Text = "";
+                txtSurname.Focus();
+                return;
+            }
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
