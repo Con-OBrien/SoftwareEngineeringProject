@@ -47,6 +47,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblForename = new System.Windows.Forms.Label();
+            this.txtPropID = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTenants)).BeginInit();
             this.grpTenants.SuspendLayout();
@@ -87,7 +88,7 @@
             this.grdTenants.Size = new System.Drawing.Size(455, 96);
             this.grdTenants.TabIndex = 45;
             this.grdTenants.Visible = false;
-            this.grdTenants.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdOwners_CellContentClick);
+            this.grdTenants.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdOwners_CellClick);
             // 
             // label10
             // 
@@ -112,7 +113,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(64, 27);
             this.btnSearch.TabIndex = 42;
-            this.btnSearch.Text = "Search:";
+            this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -134,6 +135,7 @@
             // 
             // grpTenants
             // 
+            this.grpTenants.Controls.Add(this.txtPropID);
             this.grpTenants.Controls.Add(this.txtTenantID);
             this.grpTenants.Controls.Add(this.txtSurname);
             this.grpTenants.Controls.Add(this.lblSurname);
@@ -162,6 +164,7 @@
             // 
             // txtSurname
             // 
+            this.txtSurname.Enabled = false;
             this.txtSurname.Location = new System.Drawing.Point(95, 79);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(124, 20);
@@ -178,6 +181,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(96, 143);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(123, 20);
@@ -185,6 +189,7 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.Enabled = false;
             this.txtPhone.Location = new System.Drawing.Point(95, 113);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(124, 20);
@@ -192,6 +197,7 @@
             // 
             // txtForename
             // 
+            this.txtForename.Enabled = false;
             this.txtForename.Location = new System.Drawing.Point(95, 45);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(124, 20);
@@ -223,6 +229,14 @@
             this.lblForename.Size = new System.Drawing.Size(57, 13);
             this.lblForename.TabIndex = 18;
             this.lblForename.Text = "Forename:";
+            // 
+            // txtPropID
+            // 
+            this.txtPropID.Location = new System.Drawing.Point(64, 19);
+            this.txtPropID.Name = "txtPropID";
+            this.txtPropID.Size = new System.Drawing.Size(28, 20);
+            this.txtPropID.TabIndex = 34;
+            this.txtPropID.Visible = false;
             // 
             // frmTenantRemove
             // 
@@ -272,5 +286,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblForename;
+        private System.Windows.Forms.TextBox txtPropID;
     }
 }

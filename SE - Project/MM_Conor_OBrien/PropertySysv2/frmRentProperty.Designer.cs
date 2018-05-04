@@ -136,9 +136,12 @@
             // dtpDOB
             // 
             this.dtpDOB.Location = new System.Drawing.Point(104, 208);
+            this.dtpDOB.MaxDate = new System.DateTime(2018, 5, 4, 0, 0, 0, 0);
+            this.dtpDOB.MinDate = new System.DateTime(1899, 12, 31, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(200, 20);
             this.dtpDOB.TabIndex = 38;
+            this.dtpDOB.Value = new System.DateTime(2018, 5, 4, 0, 0, 0, 0);
             // 
             // txtTenantID
             // 
@@ -292,10 +295,12 @@
             // dtpStart
             // 
             this.dtpStart.Location = new System.Drawing.Point(17, 36);
+            this.dtpStart.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dtpStart.MinDate = new System.DateTime(2018, 5, 3, 0, 0, 0, 0);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(200, 20);
             this.dtpStart.TabIndex = 37;
+            this.dtpStart.Value = new System.DateTime(2018, 5, 4, 0, 0, 0, 0);
             // 
             // dtpEnd
             // 

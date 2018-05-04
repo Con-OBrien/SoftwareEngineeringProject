@@ -24,9 +24,9 @@ namespace PropertySysv2
             parent = Parent;
         }
         private void btnRmv_Click(object sender, EventArgs e)
-        {
-            //Show Confirmation Message
-            MessageBox.Show("Tenant removed from the System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        {           
+            Booking delBook = new Booking();
+            delBook.rmvBooking(Convert.ToInt32(txtPropID.Text));
 
             //instantiate Tenant Object
             Tenant myTenant = new Tenant();
@@ -39,8 +39,9 @@ namespace PropertySysv2
             //Set Tenant record in table as Inactive
             myTenant.rmvTenant();
 
+            
             //Display Confirmation message
-            MessageBox.Show("Property Removed From System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Tenant Removed From System", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //Reset UI           
             txtTenantID.Text = "";
@@ -67,13 +68,15 @@ namespace PropertySysv2
 
         }
 
-        private void grdOwners_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdOwners_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Populate Text boxes with data from selected object from GridView
+            txtTenantID.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[0].Value.ToString();
             txtForename.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[1].Value.ToString();
-            txtTenantSearch.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtSurname.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[2].Value.ToString();
             txtPhone.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[3].Value.ToString();
             txtEmail.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtPropID.Text = grdTenants.Rows[grdTenants.CurrentCell.RowIndex].Cells[7].Value.ToString();
 
             grpTenants.Visible = true;
         }
@@ -90,7 +93,7 @@ namespace PropertySysv2
             if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
-                grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtTenantSearch.Text.ToUpper()).Tables["ss"];
+                grdTenants.DataSource = PropertySysv2.Tenant.getSurnamesAllTenant(ds, txtTenantSearch.Text.ToUpper()).Tables["rs"];
 
                 grdTenants.Visible = true;
             }

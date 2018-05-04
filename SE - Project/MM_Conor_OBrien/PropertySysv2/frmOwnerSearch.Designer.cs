@@ -106,7 +106,7 @@
             this.grdOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdOwners.Location = new System.Drawing.Point(13, 135);
             this.grdOwners.Name = "grdOwners";
-            this.grdOwners.Size = new System.Drawing.Size(455, 96);
+            this.grdOwners.Size = new System.Drawing.Size(640, 96);
             this.grdOwners.TabIndex = 39;
             this.grdOwners.Visible = false;
             // 

@@ -33,7 +33,7 @@ namespace PropertySysv2
             if (Regex.IsMatch(txtSurname.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
-                grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtSurname.Text.ToUpper()).Tables["ss"];
+                grdTenants.DataSource = PropertySysv2.Tenant.getSurnamesAllTenant(ds, txtSurname.Text.ToUpper()).Tables["rs"];
 
                 grdTenants.Visible = true;
             }

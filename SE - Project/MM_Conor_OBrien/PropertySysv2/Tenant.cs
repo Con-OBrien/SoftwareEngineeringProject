@@ -150,8 +150,8 @@ namespace PropertySysv2
         public static DataSet getSurnamesTenant(DataSet RS, String Surname)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
-            String upper = Surname.ToUpper();
-            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + upper + "%' ORDER BY Tenant_ID";
+            
+            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + Surname + "%' ORDER BY Tenant_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             OracleDataAdapter ra = new OracleDataAdapter(cmd);
@@ -165,8 +165,8 @@ namespace PropertySysv2
         public static DataSet getSurnamesAllTenant(DataSet RS, String Surname)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
-            String upper = Surname.ToUpper();
-            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + upper + "%' AND Activity = 'A' ORDER BY Tenant_ID";
+            
+            String strSQL = "SELECT * FROM Tenants WHERE Surname LIKE '%" + Surname + "%' AND Activity = 'A' ORDER BY Tenant_ID";
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             OracleDataAdapter ra = new OracleDataAdapter(cmd);

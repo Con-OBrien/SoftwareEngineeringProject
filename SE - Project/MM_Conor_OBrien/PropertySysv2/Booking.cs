@@ -171,5 +171,21 @@ namespace PropertySysv2
 
             return total;
         }
+        public void rmvBooking(int PID)
+        {
+            //connect to database
+            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            myConn.Open();
+
+       
+            String strSQL = "DELETE FROM Bookings WHERE Prop_ID = " + PID;
+
+            //Execute the command
+            OracleCommand cmd = new OracleCommand(strSQL, myConn);
+            cmd.ExecuteNonQuery();
+
+            //close DB connection
+            myConn.Close();
+        }
     }
 }

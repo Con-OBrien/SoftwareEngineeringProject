@@ -41,6 +41,14 @@ namespace PropertySysv2
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            txtForename.Text = "";
+            txtSurname.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtActivity.Text = "";
+        
+            grpTenants.Visible = false;
+
             if (txtTenantSearch.Text == "")
             {
                 MessageBox.Show("Search must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -50,7 +58,7 @@ namespace PropertySysv2
             if (Regex.IsMatch(txtTenantSearch.Text, @"^[a-zA-Z ]+$"))
             {
                 DataSet ds = new DataSet();
-                grdTenants.DataSource = PropertySysv2.Owner.getSpecificOwners(ds, txtTenantSearch.Text.ToUpper()).Tables["ss"];
+                grdTenants.DataSource = PropertySysv2.Tenant.getSurnamesTenant(ds, txtTenantSearch.Text.ToUpper()).Tables["rs"];
 
                 grdTenants.Visible = true;
             }

@@ -141,6 +141,22 @@ namespace PropertySysv2
 
             return DS;
         }
+        public static DataSet getJustTown(DataSet DS, String County)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
+
+            String strSQL = "SELECT DISTINCT Town FROM Properties WHERE County = '" + County + "' ORDER BY Town ";
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            conn.Close();
+
+            return DS;
+        }
         public static DataSet getCounty(DataSet DS)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oradb);

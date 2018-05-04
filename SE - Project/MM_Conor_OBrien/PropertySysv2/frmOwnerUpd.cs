@@ -50,7 +50,7 @@ namespace PropertySysv2
             String phone = txtPhone.Text;
             foreach (char c in phone)
             {
-                if (c <= '0' || c >= '9')
+                if (c < '0' || c > '9')
                 {
                     MessageBox.Show("Phone must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

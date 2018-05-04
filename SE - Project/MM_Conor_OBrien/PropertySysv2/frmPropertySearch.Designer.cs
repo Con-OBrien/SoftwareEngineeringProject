@@ -47,7 +47,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(701, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(878, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,7 +122,7 @@
             this.grdProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProperties.Location = new System.Drawing.Point(19, 183);
             this.grdProperties.Name = "grdProperties";
-            this.grdProperties.Size = new System.Drawing.Size(644, 96);
+            this.grdProperties.Size = new System.Drawing.Size(832, 96);
             this.grdProperties.TabIndex = 38;
             this.grdProperties.Visible = false;
             // 
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(701, 320);
+            this.ClientSize = new System.Drawing.Size(878, 320);
             this.Controls.Add(this.grdProperties);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblBeds);

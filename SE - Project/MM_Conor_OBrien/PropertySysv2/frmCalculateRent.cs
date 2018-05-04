@@ -35,12 +35,13 @@ namespace PropertySysv2
         private void frmCalculateRent_Load(object sender, EventArgs e)
         {
             //Populate Combo Boxes
-            DataSet ds = new DataSet();
+          /*  DataSet ds = new DataSet();
             ds = Property.getTown(ds);
             
 
             for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
-                cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+                cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString()); */
+
 
             DataSet cs = new DataSet();
             cs = Property.getCounty(cs);
@@ -52,9 +53,19 @@ namespace PropertySysv2
 
         private void cboCounty_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DataSet ds = new DataSet();
+            ds = Property.getJustTown(ds, cboCounty.SelectedItem.ToString());
+
+
+            for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
+                cboTown.Items.Add(ds.Tables[0].Rows[i][0].ToString());
+
             lblTown.Visible = true;
             cboTown.Visible = true;
             btnSearch.Visible = true;
+
+            
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
